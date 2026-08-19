@@ -2,10 +2,10 @@ name: overnight-brief
 
 on:
   schedule:
-    # 00:40 UTC = 北京 08:40，周一到周五。
-    # 提前 20 分钟发车是因为 GitHub 的 cron 常有 5-20 分钟排队延迟，
-    # 9 点打开页面时必须已经是新的。
-    - cron: "40 0 * * 1-5"
+    # 00:00 UTC = 北京 08:00，每天。
+    # 注意 GitHub 的 cron 常有 5-20 分钟排队延迟，实际落地多在 08:05-08:20。
+    # 周六周日跑出来的是周五那一场（美股不开盘），但隔夜新闻窗口是新的。
+    - cron: "0 0 * * *"
   workflow_dispatch:
     inputs:
       mode:

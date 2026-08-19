@@ -1,11 +1,11 @@
 # overnight-brief · 隔夜早报
 
-每交易日北京时间 08:40 自动生成一份隔夜市场快照，推到 GitHub Pages。
+每天北京时间 08:00 自动生成一份隔夜市场快照，推到 GitHub Pages。
 前一晚发生了什么宏观大事、美股哪些板块和个股在动、金银铜油怎么走、铜的基本面消息——
 一页看完。
 
 ```
-GitHub Actions (00:40 UTC)
+GitHub Actions (00:00 UTC)
         │
    ┌────┴──────────┐
  行情 quotes.py    新闻 news.py
