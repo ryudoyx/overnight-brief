@@ -287,10 +287,10 @@ judge:
     #   Groq   https://api.groq.com/openai/v1              llama-3.3-70b-versatile
     #   智谱   https://open.bigmodel.cn/api/paas/v4        glm-4-flash
     base_url: https://generativelanguage.googleapis.com/v1beta/openai
-    model: gemini-3.7-flash
-    # 免费层 503「模型过载」是常态：3.7-flash 实测三次挂一次，flash-lite 三次全过。
-    # 主模型重试仍不行就自动降级到备胎，别让一次抖动把整批新闻丢掉。
-    fallback_models: [gemini-3.1-flash-lite]
+    # 主力用 lite：3.7-flash 在免费层实测九次调用全部 429，每次都要走完重试
+    # 才降级，白烧两三分钟。lite 实测稳定，把它放前面，3.7 留作备胎。
+    model: gemini-3.1-flash-lite
+    fallback_models: [gemini-3.7-flash]
     retries: 4
     api_key_env: GEMINI_API_KEY
     temperature: 0.2
