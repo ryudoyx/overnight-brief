@@ -1,0 +1,300 @@
+# 隔夜早报配置。加减标的、调阈值都改这里，不用动代码。
+
+runtime:
+  spark_days: 10          # 迷你走势线取多少个交易日
+  history_days: 40        # 日线回看窗口，够算 spark 和成交量均值
+
+# ---------------------------------------------------------------- 指数与利率汇率
+indices:
+  - {sym: "^GSPC",  name: "标普500"}
+  - {sym: "^IXIC",  name: "纳斯达克"}
+  - {sym: "^DJI",   name: "道琼斯"}
+  - {sym: "^RUT",   name: "罗素2000"}
+  - {sym: "^VIX",   name: "VIX 恐慌指数"}
+
+macro_markets:
+  - {sym: "^TNX",      name: "美债10年期", unit: "%"}
+  - {sym: "^FVX",      name: "美债5年期",  unit: "%"}
+  - {sym: "DX-Y.NYB",  name: "美元指数",   unit: ""}
+  - {sym: "CNY=X",     name: "美元兑人民币", unit: ""}
+
+# ---------------------------------------------------------------- 板块（SPDR 11 大板块 + 两个风向标）
+sectors:
+  - {sym: "XLK",  name: "科技"}
+  - {sym: "XLC",  name: "通信服务"}
+  - {sym: "XLY",  name: "非必需消费"}
+  - {sym: "XLP",  name: "必需消费"}
+  - {sym: "XLE",  name: "能源"}
+  - {sym: "XLF",  name: "金融"}
+  - {sym: "XLV",  name: "医疗保健"}
+  - {sym: "XLI",  name: "工业"}
+  - {sym: "XLB",  name: "原材料"}
+  - {sym: "XLRE", name: "房地产"}
+  - {sym: "XLU",  name: "公用事业"}
+  - {sym: "SMH",  name: "半导体", extra: true}
+  - {sym: "KWEB", name: "中概互联", extra: true}
+
+# ---------------------------------------------------------------- 个股异动
+# 大票异动走 Yahoo screener（全美股按市值门槛筛），自选池单独取数保证一定出现
+movers:
+  min_market_cap: 20000000000   # 200 亿美元
+  min_volume: 500000
+  top_n: 8                      # 涨跌各取几只
+  min_abs_pct: 2.0              # 涨跌幅不到这个数就不算「明显」，宁可少列
+
+watchlist:
+  矿业:
+    - {sym: "FCX",  name: "自由港"}
+    - {sym: "SCCO", name: "南方铜业"}
+    - {sym: "TECK", name: "泰克资源"}
+    - {sym: "RIO",  name: "力拓"}
+    - {sym: "BHP",  name: "必和必拓"}
+    - {sym: "VALE", name: "淡水河谷"}
+    - {sym: "AA",   name: "美国铝业"}
+    - {sym: "MP",   name: "MP 稀土"}
+    - {sym: "NEM",  name: "纽蒙特"}
+    - {sym: "AEM",  name: "Agnico Eagle"}
+    - {sym: "GOLD", name: "巴里克"}
+    - {sym: "HBM",  name: "哈德贝"}
+    - {sym: "ERO",  name: "Ero Copper"}
+  中概:
+    - {sym: "BABA", name: "阿里巴巴"}
+    - {sym: "PDD",  name: "拼多多"}
+    - {sym: "JD",   name: "京东"}
+    - {sym: "NTES", name: "网易"}
+    - {sym: "BIDU", name: "百度"}
+    - {sym: "TCOM", name: "携程"}
+    - {sym: "LI",   name: "理想汽车"}
+    - {sym: "XPEV", name: "小鹏汽车"}
+    - {sym: "NIO",  name: "蔚来"}
+    - {sym: "BEKE", name: "贝壳"}
+    - {sym: "FUTU", name: "富途"}
+    - {sym: "TME",  name: "腾讯音乐"}
+    - {sym: "YUMC", name: "百胜中国"}
+    - {sym: "ZTO",  name: "中通快递"}
+
+# ---------------------------------------------------------------- 商品
+# unit_to 是落库口径，raw_unit 是 Yahoo 实际返回的口径，换算因子写死在 quotes.py 里，
+# 因为 HG=F 返回的是 USD/lb 而不是常见的美分/磅，靠猜必错。
+commodities:
+  - {sym: "GC=F", name: "COMEX 黄金", raw_unit: "USD/oz",    unit_to: "USD/oz"}
+  - {sym: "SI=F", name: "COMEX 白银", raw_unit: "USD/oz",    unit_to: "USD/oz"}
+  - {sym: "HG=F", name: "COMEX 铜",   raw_unit: "USD/lb",    unit_to: "USD/t"}
+  - {sym: "CL=F", name: "WTI 原油",   raw_unit: "USD/bbl",   unit_to: "USD/bbl"}
+  - {sym: "BZ=F", name: "布伦特原油", raw_unit: "USD/bbl",   unit_to: "USD/bbl"}
+  - {sym: "NG=F", name: "天然气",     raw_unit: "USD/MMBtu", unit_to: "USD/MMBtu"}
+
+# ---------------------------------------------------------------- 铜专栏
+copper:
+  miners: ["FCX", "SCCO", "TECK", "ERO", "HBM"]
+  shfe_symbol: "CU0"     # 新浪连续合约代码，用于取沪铜夜盘
+
+# ================================================================ 新闻
+news:
+  # 隔夜窗：北京时间前一日 16:00 起，到脚本运行时刻为止。
+  # 用绝对时刻而不是「往回 N 小时」，这样手动补跑一次也不会把窗口错开。
+  window_start_hour: 16
+  max_llm_items: 120       # 单桶最多送多少条进 Claude
+  max_per_source: 25       # 单个源最多贡献多少条——防止某一组 Google News 查询把别的源挤掉
+  max_per_category: 2      # 最终版面里单个分类最多几条——同一件事换四种措辞时靠这个保多样性
+  llm_batch_size: 25
+  fuzzy_dedup_threshold: 0.86
+
+  sources:
+    # ---------------- 宏观 / 美股 ----------------
+    - {name: 美联储官网,   type: rss,   lang: en, url: "https://www.federalreserve.gov/feeds/press_all.xml"}
+    - {name: 财联社电报,   type: cls,   lang: zh}
+    - {name: GN-美联储与利率, type: gnews, lang: en, query: 'Federal Reserve OR FOMC OR Powell (rate OR policy OR minutes) when:2d'}
+    - {name: GN-美国经济数据, type: gnews, lang: en, query: 'US (CPI OR inflation OR payrolls OR "jobless claims" OR PCE OR "retail sales" OR ISM OR GDP) when:2d'}
+    - {name: GN-关税与贸易,   type: gnews, lang: en, query: '(tariff OR "trade deal" OR "export controls" OR sanctions) (US OR China OR EU) when:2d'}
+    - {name: GN-美债与美元,   type: gnews, lang: en, query: '("Treasury yields" OR "bond market" OR "dollar index" OR "safe haven") when:2d'}
+    - {name: GN-华尔街,      type: gnews, lang: en, query: 'site:reuters.com (stocks OR "Wall Street" OR Nasdaq OR "S&P 500") when:2d'}
+    - {name: GN-地缘与能源,   type: gnews, lang: en, query: '(OPEC OR "oil prices" OR Russia OR Iran OR "Middle East") (supply OR sanctions OR conflict) when:2d'}
+    - {name: GN-央行与全球,   type: gnews, lang: en, query: '(ECB OR "Bank of Japan" OR "People''s Bank of China" OR BOE) (rate OR policy) when:2d'}
+
+    # ---------------- 铜 ----------------
+    - {name: SHMET铜快讯,  type: shmet, lang: zh, channel: '铜'}
+    - {name: Mining.com,  type: rss,   lang: en, url: "https://www.mining.com/feed/"}
+    - {name: GN-铜矿供应,   type: gnews, lang: en, query: 'copper (mine OR smelter OR concentrate OR "treatment charges") when:2d'}
+    - {name: GN-铜供应中断, type: gnews, lang: en, query: 'copper (strike OR halt OR suspend OR "force majeure" OR landslide) mine when:2d'}
+    - {name: GN-铜库存政策, type: gnews, lang: en, query: 'copper (inventories OR stockpiles OR "LME warehouse" OR tariff OR "export ban") when:2d'}
+
+  # 粗筛：把明显无关的砍掉，别让它们花 Claude 的钱。真正的判断交给 LLM。
+  buckets:
+    宏观:
+      precedence: 2        # 数字小的先认领条目，每条只进一个板块
+      top_n: 8
+      min_importance: 3
+      keywords:
+        must:
+          - fed
+          - fomc
+          - powell
+          - 美联储
+          - rate cut
+          - 降息
+          - 加息
+          - inflation
+          - 通胀
+          - cpi
+          - ppi
+          - pce
+          - payroll
+          - 非农
+          - jobless
+          - unemployment
+          - 失业
+          - gdp
+          - ism
+          - retail sales
+          - tariff
+          - 关税
+          - trade
+          - 贸易
+          - treasury
+          - yield
+          - 美债
+          - dollar
+          - 美元
+          - sanction
+          - 制裁
+          - opec
+          - 原油
+          - oil price
+          - ecb
+          - 欧洲央行
+          - bank of japan
+          - 日本央行
+          - 央行
+          - shutdown
+          - 财政
+          - recession
+          - 衰退
+          - wall street
+          - nasdaq
+          - s&p 500
+          - 标普
+          - 纳斯达克
+          - 美股
+          - earnings
+          - 财报
+        block:
+          - 券商
+          - 荐股
+          - 目标价
+          - 买入评级
+          - 增持评级
+          - 彩票
+          - 娱乐
+          - 明星
+          # 日程预告：规则档分不清「将公布」和「已公布」，价值差一个数量级
+          - what to expect
+          - awaiting
+          - ahead of
+          - due wednesday
+          - due thursday
+          - week ahead
+          - preview
+          - 前瞻
+          - 本周关注
+          - 将公布
+          - 静待
+
+          # A 股盘中快讯：跟隔夜外盘无关
+          - 连板
+          - 涨停
+          - 跌停
+          - 低开
+          - 高开
+          - 逆势活跃
+          - 板块走强
+          - 板块走弱
+          - 个股异动
+          - 创业板指
+          - 深成指
+          - 沪指
+          # 纯行情播报：涨跌幅由 quotes.py 实测，不需要新闻转述
+          - 涨幅扩大
+          - 跌幅扩大
+          - 涨超
+          - 跌超
+    铜:
+      precedence: 1
+      top_n: 5
+      min_importance: 3
+      keywords:
+        must:
+          - copper
+          - 铜
+          - cathode
+          - concentrate
+          - smelter
+          - treatment charge
+          - "TC/RC"
+          - 精矿
+          - 冶炼
+          - 阴极
+          - 加工费
+          - Codelco
+          - Escondida
+          - Grasberg
+          - Las Bambas
+          - Cobre Panama
+          - Kamoa
+          - Quellaveco
+          - Antofagasta
+          - Freeport
+          - Glencore
+          - Teck
+          - Ivanhoe
+          - Antamina
+          - Collahuasi
+          - 紫金
+          - 洛阳钼业
+          - 江西铜业
+          - Cochilco
+          - ICSG
+        block:
+          - copper mountain resort
+          - copper canyon
+          # 汇总贴：一条里塞十几件事，词表会把分数累加刷成高星，但它不是事件
+          - 市场热点回顾
+          - 热点回顾
+          - 早间新闻
+          - 财经早餐
+          - 一图看懂
+          - 数据汇总
+          - 铜锣湾
+          - 青铜器
+          - 铜像
+          - 铜牌
+          - 券商
+          - 荐股
+          - 目标价
+          - 买入评级
+
+# ================================================================ 判定与叙述后端
+# 三档，改 backend 一行切换。所有档位都只负责文字，不许碰任何数字——
+# 涨跌幅、价格、库存全部由 quotes.py 实测，模型只做组织和取舍。
+judge:
+  # rules          零 key 零成本；英文标题保留原文不翻译，也没有串讲
+  # openai_compat  接各家免费额度（Gemini / Groq / 智谱），有中文摘要和串讲
+  # claude         质量最好，约 $5/月
+  backend: openai_compat
+
+  openai_compat:
+    # 默认填 Gemini 免费层。换 Groq / 智谱只改这三行：
+    #   Groq   https://api.groq.com/openai/v1              llama-3.3-70b-versatile
+    #   智谱   https://open.bigmodel.cn/api/paas/v4        glm-4-flash
+    base_url: https://generativelanguage.googleapis.com/v1beta/openai
+    model: gemini-3.7-flash
+    # 免费层 503「模型过载」是常态：3.7-flash 实测三次挂一次，flash-lite 三次全过。
+    # 主模型重试仍不行就自动降级到备胎，别让一次抖动把整批新闻丢掉。
+    fallback_models: [gemini-3.1-flash-lite]
+    retries: 4
+    api_key_env: GEMINI_API_KEY
+    temperature: 0.2
+
+  claude:
+    id: claude-sonnet-5  # 遇到大事件想要更好的叙述，手动改成 claude-opus-5 重跑
+    effort: low          # low | medium | high | xhigh | max（默认 high，早报用 low 够了）

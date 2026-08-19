@@ -1,0 +1,9 @@
+pyyaml
+requests
+feedparser
+pydantic
+curl_cffi
+yfinance
+akshare
+pandas
+anthropic

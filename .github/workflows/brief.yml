@@ -1,0 +1,63 @@
+name: overnight-brief
+
+on:
+  schedule:
+    # 00:40 UTC = 北京 08:40，周一到周五。
+    # 提前 20 分钟发车是因为 GitHub 的 cron 常有 5-20 分钟排队延迟，
+    # 9 点打开页面时必须已经是新的。
+    - cron: "40 0 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "运行模式"
+        type: choice
+        default: normal
+        options: [normal, no-llm, quotes-only]
+
+# 上一轮没跑完就别开新的，否则两个 job 会同时改 archive 打架
+concurrency:
+  group: overnight-brief
+  cancel-in-progress: false
+
+permissions:
+  contents: write        # 要把 archive/ 和 index.html 提交回仓库
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: 出早报
+        env:
+          # backend=rules 时两个都不用配，secret 不存在就是空串，不会报错
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          case "${{ inputs.mode }}" in
+            no-llm)      python run.py --no-llm ;;
+            quotes-only) python run.py --quotes-only ;;
+            *)           python run.py ;;
+          esac
+
+      - name: 提交产物
+        run: |
+          git config user.name  "overnight-brief[bot]"
+          git config user.email "overnight-brief@users.noreply.github.com"
+          git add archive index.html
+          git diff --staged --quiet && { echo "无变化"; exit 0; }
+          git commit -m "brief: $(date -u +'%Y-%m-%d')"
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && \
+              git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep 5
+          done
+          echo "::warning::回写失败，页面这轮不会更新"
