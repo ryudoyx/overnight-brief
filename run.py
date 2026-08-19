@@ -17,7 +17,7 @@ import datetime as dt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from brief import quotes, news, narrate, render
 
-ROOT = os.path.expanduser("~/Desktop/overnight_brief")
+ROOT = os.path.dirname(os.path.abspath(__file__))
 ARCHIVE = os.path.join(ROOT, "archive")
 CST = dt.timezone(dt.timedelta(hours=8))
 

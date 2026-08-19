@@ -10,7 +10,9 @@ import json
 import html
 import datetime as dt
 
-ROOT = os.path.expanduser("~/Desktop/overnight_brief")
+# 从模块自身位置推导项目根，别写死家目录——
+# GitHub Actions 的 runner 上没有 ~/Desktop，写死了云端必挂
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARCHIVE = os.path.join(ROOT, "archive")
 
 CSS = """
