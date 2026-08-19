@@ -15,7 +15,7 @@ import shutil
 import datetime as dt
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from brief import quotes, news, narrate, render
+from brief import quotes, news, narrate, render, metals
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 ARCHIVE = os.path.join(ROOT, "archive")
@@ -56,13 +56,19 @@ def main():
         print(json.dumps(q, ensure_ascii=False, indent=2))
         return
 
+    log("取品种数据（交易所库存 / 沪盘持仓）")
+    mt = metals.collect()
+
     log("抓新闻")
     n = news.collect(cfg) if "--no-llm" not in args else {"meta": {"failures": ["--no-llm 跳过"]}}
 
-    pack = {"quotes": q, "news": n, "narration": None, "meta": {}}
+    pack = {"quotes": q, "news": n, "metals": mt, "narration": None,
+            "commentary": {}, "meta": {}}
     if "--no-llm" not in args:
         log("生成串讲")
         pack["narration"] = narrate.narrate(pack, cfg)
+        log("生成品种评论")
+        pack["commentary"] = narrate.commentary(pack, cfg)
 
     # 串讲的花费要按当前后端的单价算：openai_compat 走的是免费额度，
     # 一律按 Claude 单价加会把零成本报成几分钱，页脚不能撒这种谎

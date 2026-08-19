@@ -119,6 +119,11 @@ news:
     - {name: GN-铜供应中断, type: gnews, lang: en, query: 'copper (strike OR halt OR suspend OR "force majeure" OR landslide) mine when:2d'}
     - {name: GN-铜库存政策, type: gnews, lang: en, query: 'copper (inventories OR stockpiles OR "LME warehouse" OR tariff OR "export ban") when:2d'}
 
+    # ---------------- 铝 ----------------
+    - {name: SHMET铝快讯,  type: shmet, lang: zh, channel: '铝'}
+    - {name: GN-铝供应,     type: gnews, lang: en, query: 'aluminium (smelter OR alumina OR bauxite OR "production cut" OR capacity) when:2d'}
+    - {name: GN-铝库存政策, type: gnews, lang: en, query: 'aluminium (inventories OR "LME warehouse" OR tariff OR "export tax" OR premium) when:2d'}
+
   # 粗筛：把明显无关的砍掉，别让它们花 Claude 的钱。真正的判断交给 LLM。
   buckets:
     宏观:
@@ -218,6 +223,45 @@ news:
           - 跌幅扩大
           - 涨超
           - 跌超
+    铝:
+      precedence: 1        # 跟铜同级，各自认领自己的条目
+      top_n: 5
+      min_importance: 3
+      keywords:
+        must:
+          - aluminium
+          - aluminum
+          - alumina
+          - bauxite
+          - 电解铝
+          - 氧化铝
+          - 铝土矿
+          - 铝锭
+          - 铝棒
+          - 铝材
+          - 沪铝
+          - 伦铝
+          - 再生铝
+          - 废铝
+          - 俄铝
+          - Rusal
+          - Alcoa
+          - Norsk Hydro
+          - Chalco
+          - 中国铝业
+          - 云铝
+          - 神火
+          - 天山铝业
+          - 几内亚
+          - Guinea
+        block:
+          - 铝合金门窗
+          - 铝箔餐盒
+          - 券商
+          - 荐股
+          - 目标价
+          - 买入评级
+
     铜:
       precedence: 1
       top_n: 5

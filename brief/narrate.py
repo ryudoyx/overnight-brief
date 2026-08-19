@@ -125,3 +125,111 @@ def narrate(pack, cfg):
         return None
     out["usage"] = {"input": resp.usage.input_tokens, "output": resp.usage.output_tokens}
     return out
+
+
+# ---------------------------------------------------------------- 品种评论
+
+COMMENT_SYSTEM = """你在给一位做铜和有色为主的大宗商品研究员写每日品种评论，他早上 8 点看。
+写一段 180-320 字的中文评论，结构按「供应端 → 需求端 → 库存 → 盘面 → 结论」推进，
+不要小标题不要 bullet，连贯成段。
+
+**数字的规矩，这是最重要的一条：**
+1. 我给你的 facts 里的数字是程序算出来的，可以直接用。
+2. news 里的数字（LME 库存、仓单、升贴水、加工费这些），是新闻原文写的，可以引用，
+   但必须带出处，写成「据 SHMET」「据外电」。不要改写数值，不要做加减乘除，
+   不要把两条新闻里的数字凑成一个新数字。
+3. **除此之外一个数字都不许出现。** 没有的数据就不写那句话，宁可少写。
+   特别是：加工费 TC、社会库存、运行产能、周产量、开工率、即时利润、成本线、
+   进出口同比——这些我没有给你，你也拿不到，绝对不要编。
+4. 不要写价格预测区间（例如「预计运行于 23400-24200」）。你没有这个信息。
+
+其余要求：
+- **数字一律用阿拉伯数字**：写「389.6万吨」「同比增长3.8%」「23675元/吨」，
+  不要写成「三百八十九点六万吨」「百分之三点八」。这是给人扫读的，中文大写没法扫。
+- 开头给一句 12 字以内的定调，例如「LME 交仓增加，挤仓逻辑松动」
+- 有背离就重点讲背离（库存累积但价格涨、外盘跌而内盘扛，这类）
+- **结尾必须落在一个判断上，不要用套话收尾。** 禁止出现「值得关注」「需要警惕」
+  「建议关注……的进一步影响」「密切留意后续变化」这类正确的废话——它们不传递
+  任何信息。最后一句要说清楚：当前的主导矛盾是什么，以及它指向哪个方向。
+- 缺数据的环节直接跳过。不要写「暂无数据」这类占位句，也不要用「据悉」
+  「市场传闻」来含糊填补空缺
+
+按这个 JSON 返回，不要有别的内容：
+{"tone": "...", "text": "..."}"""
+
+
+def _variety_facts(pack, variety):
+    """把某个品种相关的事实拢到一起。只放能算准的。"""
+    q = pack["quotes"]
+    m = (pack.get("metals") or {}).get("varieties", {})
+    outer = {"铜": "COMEX 铜", "铝": None}[variety]
+
+    facts = {"品种": variety}
+    if m.get(variety):
+        facts["上期所交易所库存"] = m[variety].get("inventory")
+        facts["沪盘"] = m[variety].get("quote")
+    if variety == "铝" and m.get("氧化铝"):
+        facts["氧化铝交易所库存"] = m["氧化铝"].get("inventory")
+        facts["氧化铝盘面"] = m["氧化铝"].get("quote")
+    if outer:
+        facts["外盘"] = next((r for r in q["commodities"] if r["name"] == outer), None)
+    if variety == "铜":
+        facts["铜矿股隔夜"] = [{"name": r["name"], "chg_pct": r["chg_pct"]}
+                               for r in q["copper"]["miners"]]
+    facts["美股大盘"] = [{"name": r["name"], "chg_pct": r["chg_pct"]}
+                         for r in q["indices"] if r["name"] in ("标普500", "VIX 恐慌指数")]
+    facts["美元指数"] = next((r["chg_pct"] for r in q["macro_markets"]
+                              if r["name"] == "美元指数"), None)
+    return facts
+
+
+def _one_shot(system, user, cfg, max_tokens=3000):
+    """按当前后端发一次结构化请求，失败返回 None。"""
+    backend = cfg["judge"]["backend"]
+    try:
+        if backend == "openai_compat":
+            from .compat import CompatJudge
+            return json.loads(CompatJudge(cfg["judge"]["openai_compat"]).chat(
+                system, user, max_tokens=max_tokens))
+        client = anthropic.Anthropic()
+        resp = client.messages.create(
+            model=os.environ.get("BRIEF_MODEL") or cfg["judge"]["claude"]["id"],
+            max_tokens=max_tokens, system=system,
+            output_config={"effort": cfg["judge"]["claude"]["effort"],
+                           "format": {"type": "json_schema", "schema": {
+                               "type": "object",
+                               "properties": {"tone": {"type": "string"},
+                                              "text": {"type": "string"}},
+                               "required": ["tone", "text"],
+                               "additionalProperties": False}}},
+            messages=[{"role": "user", "content": user}])
+        if resp.stop_reason == "refusal":
+            return None
+        return json.loads(next((b.text for b in resp.content if b.type == "text"), ""))
+    except Exception as e:
+        log(f"生成失败：{type(e).__name__}: {str(e)[:110]}")
+        return None
+
+
+def commentary(pack, cfg):
+    """给铜和铝各写一段。返回 {品种: {tone, text}}。"""
+    if cfg["judge"]["backend"] == "rules":
+        log("规则档不生成品种评论")
+        return {}
+    out = {}
+    for variety in ("铜", "铝"):
+        facts = _variety_facts(pack, variety)
+        news = pack["news"].get(variety, [])
+        if not facts.get("沪盘") and not news:
+            log(f"{variety}：既无盘面也无消息，跳过评论")
+            continue
+        payload = ("facts（程序算好的，可直接引用）：\n"
+                   + json.dumps(facts, ensure_ascii=False, indent=1)
+                   + "\n\nnews（新闻原文，里面的数字要标出处）：\n"
+                   + json.dumps([{k: n[k] for k in ("title", "summary", "direction", "source")}
+                                 for n in news], ensure_ascii=False, indent=1))
+        got = _one_shot(COMMENT_SYSTEM, payload, cfg, max_tokens=3000)
+        if got:
+            out[variety] = got
+            log(f"{variety}：评论已生成（{len(got.get('text', ''))} 字）")
+    return out

@@ -217,6 +217,40 @@ def date_picker(current):
     return (f'<select onchange="location.href=this.value">{opts}</select>')
 
 
+def comment_block(pack, variety):
+    c = (pack.get("commentary") or {}).get(variety)
+    if not c:
+        return ""
+    return (f'<div class="tone">{esc(c.get("tone", ""))}</div>'
+            f'<div class="narr">{esc(c.get("text", ""))}</div>')
+
+
+def metal_kpis(pack, names):
+    """交易所库存 + 沪盘，拼成 KPI 卡。"""
+    m = (pack.get("metals") or {}).get("varieties", {})
+    rows = []
+    for cn in names:
+        v = m.get(cn) or {}
+        qt, inv = v.get("quote"), v.get("inventory")
+        if qt:
+            rows.append({"name": f"沪{cn}" if cn != "氧化铝" else "氧化铝",
+                         "close": qt["close"], "chg_pct": qt["chg_pct"]})
+        if inv:
+            rows.append({"name": f"{cn}交易所库存", "close": inv["stock"],
+                         "chg_pct": None, "sub": inv["change"]})
+    if not rows:
+        return ""
+    out = ['<div class="kpis">']
+    for r in rows:
+        extra = (f'<div class="c {cls(r["sub"])}">{r["sub"]:+,.0f} 吨</div>'
+                 if r.get("sub") is not None else
+                 f'<div class="c {cls(r["chg_pct"])}">{pct(r["chg_pct"])}</div>')
+        out.append(f'<div class="kpi"><div class="k">{esc(r["name"])}</div>'
+                   f'<div class="v">{num(r["close"])}</div>{extra}</div>')
+    out.append("</div>")
+    return "".join(out)
+
+
 def build(pack):
     q, n = pack["quotes"], pack["news"]
     narr = pack.get("narration") or {}
@@ -260,6 +294,8 @@ def build(pack):
 
     c = q["copper"]
     parts.append("<h2>铜</h2>")
+    parts.append(comment_block(pack, "铜"))
+    parts.append(metal_kpis(pack, ["铜"]))
     cop = []
     if c.get("comex"):
         r = c["comex"]
@@ -273,6 +309,11 @@ def build(pack):
         parts.append('<div class="cols">' + watch_table(c["miners"], "矿业") + "</div>")
     parts.append(news_block(n.get("铜", []), "隔夜窗内没有达到阈值的铜消息。"))
 
+    parts.append("<h2>铝</h2>")
+    parts.append(comment_block(pack, "铝"))
+    parts.append(metal_kpis(pack, ["铝", "氧化铝"]))
+    parts.append(news_block(n.get("铝", []), "隔夜窗内没有达到阈值的铝消息。"))
+
     nm = n.get("meta", {})
     fails = nm.get("failures") or []
     note = [f'数据窗口 {esc(nm.get("window_start", ""))} → {esc(nm.get("window_end", ""))}（北京时间）。',
@@ -280,6 +321,9 @@ def build(pack):
             f'行情来自 Yahoo Finance，铜价单位已统一为 USD/t；沪铜夜盘来自新浪。']
     if pack["meta"].get("cost_usd"):
         note.append(f'本次 LLM 花费约 ${pack["meta"]["cost_usd"]:.4f}（{esc(nm.get("llm_model", ""))}）。')
+    gaps = (pack.get("metals") or {}).get("gaps") or []
+    if gaps:
+        note.append("品种评论未覆盖（免费源拿不到，刻意不写而非遗漏）：" + esc("；".join(gaps)))
     if fails:
         note.append('<span class="warn">失败源：' + esc("；".join(fails)[:300]) + "</span>")
     parts.append('<div class="note">' + "<br>".join(note) + "</div>")

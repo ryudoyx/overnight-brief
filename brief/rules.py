@@ -184,8 +184,17 @@ _NUM = re.compile(
     r"\d[\d,.]*\s*(%|吨|万吨|美元|元/吨|基点|bps?|tonnes?|tons?|kt\b|mt\b|usd|\$)",
     re.IGNORECASE)
 
+ALU_MAJORS = [
+    "rusal", "alcoa", "norsk hydro", "chalco", "emirates global aluminium",
+    "vedanta", "hindalco", "press metal", "南山铝业", "中国铝业", "云铝",
+    "神火", "天山铝业", "魏桥", "信发", "几内亚", "guinea", "boke",
+]
+
 SPEC = {
     "铜": (COPPER_SIGNALS, COPPER_MAJORS),
+    # 铝复用铜那套信号词：罢工/减产/库存/关税这些事件词是通用的，
+    # 只有主力企业名单不同
+    "铝": (COPPER_SIGNALS, ALU_MAJORS),
     "宏观": (MACRO_SIGNALS, MACRO_MAJORS),
 }
 
