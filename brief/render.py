@@ -166,11 +166,17 @@ def news_block(rows, empty="隔夜窗内没有达到阈值的消息。"):
 def movers_table(rows, head):
     if not rows:
         return f"<h3 class='sub'>{head}</h3><div class='sub'>无</div>"
+    def mcap(r):
+        # Yahoo 的异动榜偶尔会漏掉 marketCap 字段。它只是个参考列，
+        # 不该因为它缺失就让整份早报渲染失败——2026-08-20 那次定时运行就是这么挂的。
+        v = r.get("market_cap")
+        return f"{v / 1e9:,.0f}B" if isinstance(v, (int, float)) else "—"
+
     body = "".join(
         f'<tr><td>{esc(r["sym"])} <span class="sub">{esc(str(r["name"])[:16])}</span></td>'
         f'<td>{num(r["close"])}</td>'
         f'<td class="{cls(r["chg_pct"])}">{pct(r["chg_pct"])}</td>'
-        f'<td class="sub">{r["market_cap"] / 1e9:,.0f}B</td></tr>'
+        f'<td class="sub">{mcap(r)}</td></tr>'
         for r in rows)
     return (f'<div class="wrap"><table><thead><tr><th>{esc(head)}</th><th>收盘</th>'
             f'<th>涨跌</th><th>市值</th></tr></thead><tbody>{body}</tbody></table></div>')
