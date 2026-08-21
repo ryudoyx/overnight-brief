@@ -170,6 +170,9 @@ SOURCE_BONUS = {
     "彭博-Economics": 0.7,
     "FT": 0.7,      # 编辑筛过的文章，信噪比高于快讯流
     "Mining-铜频道": 0.5,
+    "Northern Miner": 0.5,
+    "International Mining": 0.5,
+    "IAI国际铝业": 0.8,      # 行业协会的产量统计，权威度高于媒体转述
     "Mining-铝频道": 0.5,
     "SHMET铜快讯": 0.8,
     "GN-美联储与利率": 0.5,

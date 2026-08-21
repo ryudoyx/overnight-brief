@@ -125,6 +125,11 @@ news:
     - {name: SHMET铜快讯,  type: shmet, lang: zh, channel: '铜'}
     - {name: Mining.com,  type: rss,   lang: en, url: "https://www.mining.com/feed/"}
     - {name: Mining-铜频道, type: rss,  lang: en, url: "https://www.mining.com/commodity/copper/feed/"}
+    # 矿业专业媒体。发文频率低（一天 1-6 条），但条条是行业内容，一次请求的成本
+    # 换偶尔一条硬消息，划算。注意别用 site:reuters.com 查金属——路透给每家矿业
+    # 公司都建了行情页，元数据含 copper/aluminium，一查 100 条里 98 条是报价页。
+    - {name: Northern Miner, type: rss, lang: en, url: "https://www.northernminer.com/feed/"}
+    - {name: International Mining, type: rss, lang: en, url: "https://im-mining.com/feed/"}
     - {name: GN-铜矿供应,   type: gnews, lang: en, query: 'copper (mine OR smelter OR concentrate OR "treatment charges") when:2d'}
     - {name: GN-铜供应中断, type: gnews, lang: en, query: 'copper (strike OR halt OR suspend OR "force majeure" OR landslide) mine when:2d'}
     - {name: GN-铜库存政策, type: gnews, lang: en, query: 'copper (inventories OR stockpiles OR "LME warehouse" OR tariff OR "export ban") when:2d'}
@@ -135,6 +140,9 @@ news:
     - {name: GN-铝库存政策, type: gnews, lang: en, query: 'aluminium (inventories OR "LME warehouse" OR tariff OR "export tax" OR premium) when:2d'}
     # 注意是美式拼写 aluminum，aluminium 那个 slug 是 404
     - {name: Mining-铝频道, type: rss,  lang: en, url: "https://www.mining.com/commodity/aluminum/feed/"}
+    # 国际铝业协会：权威产量与供应统计，周更级别。铝栏本来就比铜薄，
+    # 它发一条顶得上十条转述（如 GULF ALUMINIUM OUTPUT COLLAPSES BY 40%）。
+    - {name: IAI国际铝业, type: rss, lang: en, url: "https://international-aluminium.org/feed/"}
 
   # 粗筛：把明显无关的砍掉，别让它们花 Claude 的钱。真正的判断交给 LLM。
   buckets:
