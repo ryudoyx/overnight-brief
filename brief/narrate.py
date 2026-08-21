@@ -1,10 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""把算好的事实包交给 Claude 写一段中文串讲。
+"""串讲与品种评论——分层结构化输出。
 
-铁律：模型收到的每一个数字都是 quotes.py 实测出来的，它只负责组织和取舍。
-系统提示里明确禁止它自己算涨跌幅、算幅度、算相关性——那些一旦编出来，
-整份早报的可信度就没了。
+模型返回的是各层字段（宏观主线 / 指数 / 利率汇率 / …），不是一整段文字，
+排版交给 render 控制。这样既能保证版面稳定，也让每一层的写作要求可以单独下。
+
+铁律不变：facts 里的数字由代码算好，模型直接引用；news 里的数字来自新闻原文，
+可以用；除此之外一个数字都不许出现。
+
+出处规则（2026-08-21 按用户要求定）：
+  引用**他人观点**（研报结论、机构判断、官员表态）→ 必须写明来源
+  引用**数据**（价格、库存、产量、进出口）→ 不标来源，直接写
 """
 import os
 import sys
@@ -13,36 +19,127 @@ import datetime as dt
 
 import anthropic
 
-SYSTEM = """你在给一位做铜为主的大宗商品研究员写每日隔夜早报的开篇串讲。他早上 9 点打开网页，
-这段话是他看到的第一段文字，后面才是数据表格。
+CITE_RULE = """
+出处规则：
+- 引用**他人的观点或判断**时必须点名，写成「国信期货认为…」「美联储官员表示…」
+  「加方官员称…」。观点不署名等于把别人的判断冒充成事实。
+- 引用**数据**时不要标来源。直接写「7月精炼铜进口 279,557.87 吨，环比下降 16.07%」，
+  不要写成「据海关总署，7月…」。数据本身不需要背书，标注只会稀释可读性。
 
-写作要求：
-- 150-250 字，中文，一段到两段，不要小标题不要 bullet
-- 先说昨夜的主线是什么，再说值得注意的分歧或异常
-- 只用我给你的数字。**绝对不要自己计算任何数值**——不要算涨跌幅、不要算比值、
-  不要把两个数相减，不要说"累计""较上周"这种需要额外数据才能成立的话。
-  你手上没有的数字就不要提。
-- 不要复述整张表。挑两三件真正重要的说透，其余交给表格
-- 不要给交易建议，不要预测明天
-- 不要用"值得关注""需要警惕"这类正确的废话；说清楚事实和它的含义就够了
-- 如果数据里有背离（比如铜价跌但铜矿股涨），那通常就是最值得讲的一件事
+数字规矩：
+- facts 里的数字是程序算出来的，直接用。
+- news 里的数字是新闻原文写的，可以用。
+- **除此之外一个数字都不许出现。** 不要做加减乘除，不要把两条新闻的数字凑成新数字。
+- 没有的数据就不写那句话。特别是加工费 TC、社会库存、运行产能、周产量、开工率、
+  即时利润、成本线——这些我没给你，绝对不要编。
+- 不要写价格预测区间。你没有这个信息。
+- 数字一律用阿拉伯数字，不要写成中文大写。
 
-另外给一个 tone：一句话概括昨夜定调，12 字以内，会显示在页面最顶部。
-例如「风险偏好回落，商品分化」「铜逼仓主导，美股缩量」。
+**某一层没有实质内容时，直接写短。** 字数区间是上限不是配额——如果需求端
+当晚确实没有新信息，就写一句「消息面无新增需求侧信息」，不要用「市场正密切
+观察政策传导」「消费信号处于震荡调整阶段」这类句子把字数填满。空话比留白更糟，
+它让读的人误以为读到了内容。
 
-按这个 JSON 返回，不要有别的内容：
-{"tone": "...", "text": "..."}"""
+**不要为价格变动编造原因。** 只有当 news 里明确写出了原因，才可以写因果。
+如果某只股票大跌而消息面没有给出解释，就只陈述现象（「Moderna 跌 23.55%
+拖累医疗板块」），不要补一个「因财报不及预期」——你不知道，猜的原因会被当成事实。
+宁可写「消息面未给出解释」，也不要编一个听起来合理的理由。
+"""
+
+NARRATION_SYSTEM = """你在给一位做铜和有色为主的大宗商品研究员写每日隔夜早报的开篇。
+他早上 8 点打开网页，先看到你写的这几层，然后才是数据表格。
+
+按下面七个字段分别作答，每一层各司其职，不要互相复述：
+
+tone      12 字以内的定调，例如「财政与通胀双重定价，股债双杀」
+macro     **最重要的一层**。不要复述价格，要回答「昨夜发生了什么、它如何解释这些价格」。
+          把跨资产的矛盾点显性化——比如股票和债券同时下跌而黄金大涨，这说明资金
+          交易的是财政与通胀，而不是传统避险。有几条消息指向同一个方向就串起来讲。
+          150-250 字。
+indices   指数与波动率。除了涨跌幅，说清楚结构特征（大盘跌得多还是小盘跌得多，
+          这通常能指示压力来自利率还是来自单一行业）。60 字以内。
+rates_fx  利率与汇率。重点是它跟股票、美元、商品之间是否自洽。60 字以内。
+sectors   板块。领涨领跌各说几个，并判断这是结构性调仓还是系统性抛售。60 字以内。
+movers    个股异动。**不要只罗列涨跌幅**，挑最值得说的一两只，并尽量与当晚的宏观
+          消息交叉印证（例如零售龙头大跌 × 住房可负担性数据恶化 = 消费端压力）。
+          80-120 字。
+commodities 商品。60 字以内。
+""" + CITE_RULE
+
+COMMENT_SYSTEM = """你在给一位做铜和有色为主的大宗商品研究员写每日品种评论，他早上 8 点看。
+
+按下面五个字段分别作答，每层单独成句，不要互相复述：
+
+tone       12 字以内的定调，例如「挤仓退潮，近端缺乏驱动」
+supply     供应端：矿端、冶炼、外盘库存、进口货源。80-140 字。
+demand     需求端：下游补库、开工、进出口、消费信号。80-140 字。
+market     盘面：内外盘价格与涨跌、持仓、交易所库存及其变化、相关股票表现。
+           库存要注意时间尺度——单日变化和五日累计方向相反时，这本身就是信息。
+           80-140 字。
+conclusion 结论：当前主导矛盾是什么，指向哪个方向。60-100 字。
+
+           **不要以「建议关注…」「需注意…」「留意后续…」结尾。** 这类句子看似
+           谨慎，实际不传递任何信息——读的人本来就知道要关注市场。
+
+           要写风险，就写成**可证伪的条件**：说清楚「什么情况出现，上面的判断就
+           不成立」。例如不要写「建议关注库存能否持续去化」，而要写「若五日累库
+           转为持续去库，近端压制解除，背离将向铜价方向收敛」。前者是废话，
+           后者是能拿去验证的判断。
+
+           如果存在明显背离（价格不动而股票大涨、外盘跌而内盘扛），在这里点破。
+""" + CITE_RULE
+
+NARRATION_FIELDS = ["tone", "macro", "indices", "rates_fx", "sectors", "movers", "commodities"]
+COMMENT_FIELDS = ["tone", "supply", "demand", "market", "conclusion"]
 
 
 def log(msg):
     print(f"[{dt.datetime.now():%H:%M:%S}] {msg}", file=sys.stderr, flush=True)
 
 
-def _brief_facts(pack):
-    """喂给模型的精简版事实包。
+def _schema(fields):
+    return {"type": "object",
+            "properties": {f: {"type": "string"} for f in fields},
+            "required": fields, "additionalProperties": False}
 
-    刻意不把 spark 序列和 url 塞进去——模型不需要，只会诱导它对着一串数字做算术。
-    """
+
+def json_call(system, user, cfg, schema, hint="", max_tokens=4000):
+    """按当前后端发一次结构化请求，返回解析后的 JSON；失败返回 None。"""
+    backend = cfg["judge"]["backend"]
+    try:
+        if backend == "openai_compat":
+            from .compat import CompatJudge
+            raw = CompatJudge(cfg["judge"]["openai_compat"]).chat(
+                system + hint, user, max_tokens=max_tokens)
+        else:
+            client = anthropic.Anthropic()
+            resp = client.messages.create(
+                model=os.environ.get("BRIEF_MODEL") or cfg["judge"]["claude"]["id"],
+                max_tokens=max_tokens, system=system,
+                output_config={"effort": cfg["judge"]["claude"]["effort"],
+                               "format": {"type": "json_schema", "schema": schema}},
+                messages=[{"role": "user", "content": user}])
+            if resp.stop_reason == "refusal":
+                return None
+            raw = next((b.text for b in resp.content if b.type == "text"), "")
+        return json.loads(raw)
+    except Exception as e:
+        log(f"  生成失败：{type(e).__name__}: {str(e)[:110]}")
+        return None
+
+
+def _one_shot(system, user, cfg, fields, max_tokens=4000):
+    """结构化多字段输出；缺字段补空串，别让某层缺失把整段丢掉。"""
+    hint = "\n\n只输出 JSON，不要 markdown 代码块，不要解释文字。字段：" + "、".join(fields)
+    got = json_call(system, user, cfg, _schema(fields), hint, max_tokens)
+    if got is None:
+        return None
+    return {f: str(got.get(f, "") or "").strip() for f in fields}
+
+
+def _brief_facts(pack):
+    """喂给模型的精简事实包。不放 spark 序列和 url——模型不需要，
+    只会诱导它对着一串数字做算术。"""
     q, n = pack["quotes"], pack["news"]
 
     def rows(items, keys=("name", "close", "chg_pct")):
@@ -59,107 +156,26 @@ def _brief_facts(pack):
                   "chg_pct": r["chg_pct"]} for r in q["commodities"]],
         "自选股": [{"group": r["group"], "name": r["name"], "chg_pct": r["chg_pct"]}
                    for r in q["watchlist"]],
-        "铜矿股": [{"name": r["name"], "chg_pct": r["chg_pct"]} for r in q["copper"]["miners"]],
-        "沪铜夜盘": q["copper"]["shfe_night"],
         "宏观新闻": [{k: r[k] for k in ("title", "summary", "direction", "importance")}
                      for r in n.get("宏观", [])],
-        "铜新闻": [{k: r[k] for k in ("title", "summary", "direction", "importance")}
-                   for r in n.get("铜", [])],
     }
 
 
 def narrate(pack, cfg):
-    """规则档没有叙述能力，直接跳过——页面照出，只是少这一段。"""
-    backend = cfg["judge"]["backend"]
-    if backend == "rules":
-        log("规则档不生成串讲（要这段话就把 judge.backend 换成 openai_compat 或 claude）")
+    if cfg["judge"]["backend"] == "rules":
+        log("规则档不生成串讲（要这几层就换 openai_compat 或 claude）")
         return None
-    if backend == "openai_compat":
-        from .compat import CompatJudge
-        j = CompatJudge(cfg["judge"]["openai_compat"])
-        try:
-            text = j.chat(SYSTEM, "昨夜的事实如下（所有数字均已由程序算好，直接引用即可）：\n\n"
-                          + json.dumps(_brief_facts(pack), ensure_ascii=False, indent=1),
-                          max_tokens=2000)
-            out = json.loads(text)
-        except Exception as e:
-            log(f"串讲生成失败（页面照常出）：{type(e).__name__}: {str(e)[:120]}")
-            return None
-        out["usage"] = j.usage
-        return out
-
-    model = os.environ.get("BRIEF_MODEL") or cfg["judge"]["claude"]["id"]
-    client = anthropic.Anthropic()
-    try:
-        resp = client.messages.create(
-            model=model,
-            max_tokens=4000,
-            system=SYSTEM,
-            output_config={
-                "effort": cfg["judge"]["claude"]["effort"],
-                "format": {"type": "json_schema", "schema": {
-                    "type": "object",
-                    "properties": {"tone": {"type": "string"}, "text": {"type": "string"}},
-                    "required": ["tone", "text"],
-                    "additionalProperties": False,
-                }},
-            },
-            messages=[{
-                "role": "user",
-                "content": "昨夜的事实如下（所有数字均已由程序算好，直接引用即可）：\n\n"
-                           + json.dumps(_brief_facts(pack), ensure_ascii=False, indent=1),
-            }],
-        )
-    except (anthropic.APIStatusError, anthropic.APIConnectionError) as e:
-        log(f"串讲生成失败（页面照常出，只是少这一段）：{type(e).__name__}: {str(e)[:120]}")
-        return None
-
-    if resp.stop_reason == "refusal":
-        log("模型拒答串讲，跳过")
-        return None
-    text = next((b.text for b in resp.content if b.type == "text"), "")
-    try:
-        out = json.loads(text)
-    except json.JSONDecodeError:
-        log("串讲输出不是合法 JSON，跳过")
-        return None
-    out["usage"] = {"input": resp.usage.input_tokens, "output": resp.usage.output_tokens}
-    return out
-
-
-# ---------------------------------------------------------------- 品种评论
-
-COMMENT_SYSTEM = """你在给一位做铜和有色为主的大宗商品研究员写每日品种评论，他早上 8 点看。
-写一段 180-320 字的中文评论，结构按「供应端 → 需求端 → 库存 → 盘面 → 结论」推进，
-不要小标题不要 bullet，连贯成段。
-
-**数字的规矩，这是最重要的一条：**
-1. 我给你的 facts 里的数字是程序算出来的，可以直接用。
-2. news 里的数字（LME 库存、仓单、升贴水、加工费这些），是新闻原文写的，可以引用，
-   但必须带出处，写成「据 SHMET」「据外电」。不要改写数值，不要做加减乘除，
-   不要把两条新闻里的数字凑成一个新数字。
-3. **除此之外一个数字都不许出现。** 没有的数据就不写那句话，宁可少写。
-   特别是：加工费 TC、社会库存、运行产能、周产量、开工率、即时利润、成本线、
-   进出口同比——这些我没有给你，你也拿不到，绝对不要编。
-4. 不要写价格预测区间（例如「预计运行于 23400-24200」）。你没有这个信息。
-
-其余要求：
-- **数字一律用阿拉伯数字**：写「389.6万吨」「同比增长3.8%」「23675元/吨」，
-  不要写成「三百八十九点六万吨」「百分之三点八」。这是给人扫读的，中文大写没法扫。
-- 开头给一句 12 字以内的定调，例如「LME 交仓增加，挤仓逻辑松动」
-- 有背离就重点讲背离（库存累积但价格涨、外盘跌而内盘扛，这类）
-- **结尾必须落在一个判断上，不要用套话收尾。** 禁止出现「值得关注」「需要警惕」
-  「建议关注……的进一步影响」「密切留意后续变化」这类正确的废话——它们不传递
-  任何信息。最后一句要说清楚：当前的主导矛盾是什么，以及它指向哪个方向。
-- 缺数据的环节直接跳过。不要写「暂无数据」这类占位句，也不要用「据悉」
-  「市场传闻」来含糊填补空缺
-
-按这个 JSON 返回，不要有别的内容：
-{"tone": "...", "text": "..."}"""
+    got = _one_shot(
+        NARRATION_SYSTEM,
+        "昨夜的事实如下（数字均已由程序算好，直接引用即可）：\n\n"
+        + json.dumps(_brief_facts(pack), ensure_ascii=False, indent=1),
+        cfg, NARRATION_FIELDS)
+    if got:
+        log(f"串讲已生成（宏观主线 {len(got['macro'])} 字）")
+    return got
 
 
 def _variety_facts(pack, variety):
-    """把某个品种相关的事实拢到一起。只放能算准的。"""
     q = pack["quotes"]
     m = (pack.get("metals") or {}).get("varieties", {})
     outer = {"铜": "COMEX 铜", "铝": None}[variety]
@@ -183,36 +199,7 @@ def _variety_facts(pack, variety):
     return facts
 
 
-def _one_shot(system, user, cfg, max_tokens=3000):
-    """按当前后端发一次结构化请求，失败返回 None。"""
-    backend = cfg["judge"]["backend"]
-    try:
-        if backend == "openai_compat":
-            from .compat import CompatJudge
-            return json.loads(CompatJudge(cfg["judge"]["openai_compat"]).chat(
-                system, user, max_tokens=max_tokens))
-        client = anthropic.Anthropic()
-        resp = client.messages.create(
-            model=os.environ.get("BRIEF_MODEL") or cfg["judge"]["claude"]["id"],
-            max_tokens=max_tokens, system=system,
-            output_config={"effort": cfg["judge"]["claude"]["effort"],
-                           "format": {"type": "json_schema", "schema": {
-                               "type": "object",
-                               "properties": {"tone": {"type": "string"},
-                                              "text": {"type": "string"}},
-                               "required": ["tone", "text"],
-                               "additionalProperties": False}}},
-            messages=[{"role": "user", "content": user}])
-        if resp.stop_reason == "refusal":
-            return None
-        return json.loads(next((b.text for b in resp.content if b.type == "text"), ""))
-    except Exception as e:
-        log(f"生成失败：{type(e).__name__}: {str(e)[:110]}")
-        return None
-
-
 def commentary(pack, cfg):
-    """给铜和铝各写一段。返回 {品种: {tone, text}}。"""
     if cfg["judge"]["backend"] == "rules":
         log("规则档不生成品种评论")
         return {}
@@ -223,13 +210,13 @@ def commentary(pack, cfg):
         if not facts.get("沪盘") and not news:
             log(f"{variety}：既无盘面也无消息，跳过评论")
             continue
-        payload = ("facts（程序算好的，可直接引用）：\n"
+        payload = ("facts（程序算好的，直接引用）：\n"
                    + json.dumps(facts, ensure_ascii=False, indent=1)
-                   + "\n\nnews（新闻原文，里面的数字要标出处）：\n"
+                   + "\n\nnews（新闻原文；里面的观点要点名，数据不用标）：\n"
                    + json.dumps([{k: n[k] for k in ("title", "summary", "direction", "source")}
                                  for n in news], ensure_ascii=False, indent=1))
-        got = _one_shot(COMMENT_SYSTEM, payload, cfg, max_tokens=3000)
+        got = _one_shot(COMMENT_SYSTEM, payload, cfg, COMMENT_FIELDS)
         if got:
             out[variety] = got
-            log(f"{variety}：评论已生成（{len(got.get('text', ''))} 字）")
+            log(f"{variety}：评论已生成")
     return out

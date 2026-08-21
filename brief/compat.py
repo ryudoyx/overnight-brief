@@ -23,12 +23,14 @@ _FENCE = re.compile(r"^\s*```(?:json)?\s*|\s*```\s*$", re.MULTILINE)
 
 SCHEMA_HINT = """
 只输出 JSON，不要 markdown 代码块，不要任何解释文字。格式：
-{"items":[{"id":0,"relevant":true,"importance":3,"category":"...",
+{"items":[{"id":0,"relevant":true,"stale":false,"importance":3,"category":"...",
 "direction":"利多","title_zh":"...","summary_zh":"..."}]}
 
 category 只能是: %s
 direction 只能是: 利多 / 利空 / 中性
 importance 是 1 到 5 的整数
+stale 是布尔值：只有当这是几年前的旧文章被重新推送时才填 true；
+月度数据在次月公布（如 8 月发布 7 月海关数据）属正常新闻，填 false
 每条输入都要有对应 id，不要漏，不要编造。
 """
 
@@ -104,8 +106,11 @@ class CompatJudge:
         for start in range(0, len(items), batch_size):
             chunk = items[start:start + batch_size]
             try:
+                import datetime as _dt
+                today = _dt.datetime.now(_dt.timezone(_dt.timedelta(hours=8)))
                 text = self.chat(
                     system,
+                    f"今天是 {today:%Y年%m月%d日}。\n"
                     f"以下是 {len(chunk)} 条待判断的隔夜新闻，请逐条给出结论：\n\n" + _render(chunk))
                 got = schema_model.model_validate_json(text).items
             except (requests.RequestException, ValidationError,

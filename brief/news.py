@@ -106,6 +106,52 @@ def dedup_judged(rows, threshold):
     return kept
 
 
+def merge_same_event(rows, bucket, cfg):
+    """让模型把讲同一件事的条目并成一组，保留星级最高的那条。
+
+    为什么不能只靠相似度：2026-08-20 那天宏观栏同时出现「美联储官员重申高通胀下
+    或需加息」和「美联储官员暗示可能需要加息」——同一件事，但中文措辞差异大，
+    字符相似度只有 0.6 上下，把阈值调到能合并它们，正常的不同事件也会被误并。
+    这是语义判断，交给模型做一次轻量分组更稳。
+
+    这一步是尽力而为：模型挂了就原样返回，不阻塞出报。
+    """
+    if len(rows) < 2 or cfg["judge"]["backend"] == "rules":
+        return rows
+    from .narrate import json_call          # 延迟导入，避免与 compat 形成循环
+    listing = "\n".join(f"[{i}] {r['title']}｜{r['summary'][:70]}"
+                         for i, r in enumerate(rows))
+    schema = {"type": "object",
+              "properties": {"groups": {"type": "array",
+                                        "items": {"type": "array",
+                                                  "items": {"type": "integer"}}}},
+              "required": ["groups"], "additionalProperties": False}
+    got = json_call(
+        f"下面是{bucket}板块的候选条目。把**报道同一件事**的编号并到同一组，"
+        "各自独立的事件各成一组。判断标准是事件本身是否相同，不是措辞是否相似——"
+        "同一场议息、同一次制裁、同一份数据的不同家转述，都算同一件事；"
+        "而『铜库存增加』和『铜价下跌』是两件事，不要合并。"
+        "每个编号必须且只能出现一次。",
+        listing, cfg, schema,
+        hint='\n\n只输出 JSON：{"groups":[[0,3],[1],[2]]}，不要解释文字。',
+        max_tokens=1500)
+    if not got or not isinstance(got.get("groups"), list):
+        return rows
+
+    seen, kept = set(), []
+    for grp in got["groups"]:
+        idxs = [i for i in grp if isinstance(i, int) and 0 <= i < len(rows) and i not in seen]
+        if not idxs:
+            continue
+        seen.update(idxs)
+        kept.append(max((rows[i] for i in idxs), key=lambda r: r["importance"]))
+    # 模型漏掉的编号补回来，宁可多留也不能凭空丢条目
+    kept.extend(rows[i] for i in range(len(rows)) if i not in seen)
+    if len(kept) < len(rows):
+        log(f"{bucket}：模型判定 {len(rows) - len(kept)} 条是同题重复，已合并")
+    return kept
+
+
 def cap_per_source(items, cap):
     """每个源最多留 cap 条（按时间新→旧）。
 
@@ -133,6 +179,7 @@ class MacroJudgement(BaseModel):
     model_config = ConfigDict(extra="forbid")
     id: int
     relevant: bool
+    stale: bool
     importance: int
     category: Literal[MACRO_CATS]  # type: ignore[valid-type]
     direction: Literal[DIRECTIONS]  # type: ignore[valid-type]
@@ -144,6 +191,7 @@ class CopperJudgement(BaseModel):
     model_config = ConfigDict(extra="forbid")
     id: int
     relevant: bool
+    stale: bool
     importance: int
     category: Literal[COPPER_CATS]  # type: ignore[valid-type]
     direction: Literal[DIRECTIONS]  # type: ignore[valid-type]
@@ -162,6 +210,24 @@ class CopperBatch(BaseModel):
 
 
 COMMON_RULES = """
+
+**陈旧内容识别（stale）**：只用来拦一种情况——**几年前的旧文章被重新推送**。
+Google News 偶尔会把过时文章按抓取时间重新分发，时间戳是新的、内容是旧的。
+
+标 stale=true 的例子：
+- 报道的是往年的事件，且与当前年份明显矛盾（如 2026 年推送一篇讲 2022 年
+  某月 CPI 达 9.1%、创 1981 年以来最高的文章）
+- 提到的人物职位、政策状态、价格水平明显属于过去某个时期
+
+**下面这些一律标 stale=false，它们是正常的新闻，不要误杀：**
+- **月度/季度统计数据在次月次季公布**——8 月发布 7 月的海关进出口、产量、
+  库存数据是常规节奏，这是新消息，不是旧闻
+- 回顾上半年、上一季度表现的总结性报道
+- 对未来的预测、展望、指引
+- 事件本身发生在最近一两周内
+
+拿不准一律标 false。这个字段只用来拦明显穿越的旧文，宁可漏放也不要误杀。
+
 importance 打分（1-5）：
 5 = 隔夜最重要的事，不看会漏掉行情主线
 4 = 明确改变预期，值得单独说一句
@@ -276,7 +342,9 @@ class ClaudeJudge:
                 },
                 messages=[{
                     "role": "user",
-                    "content": f"以下是 {len(items)} 条待判断的隔夜新闻，请逐条给出结论：\n\n" + _render(items),
+                    "content": (f"今天是 {dt.datetime.now(CST):%Y年%m月%d日}。\n"
+                                f"以下是 {len(items)} 条待判断的隔夜新闻，请逐条给出结论：\n\n"
+                                + _render(items)),
                 }],
             )
         except anthropic.APIStatusError as e:
@@ -366,6 +434,9 @@ def collect(cfg=None):
         log(f"{bucket}：粗筛出 {len(cand)} 条送判定")
         rows = []
         for it, j in judge.judge(bucket, cand, nc["llm_batch_size"]):
+            if j.get("stale"):
+                log(f"  丢弃陈旧条目：{it.title[:40]}")
+                continue
             if not j["relevant"] or j["importance"] < bc["min_importance"]:
                 continue
             rows.append({
@@ -381,6 +452,7 @@ def collect(cfg=None):
         merged = dedup_judged(rows, nc["fuzzy_dedup_threshold"])
         if len(merged) < len(rows):
             log(f"{bucket}：判定后合并同题 {len(rows) - len(merged)} 条")
+        merged = merge_same_event(merged, bucket, cfg)
         merged.sort(key=lambda r: (-r["importance"], r["published"]))
         # 同一件事换四种措辞，字面相似度堵不住（实测美加关税一条新闻占了 8 个位置里的 4 个），
         # 按分类限流才能保证版面上是四五件不同的事，而不是一件事的四种说法

@@ -253,6 +253,7 @@ def score(item, bucket):
 
     return {
         "relevant": total >= 1.5,
+        "stale": False,          # 规则档判断不了内容年份，一律放行
         "importance": importance,
         "category": max(cats, key=cats.get) if cats else "其他",
         "direction": "利多" if votes > 0.5 else "利空" if votes < -0.5 else "中性",

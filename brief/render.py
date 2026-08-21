@@ -34,6 +34,10 @@ border-radius:5px;padding:3px 6px;font-size:12.5px}
 .tone{font-size:17px;font-weight:650;margin:14px 0 6px}
 .narr{background:var(--card);border:1px solid var(--line);border-radius:7px;
 padding:13px 15px;line-height:1.85}
+.lead{font-size:14.5px;line-height:1.9;margin-bottom:11px}
+.layer{display:flex;gap:10px;padding:7px 0;border-top:1px solid var(--line);line-height:1.8}
+.layer .lb{flex:0 0 62px;color:var(--dim);font-size:12.5px;padding-top:2px}
+.layer .lv{flex:1}
 .up{color:var(--up)}.dn{color:var(--dn)}.flat{color:var(--flat)}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px}
 .kpi{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:9px 11px}
@@ -223,12 +227,37 @@ def date_picker(current):
     return (f'<select onchange="location.href=this.value">{opts}</select>')
 
 
+def layered(obj, lead_key, labels):
+    """把结构化的各层字段渲染成「主段 + 标签行」。
+
+    lead_key 那一层排在最上面且字号更大——它是分析，其余是分层陈列，
+    视觉权重不该一样。
+    """
+    if not obj:
+        return ""
+    parts = []
+    if obj.get(lead_key):
+        parts.append(f'<div class="lead">{esc(obj[lead_key])}</div>')
+    for key, label in labels:
+        v = obj.get(key)
+        if v:
+            parts.append(f'<div class="layer"><div class="lb">{esc(label)}</div>'
+                         f'<div class="lv">{esc(v)}</div></div>')
+    return f'<div class="narr">{"".join(parts)}</div>' if parts else ""
+
+
+NARR_LABELS = [("indices", "指数"), ("rates_fx", "利率汇率"), ("sectors", "板块"),
+               ("movers", "个股"), ("commodities", "商品")]
+COMMENT_LABELS = [("supply", "供应"), ("demand", "需求"),
+                  ("market", "盘面"), ("conclusion", "结论")]
+
+
 def comment_block(pack, variety):
     c = (pack.get("commentary") or {}).get(variety)
     if not c:
         return ""
     return (f'<div class="tone">{esc(c.get("tone", ""))}</div>'
-            f'<div class="narr">{esc(c.get("text", ""))}</div>')
+            + layered(c, "", COMMENT_LABELS))
 
 
 def metal_kpis(pack, names):
@@ -274,8 +303,7 @@ def build(pack):
     ]
     if narr.get("tone"):
         parts.append(f'<div class="tone">{esc(narr["tone"])}</div>')
-    if narr.get("text"):
-        parts.append(f'<div class="narr">{esc(narr["text"])}</div>')
+    parts.append(layered(narr, "macro", NARR_LABELS))
 
     parts.append(f'<h2>宏观大事<span class="n">{len(n.get("宏观", []))} 条</span></h2>')
     parts.append(news_block(n.get("宏观", [])))
