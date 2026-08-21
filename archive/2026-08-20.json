@@ -188,13 +188,13 @@
    {
     "sym": "DX-Y.NYB",
     "name": "美元指数",
-    "close": 98.78,
+    "close": 98.76,
     "prev_close": 98.83,
-    "chg": -0.05,
-    "chg_pct": -0.05,
+    "chg": -0.07,
+    "chg_pct": -0.07,
     "session_date": "2026-08-20",
     "prev_session_date": "2026-08-19",
-    "quote_at": "2026-08-20T21:25-04:00",
+    "quote_at": "2026-08-20T21:30-04:00",
     "span_days": 1,
     "volume": null,
     "vol_ratio": null,
@@ -208,19 +208,19 @@
      99.64,
      99.65,
      98.83,
-     98.777
+     98.761
     ]
    },
    {
     "sym": "CNY=X",
     "name": "美元兑人民币",
-    "close": 6.7217,
+    "close": 6.7218,
     "prev_close": 6.7295,
-    "chg": -0.0078,
-    "chg_pct": -0.12,
+    "chg": -0.0077,
+    "chg_pct": -0.11,
     "session_date": "2026-08-21",
     "prev_session_date": "2026-08-20",
-    "quote_at": "2026-08-21T02:35+01:00",
+    "quote_at": "2026-08-21T02:40+01:00",
     "span_days": 1,
     "volume": null,
     "vol_ratio": null,
@@ -234,7 +234,7 @@
      6.7399,
      6.7426,
      6.7295,
-     6.7217
+     6.7218
     ]
    }
   ],
@@ -584,16 +584,16 @@
    {
     "sym": "GC=F",
     "name": "COMEX 黄金",
-    "close": 4583.6,
+    "close": 4586.9,
     "prev_close": 4489.4,
-    "chg": 94.2,
-    "chg_pct": 2.1,
+    "chg": 97.5,
+    "chg_pct": 2.17,
     "session_date": "2026-08-20",
     "prev_session_date": "2026-08-19",
-    "quote_at": "2026-08-20T21:25-04:00",
+    "quote_at": "2026-08-20T21:30-04:00",
     "span_days": 1,
-    "volume": 11394,
-    "vol_ratio": 1.87,
+    "volume": 11828,
+    "vol_ratio": 1.94,
     "spark": [
      4340.7002,
      4361.7998,
@@ -604,23 +604,23 @@
      4417.7998,
      4366.0,
      4489.3999,
-     4583.6
+     4586.9
     ],
     "unit": "USD/oz"
    },
    {
     "sym": "SI=F",
     "name": "COMEX 白银",
-    "close": 68.53,
+    "close": 68.58,
     "prev_close": 65.73,
-    "chg": 2.79,
-    "chg_pct": 4.25,
+    "chg": 2.85,
+    "chg_pct": 4.34,
     "session_date": "2026-08-20",
     "prev_session_date": "2026-08-19",
-    "quote_at": "2026-08-20T21:25-04:00",
+    "quote_at": "2026-08-20T21:30-04:00",
     "span_days": 1,
-    "volume": 3494,
-    "vol_ratio": 38.02,
+    "volume": 3682,
+    "vol_ratio": 40.07,
     "spark": [
      63.332,
      65.106,
@@ -631,23 +631,23 @@
      66.121,
      63.941,
      65.734,
-     68.525
+     68.585
     ],
     "unit": "USD/oz"
    },
    {
     "sym": "HG=F",
     "name": "COMEX 铜",
-    "close": 14367.53,
+    "close": 14374.14,
     "prev_close": 14302.49,
-    "chg": 65.04,
-    "chg_pct": 0.45,
+    "chg": 71.65,
+    "chg_pct": 0.5,
     "session_date": "2026-08-20",
     "prev_session_date": "2026-08-19",
-    "quote_at": "2026-08-20T21:25-04:00",
+    "quote_at": "2026-08-20T21:30-04:00",
     "span_days": 1,
-    "volume": 2319,
-    "vol_ratio": 1.82,
+    "volume": 2431,
+    "vol_ratio": 1.9,
     "spark": [
      14485.4727,
      14538.384,
@@ -658,22 +658,22 @@
      14559.328,
      14291.4663,
      14302.4897,
-     14367.5256
+     14374.1395
     ],
     "unit": "USD/t"
    },
    {
     "sym": "CL=F",
     "name": "WTI 原油",
-    "close": 86.62,
+    "close": 86.57,
     "prev_close": 85.83,
-    "chg": 0.79,
-    "chg_pct": 0.92,
+    "chg": 0.74,
+    "chg_pct": 0.86,
     "session_date": "2026-08-20",
     "prev_session_date": "2026-08-19",
-    "quote_at": "2026-08-20T21:25-04:00",
+    "quote_at": "2026-08-20T21:30-04:00",
     "span_days": 1,
-    "volume": 6754,
+    "volume": 7076,
     "vol_ratio": 0.03,
     "spark": [
      78.18,
@@ -685,22 +685,22 @@
      84.5,
      84.94,
      85.83,
-     86.62
+     86.57
     ],
     "unit": "USD/bbl"
    },
    {
     "sym": "BZ=F",
     "name": "布伦特原油",
-    "close": 93.7,
+    "close": 93.72,
     "prev_close": 91.62,
-    "chg": 2.08,
-    "chg_pct": 2.27,
+    "chg": 2.1,
+    "chg_pct": 2.29,
     "session_date": "2026-08-20",
     "prev_session_date": "2026-08-19",
-    "quote_at": "2026-08-20T21:19-04:00",
+    "quote_at": "2026-08-20T21:28-04:00",
     "span_days": 1,
-    "volume": 577,
+    "volume": 611,
     "vol_ratio": 0.02,
     "spark": [
      83.55,
@@ -712,22 +712,22 @@
      90.87,
      91.02,
      91.62,
-     93.7
+     93.72
     ],
     "unit": "USD/bbl"
    },
    {
     "sym": "NG=F",
     "name": "天然气",
-    "close": 2.764,
+    "close": 2.763,
     "prev_close": 2.814,
-    "chg": -0.05,
-    "chg_pct": -1.78,
+    "chg": -0.051,
+    "chg_pct": -1.81,
     "session_date": "2026-08-20",
     "prev_session_date": "2026-08-19",
-    "quote_at": "2026-08-20T21:24-04:00",
+    "quote_at": "2026-08-20T21:29-04:00",
     "span_days": 1,
-    "volume": 758,
+    "volume": 764,
     "vol_ratio": 0.01,
     "spark": [
      2.662,
@@ -739,7 +739,7 @@
      2.69,
      2.776,
      2.814,
-     2.764
+     2.763
     ],
     "unit": "USD/MMBtu"
    }
@@ -1613,16 +1613,16 @@
    "comex": {
     "sym": "HG=F",
     "name": "COMEX 铜",
-    "close": 14367.53,
+    "close": 14374.14,
     "prev_close": 14302.49,
-    "chg": 65.04,
-    "chg_pct": 0.45,
+    "chg": 71.65,
+    "chg_pct": 0.5,
     "session_date": "2026-08-20",
     "prev_session_date": "2026-08-19",
-    "quote_at": "2026-08-20T21:25-04:00",
+    "quote_at": "2026-08-20T21:30-04:00",
     "span_days": 1,
-    "volume": 2319,
-    "vol_ratio": 1.82,
+    "volume": 2431,
+    "vol_ratio": 1.9,
     "spark": [
      14485.4727,
      14538.384,
@@ -1633,7 +1633,7 @@
      14559.328,
      14291.4663,
      14302.4897,
-     14367.5256
+     14374.1395
     ],
     "unit": "USD/t"
    },
@@ -1783,7 +1783,7 @@
    ]
   },
   "meta": {
-   "generated_at": "2026-08-21T09:35:40+08:00",
+   "generated_at": "2026-08-21T09:41:01+08:00",
    "session_date": "2026-08-20"
   }
  },
@@ -1791,7 +1791,7 @@
   "铝": [
    {
     "title": "电解铝社库降至六个半月新低",
-    "summary": "截至8月20日，中国主要市场电解铝库存为84.9万吨，较本周一减少1.4万吨，去库趋势持续。",
+    "summary": "截止8月20日，国内电解铝社会库存为84.9万吨，较周一减少1.4万吨，去库趋势持续。",
     "category": "库存",
     "direction": "利多",
     "importance": 5,
@@ -1800,18 +1800,18 @@
     "published": "2026-08-20T16:16+08:00"
    },
    {
-    "title": "7月铝土矿进口量同比下降4.64%",
-    "summary": "中国7月铝土矿进口量为1904.4万吨，环比下降6.28%，同比下降4.64%，其中几内亚进口量同比下降6.20%。",
+    "title": "7月铝土矿进口量同比下降",
+    "summary": "7月铝土矿进口量为1904.4万吨，同比下降4.64%，其中几内亚进口量同比下降6.20%。",
     "category": "供应",
-    "direction": "利空",
+    "direction": "利多",
     "importance": 4,
     "source": "SHMET铝快讯",
     "url": "https://www.shmet.com/newsFlash/newsFlash.html",
     "published": "2026-08-20T20:52+08:00"
    },
    {
-    "title": "7月氧化铝进口量同比大增191.33%",
-    "summary": "中国7月氧化铝进口量为36.66万吨，同比大幅增长191.33%，其中澳大利亚进口量同比激增859.43%。",
+    "title": "7月氧化铝进口量同比激增",
+    "summary": "7月氧化铝进口量为36.66万吨，同比大幅上升191.33%，其中澳洲进口量同比激增859.43%。",
     "category": "供应",
     "direction": "利空",
     "importance": 4,
@@ -1823,7 +1823,7 @@
   "铜": [
    {
     "title": "上期所铜仓单减少3619吨",
-    "summary": "8月20日上期所铜期货仓单报53079吨，单日减少3619吨，显示现货市场去库。",
+    "summary": "8月20日上期所铜期货仓单报53079吨，单日减少3619吨，显示现货库存去化。",
     "category": "库存",
     "direction": "利多",
     "importance": 4,
@@ -1832,8 +1832,18 @@
     "published": "2026-08-20T16:05+08:00"
    },
    {
-    "title": "Las Bambas铜矿停产",
-    "summary": "Las Bambas铜矿停产加剧了南美地区的供应担忧，对铜价构成支撑。",
+    "title": "洛阳钼业上半年铜产量增逾9%",
+    "summary": "洛阳钼业2026年上半年实现铜产量387,961吨，同比增长9.73%，产能持续释放。",
+    "category": "供应",
+    "direction": "利空",
+    "importance": 4,
+    "source": "SHMET铜快讯",
+    "url": "https://www.shmet.com/newsFlash/newsFlash.html",
+    "published": "2026-08-20T16:40+08:00"
+   },
+   {
+    "title": "Las Bambas铜矿停产加剧供应担忧",
+    "summary": "秘鲁Las Bambas铜矿停产，进一步恶化了南美铜矿的供应预期。",
     "category": "供应",
     "direction": "利多",
     "importance": 4,
@@ -1842,18 +1852,8 @@
     "published": "2026-08-20T18:03+08:00"
    },
    {
-    "title": "中国7月铜精矿进口量同比下降6.95%",
-    "summary": "7月铜精矿进口量为237.85万吨，其中秘鲁进口量同比下降6.78%，显示原料供应偏紧。",
-    "category": "供应",
-    "direction": "利多",
-    "importance": 4,
-    "source": "SHMET铜快讯",
-    "url": "https://www.shmet.com/newsFlash/newsFlash.html",
-    "published": "2026-08-20T20:52+08:00"
-   },
-   {
-    "title": "洛阳钼业预计下半年铜基本面偏紧",
-    "summary": "洛阳钼业认为矿石品位下降及资本开支不足将约束供应，叠加新能源与AI需求，预计铜价稳中向好。",
+    "title": "洛阳钼业预计下半年铜市偏紧",
+    "summary": "洛阳钼业认为矿石品位下降及新项目资本开支不足将持续约束供应，叠加新能源与AI需求支撑，看好铜价走势。",
     "category": "其他",
     "direction": "利多",
     "importance": 3,
@@ -1874,18 +1874,18 @@
   ],
   "宏观": [
    {
-    "title": "美联储纪要显示加息支持度增加",
-    "summary": "美联储会议纪要显示，鉴于通胀担忧持续，官员们对加息的支持力度正在增强。",
+    "title": "FOMC纪要暗示可能加息，市场定价不足",
+    "summary": "美联储最新会议纪要显示官员讨论了加息可能性，目前市场对此预期的定价依然偏低。",
     "category": "货币政策",
     "direction": "利空",
     "importance": 5,
     "source": "GN-美联储与利率",
-    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPLV9LVFhVN05jZnlQNHZpLVkzMlV4SEc3eFcxM1JPNVVRYjFWWUhUTE5YYjFuSEppWHdFNWJkWGJNR1Z3LVNUdUswQ0FLVGNTRG84Vzlwc3ctOG9nazlpV1h6SGpKZjVsaEpiaXdUeWY0Z3JVMkZYNXdSRUVUck1nOHFNemdfVDJKT1E4WkVsNHBmeWtnM2Zjbkt5MDI5TkwwemFldkM3LTV0Qmd4dHlMRzNkbXpLZUdRYUVhOUlSeVRhTndxcHc?oc=5",
-    "published": "2026-08-20T19:12+08:00"
+    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVy01b2VDX19oOFpKU3FlUDhRSnpIczFNVDZnU3FxbHJ1RjVYd3ZuSlFXa3BpalE3U1RvZ2xZNzZ4SmpkQXRXVTF3OXZDUlpSUThpVjVQNmtKSTAxR2stc1BjdURkRjBreVVSTERzb2xvVDl6ME9VSmFDWlI3dURDYm16dG9QcWhYRlFLbHAwRTRlUEFseVdjdG9QT0JpbFVIUnZaenVPNHB5dmpOZVdVQjhtZlFGYVVIcTNDcDktWQ?oc=5",
+    "published": "2026-08-20T18:41+08:00"
    },
    {
     "title": "美国国债规模突破40万亿美元",
-    "summary": "美国国债总额突破40万亿美元大关，市场担忧财政支出导致收益率跳升。",
+    "summary": "美国国债总额突破40万亿美元大关，市场对财政支出担忧加剧，推升美债收益率。",
     "category": "财政与政治",
     "direction": "利空",
     "importance": 4,
@@ -1894,8 +1894,8 @@
     "published": "2026-08-20T17:37+08:00"
    },
    {
-    "title": "美联储穆萨莱姆：9月决策仍未定",
-    "summary": "圣路易斯联储主席穆萨莱姆表示通胀依然过高，9月利率决策保持开放态度。",
+    "title": "圣路易斯联储主席：9月利率决定仍未定",
+    "summary": "Musalem表示通胀依然过高，美联储对9月是否降息持开放态度，未给出明确信号。",
     "category": "货币政策",
     "direction": "利空",
     "importance": 4,
@@ -1904,38 +1904,8 @@
     "published": "2026-08-20T18:21+08:00"
    },
    {
-    "title": "美国对伊朗、俄罗斯等实施新制裁",
-    "summary": "美国宣布对伊朗、真主党、俄罗斯及古巴实施新一轮制裁措施。",
-    "category": "地缘与能源",
-    "direction": "利空",
-    "importance": 4,
-    "source": "GN-地缘与能源",
-    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOcFNUeVpuVk11czdsbzQ5bDVfMGZ4MkV2TDYzMndhNk1RcFVtR0YzU3BOUUdTRFNZbmZpWVVFZGkyeGJfa1hjSEpmQ1QtXzBGNkZ1WC1kY1I0dlY1SDZ3SFZQZ2Y2YW82bGtJSklYWGRCbjdWcXBpOGh3YTVpeU1FNHAxd2Y?oc=5",
-    "published": "2026-08-20T19:06+08:00"
-   },
-   {
-    "title": "美国上周初请失业金人数降至20.6万",
-    "summary": "美国就业市场保持韧性，初请失业金人数降至20.6万人，裁员依然稀少。",
-    "category": "经济数据",
-    "direction": "利多",
-    "importance": 4,
-    "source": "GN-美国经济数据",
-    "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPbDU1aXRiUUhpQ3VTTlIwb0g5VDJOWl9wSk5NdmxZM3FpQ2tWSjE0RWhnbVR2MEZUcGdwZG12YnQ0bVRxb3FKNURyMWNUWk0taGx0anhnaWJGaG1jT3dLMUxTekJkU0xWNmQyTWdCa3RhN1oxSXRucWt4MVpveFVNNWpUV2xLZ05WLThkb0ctbVBiSHFhT3RNUTBtNjJvajhHNlluZjlwcUhBbGFZdGJ4QjNOZHZUZWJQdWtKU0s3Y3lIQkt2aEV3SmRYTWN3QUwtaloyRzBPMNIB3AFBVV95cUxNU3JFVWQ5TjEwcXRmYnVnZmJ4N09IRDhpd0xYeWRQbXdDMUdfaG1lUzJkOU9oWThDNHNCU2dzbWNHYi1nRGJMcjk4b1dUdTFYeEdNWDYxTWJRdjNkMm1xQXZQWTgwUmZXcGI0c1YtcmRGSHcwQkpObUlpTjl2ZUNkWjdYeDRDYUQxOTUxR0k1SEJhRWhsZWhyUjkyRGVXZVo1aFZMM3FESDNIN185WXNRdy02X1VZVTU5WUNETXBBNjVtSTdOcU9qNmdFODkwbHJaTm9mNktsWmJEWXpy?oc=5",
-    "published": "2026-08-20T19:41+08:00"
-   },
-   {
-    "title": "沃尔玛增长放缓，反映消费疲软",
-    "summary": "沃尔玛公布多年来最弱增长数据，显示美国消费者受通胀压力影响，消费意愿下降。",
-    "category": "公司与行业",
-    "direction": "利空",
-    "importance": 4,
-    "source": "GN-美国经济数据",
-    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOaUVzaHA5R0NCcnRGR0NFYVRTR1poWXM4U3BlTDAtYWJNZGF0UHRlS3BXMUhfUFR4SV9CekFvd3hEdVBLbFFIY3ZEX2xFT21rUnYtN2VQZVBDRWduLU5Nb3NEM3B5Tm9YaFlpSnJjamNlakNCWkpicW8tXzNRcmU0ajI3dXdTR2VwTVE4LWJ5SzVTMGlOVUFBc0hQTEFDblFqMlNtT29WbGpSVGxLZm9pcXVfaFVnTzl0b1pxWm9qeEJ2VGRP?oc=5",
-    "published": "2026-08-20T22:27+08:00"
-   },
-   {
-    "title": "美国准备对伊朗实施新制裁",
-    "summary": "受美国拟对伊朗实施新制裁影响，布伦特原油价格突破93美元。",
+    "title": "美国拟制裁伊朗，油价上涨",
+    "summary": "因美国准备对伊朗实施新制裁，布伦特原油价格突破93美元，周涨幅达5%。",
     "category": "地缘与能源",
     "direction": "利多",
     "importance": 4,
@@ -1944,21 +1914,51 @@
     "published": "2026-08-21T01:06+08:00"
    },
    {
-    "title": "欧元区PPI低于预期",
-    "summary": "欧元区PPI数据低于市场预测，分析认为这仍支持欧洲央行维持加息路径。",
-    "category": "经济数据",
+    "title": "美国因伊朗关系制裁真主党",
+    "summary": "美国宣布对真主党实施新制裁，理由是其与伊朗的关联。",
+    "category": "地缘与能源",
     "direction": "中性",
     "importance": 3,
-    "source": "GN-央行与全球",
-    "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQTDFad2JTb0VRQl9KRURlNTdJWUswQVpzM2x6aHl1WEw4Zk41UjVPUlZsVEZORmZwTVp1cnhLU2M2Q1JtUmxxVU00cThPSlBmOE5aQkhtY1drTkp2YU5XQjFfRjJMLTZtVVJibERzSUpsX1dsUHI3UGlkdjFDQkZVRTB1eHpVYlFOQ2Z4Q2FMSGRDc2UyQnNzTWVSODNiTWpfVjJwaGZYRnhzOTlTTWxaN19EVEVnM3dHM2J4Vi1RWkVkQUh5UEktZlF5Y0d4VmszcFpLMWp5T2NGSUNlVkZhTGtzcnJvSnR3Y1ZHaTFxSUNxd05Ea0V1bmhmRQ?oc=5",
-    "published": "2026-08-20T18:30+08:00"
+    "source": "GN-地缘与能源",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPcTRIR0hJcDNpQllscEhqZjNlSVdRUU1aVWt2cW1WaFVveGlTdjRBSjRNMlpBME9QREVxdGJNaEZqS01HY2VUY2NTSDNfOE5kcWVVWFFQRDVVN2M0VERfWFVtZWpOM1FVbl9MdHZVU2xaUmoxNlVaVEphTHNsOVZvVmNXNjZZN1ZQX3Q1OHZOazFadGJvbmFFQ2NMdllBQQ?oc=5",
+    "published": "2026-08-20T17:29+08:00"
+   },
+   {
+    "title": "美国四周平均失业救济人数上升",
+    "summary": "美国四周平均失业救济申请人数升至20万以上，市场对美联储宽松政策的预期升温。",
+    "category": "经济数据",
+    "direction": "利多",
+    "importance": 3,
+    "source": "GN-美国经济数据",
+    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQQVRqTEJTbXJlVTRGTE1xOEY0enpPWmVhaGNGUEFDT3JXWmFKcmN0MUp0aWhvdFZsTGNPODU2UDVyQlZvY2VnWVFaamV1bDhCNzQyaE1tRU9aXzd4c1plWDBBU25iS1EwdnF4RlUtNUFkVHV4MXZxTmNMY0l2ODFqRldUa0NzRUlnZVJkcVhQemF6NV9FM3JQR0NzNlBEbUNhNUY0aFZtcVB4MGZ6aEUwR2hCWUo5Y0VyS0JFUTJURGJzNW9PdXNj?oc=5",
+    "published": "2026-08-20T18:19+08:00"
+   },
+   {
+    "title": "美国失业救济申请人数低于预期",
+    "summary": "失业救济申请数据好于预期，支撑了美联储维持高利率的观点，推升美债收益率和美元。",
+    "category": "经济数据",
+    "direction": "利空",
+    "importance": 3,
+    "source": "GN-美国经济数据",
+    "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQLV9QMW9iV0Z3XzdqQktpTGpNdkMzMjhiN0x4d1dlOF9ydFJYblRPNVpoY1lNN05zNjRRNWtpZlRpakNic0tVQVg2THpNa3J4OUhxRHpfOFBwYnktVFJOaWtneGlPcm9SWFp3dkxsdDl5RXpfX0xxWEFQclVPNko5c1pOTThvbGhmbVNua0E3Q1VrZzVGZ1JRQi10UFVpMTdrNkRpc05YOU80eWRYYmNjTWI0Ul9sVGFRREdiengwTWpTZjAteUJsMzVCUk1feDZRRDdnckFOYy1VZw?oc=5",
+    "published": "2026-08-20T18:19+08:00"
+   },
+   {
+    "title": "贝森特回应油价上涨及财政部稳定债市举措",
+    "summary": "美国财政部长贝森特就油价波动及财政部为稳定债券市场所采取的行动发表评论。",
+    "category": "财政与政治",
+    "direction": "中性",
+    "importance": 3,
+    "source": "GN-美债与美元",
+    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOaXRVQWhiNnBpbV9KUkVUQUo4aXNBSmRsR0x3SFhLSjI4emlMWWJlTmtrR1kyX1dKMTJPQk9mT0I1TkFBWmtfUjRsUTZGWjRsdnlwOExqeks0UzhFZjNGQU9wdm5zanM0WURwSEpuNHhwak9JQUhOM1NQRXFfNmU1U2N2UzA1NXBvUW03OHdhYXhYUWZScVg5UEZ2VTNoZHhITi1WQmR0ZHB3cFh2bnFUMmk4QlZ6d3YxbVlxeE1hdWRFRzNKYWl6WlZSTGE?oc=5",
+    "published": "2026-08-20T18:43+08:00"
    }
   ],
   "meta": {
    "window_start": "2026-08-20T16:00+08:00",
-   "window_end": "2026-08-21T09:35+08:00",
-   "raw_count": 451,
-   "dedup_count": 357,
+   "window_end": "2026-08-21T09:41+08:00",
+   "raw_count": 449,
+   "dedup_count": 352,
    "failures": [],
    "llm_cost_usd": 0.0,
    "llm_model": "gemini-3.1-flash-lite"
@@ -1976,11 +1976,11 @@
     },
     "quote": {
      "symbol": "CU0",
-     "close": 107140.0,
-     "chg_pct": 0.26,
+     "close": 107050.0,
+     "chg_pct": 0.18,
      "prev_settle": 106860.0,
-     "volume": 34479,
-     "open_interest": 172228,
+     "volume": 35715,
+     "open_interest": 172618,
      "trade_date": "2026-08-21",
      "unit": "CNY/t",
      "source": "新浪连续合约"
@@ -1996,11 +1996,11 @@
     },
     "quote": {
      "symbol": "AL0",
-     "close": 23650.0,
-     "chg_pct": 0.08,
+     "close": 23605.0,
+     "chg_pct": -0.11,
      "prev_settle": 23630.0,
-     "volume": 91456,
-     "open_interest": 269601,
+     "volume": 95199,
+     "open_interest": 270344,
      "trade_date": "2026-08-21",
      "unit": "CNY/t",
      "source": "新浪连续合约"
@@ -2016,11 +2016,11 @@
     },
     "quote": {
      "symbol": "AO0",
-     "close": 2686.0,
-     "chg_pct": 0.71,
+     "close": 2696.0,
+     "chg_pct": 1.09,
      "prev_settle": 2667.0,
-     "volume": 120787,
-     "open_interest": 301196,
+     "volume": 127488,
+     "open_interest": 300268,
      "trade_date": "2026-08-21",
      "unit": "CNY/t",
      "source": "新浪连续合约"
@@ -2037,32 +2037,32 @@
   ]
  },
  "narration": {
-  "tone": "财政担忧加剧，避险情绪推升贵金属",
-  "macro": "美联储纪要释放鹰派信号，叠加美国国债规模突破关键关口，引发市场对财政可持续性与通胀粘性的双重担忧，美债收益率显著跳升。尽管就业数据表现强劲，但沃尔玛财报揭示的消费疲软信号，加剧了市场对滞胀风险的定价。地缘政治局势紧张，促使资金从权益类资产撤出，转而涌入黄金与原油等避险及抗通胀品种。跨资产表现显示，利率上行并未压制商品，反而因地缘制裁预期与财政赤字担忧，形成了股债双杀、商品分化的格局。",
-  "indices": "全线收跌，罗素2000与道指领跌，显示小盘股与传统价值股对利率敏感度更高。VIX指数大幅攀升，市场避险情绪显著升温。",
-  "rates_fx": "美债收益率全线走高，与美联储鹰派纪要自洽。美元指数微跌，人民币汇率保持相对稳定。",
-  "sectors": "医疗保健与非必需消费领跌，反映消费端压力与行业个股利空。半导体与能源板块相对抗跌，呈现结构性防御特征。",
-  "movers": "Moderna因消息面未给出明确解释大幅下挫，拖累医疗板块；沃尔玛增长数据不及预期，直接印证了美国消费端面临的通胀压力，导致股价显著回调。",
-  "commodities": "地缘制裁预期推升原油，避险需求驱动黄金与白银大幅上涨，铜价在宏观压力下仍维持韧性。"
+  "tone": "加息预期重燃，股债双杀，贵金属避险",
+  "macro": "昨夜市场核心逻辑在于美联储政策预期的修正与财政担忧的共振。FOMC纪要意外释放加息讨论信号，叠加失业救济数据好于预期，打破了此前市场对降息的乐观定价，导致美债收益率显著攀升。与此同时，美国国债总额突破40万亿美元，财政赤字担忧进一步推高长端利率，压制了权益资产估值。跨资产表现呈现明显的避险特征：股债同步下跌，而黄金与白银因地缘政治风险（美国拟制裁伊朗）及对冲财政失控风险的需求而大幅上涨。原油受制裁预期驱动走强，与工业品板块的疲软形成对比，显示资金正从成长性资产撤出，转向抗通胀与避险品种。",
+  "indices": "全线收跌，罗素2000跌幅居前，显示小盘股对利率敏感度更高。VIX指数跳升，市场避险情绪显著升温。",
+  "rates_fx": "美债收益率全线大幅上行，与美股下跌逻辑自洽。美元指数微跌，人民币汇率小幅走强。",
+  "sectors": "医疗保健与非必需消费领跌，显示防御性与可选消费板块承压。半导体与能源板块相对抗跌，呈现结构性分化。",
+  "movers": "Moderna大跌，拖累医疗板块整体表现。沃尔玛跌幅显著，反映出市场对消费端压力的担忧。加密货币相关标的如MSTR与COIN逆势大涨，显示资金在避险与投机之间存在剧烈博弈。",
+  "commodities": "贵金属因避险需求大涨，原油受地缘制裁预期支撑走强，铜价表现相对平稳。"
  },
  "commentary": {
   "铜": {
-   "tone": "供应扰动加剧，现货去库支撑",
-   "supply": "Las Bambas铜矿停产加剧南美供应担忧。7月铜精矿进口量为2378500吨，同比下降6.95%，其中秘鲁进口量同比下降6.78%，原料供应持续偏紧。洛阳钼业认为矿石品位下降及资本开支不足将长期约束供应。LME铜注册仓单为166775吨，注销仓单为73150吨。",
-   "demand": "洛阳钼业指出新能源与AI领域需求将对铜价形成支撑，消息面无其他新增需求侧信息。",
-   "market": "沪铜收报107140元，涨幅0.26%，持仓172228手。COMEX铜收报14367.53美元，涨幅0.45%。上期所库存单日减少3619吨至53079吨，但5日累计增加25871吨，库存变动存在短期背离。隔夜铜矿股普涨，自由港涨3.08%，Ero Copper涨5.69%，而标普500指数下跌0.87%且VIX指数上涨7.52%，宏观避险情绪升温。",
-   "conclusion": "当前主导矛盾为矿端供应扰动与现货去库的支撑。若上期所库存5日累计增幅转为去库，则库存背离压制解除，铜价将进一步走强；若铜矿股涨势与美股大盘跌势持续背离，需警惕宏观风险对铜价的负反馈。"
+   "tone": "供应扰动支撑，库存去化与宏观避险博弈",
+   "supply": "洛阳钼业上半年铜产量达387,961吨，同比增长9.73%，显示产能持续释放。然而，秘鲁Las Bambas铜矿停产加剧了市场对南美供应的担忧。洛阳钼业认为矿石品位下降及新项目资本开支不足将持续约束供应，预计下半年铜市偏紧。此外，LME铜注册仓单为166,775吨，注销仓单为73,150吨。",
+   "demand": "消息面无新增需求侧信息。",
+   "market": "沪铜收报107050.0 CNY/t，涨幅0.18%；COMEX铜收报14374.14 USD/t，涨幅0.5%。上期所库存单日减少3619吨至53079吨，但五日累计增加25871吨，库存变动方向存在背离。隔夜铜矿股普涨，自由港涨3.08%，Ero Copper涨5.69%，与标普500下跌0.87%及VIX指数上涨7.52%形成的宏观避险情绪产生明显背离。",
+   "conclusion": "当前主导矛盾为供应端扰动与库存短期去化对价格的支撑，抵消了宏观避险情绪的压制。若五日累库趋势转为持续去库，近端压制解除，铜价将进一步走强；若库存五日累库幅度持续扩大，则表明现货端支撑不足，铜价将向宏观避险逻辑回归。"
   },
   "铝": {
-   "tone": "库存去化支撑，氧化铝供需错配",
-   "supply": "铝土矿进口量同比下降4.64%，其中几内亚进口量同比下降6.20%，原料端供应压力显现。氧化铝进口量同比大增191.33%，澳大利亚进口量同比激增859.43%，进口补充缓解了国内供应紧张。上期所氧化铝库存单日减少35961吨，五日累计减少20968吨，单日与五日变动方向背离，显示短期现货流转波动加剧。",
-   "demand": "电解铝社会库存降至84.9万吨，较本周一减少1.4万吨，去库趋势持续。下游补库需求在低库存背景下保持韧性，消费端未见明显负反馈。",
-   "market": "沪铝收报23650元，涨幅0.08%，持仓269601手。上期所铝库存单日减少5305吨，五日累计减少14839吨，库存持续去化对盘面形成支撑。氧化铝收报2686元，涨幅0.71%，持仓301196手。美股标普500下跌0.87%，VIX恐慌指数上涨7.52%，宏观情绪偏弱，但铝价表现相对抗跌。",
-   "conclusion": "当前主导矛盾为低库存对价格的支撑与原料进口波动带来的不确定性。若电解铝社会库存转为持续累库，则去库驱动逻辑失效，铝价将面临回调压力。若氧化铝单日去库趋势无法持续并转为累库，则近期供应紧张的预期将得到修正。"
+   "tone": "库存去化支撑，氧化铝偏强",
+   "supply": "7月铝土矿进口量为1904.4万吨，同比下降4.64%，其中几内亚进口量同比下降6.20%，原料端供应压力显现。与此同时，7月氧化铝进口量为36.66万吨，同比大幅上升191.33%，其中澳洲进口量同比激增859.43%，进口氧化铝对国内供应形成补充。",
+   "demand": "国内电解铝社会库存为84.9万吨，较周一减少1.4万吨，去库趋势持续，显示下游需求维持韧性。",
+   "market": "沪铝收报23605元/吨，跌0.11%，持仓270344手。上期所铝库存减少5305吨，五日累计减少14839吨，库存去化方向一致。氧化铝收报2696元/吨，涨1.09%，持仓300268手。氧化铝库存单日减少35961吨，五日累计减少20968吨，库存变动方向存在背离。标普500跌0.87%，VIX恐慌指数涨7.52%，宏观情绪偏弱。",
+   "conclusion": "当前主导矛盾为电解铝库存持续去化对价格的支撑。若电解铝社会库存转为累库，则去库支撑逻辑失效。氧化铝库存单日与五日变动方向背离，若后续氧化铝库存持续去化，则盘面涨势将得到确认。"
   }
  },
  "meta": {
-  "generated_at": "2026-08-21T09:39:10+08:00",
+  "generated_at": "2026-08-21T09:44:00+08:00",
   "cost_usd": 0
  }
 }
