@@ -205,11 +205,48 @@ def fetch_cls(src: dict) -> list[Item]:
     return out
 
 
+
+def fetch_wscn(src: dict) -> list[Item]:
+    """华尔街见闻**资讯流**（文章），不是快讯流。
+
+    快讯流（/content/lives）实测 100 条基本是 A 股盘中异动，跟财联社电报生态位
+    重合且信噪比更差；资讯流是编辑筛过的文章，窗内 27 条里 8 条宏观相关，
+    而且常带机构观点（野村、Jeff Currie 这类），正好配合「观点要点名」的出处规则。
+    """
+    r = requests.get(
+        "https://api-one.wallstcn.com/apiv1/content/information-flow",
+        params={"channel": src.get("channel", "global-channel"),
+                "accept": "article", "limit": src.get("limit", 40)},
+        headers={"User-Agent": UA}, timeout=TIMEOUT)
+    r.raise_for_status()
+    items = ((r.json().get("data") or {}).get("items")) or []
+
+    out = []
+    for it in items:
+        res = it.get("resource") or {}
+        title = (res.get("title") or "").strip()
+        ts = res.get("display_time") or it.get("display_time")
+        if not title or not ts:
+            continue
+        out.append(
+            Item(
+                title=title,
+                summary=strip_html(res.get("content_short") or res.get("summary") or ""),
+                url=res.get("uri") or "https://wallstreetcn.com/",
+                source=src["name"],
+                published=datetime.fromtimestamp(int(ts), tz=timezone.utc),
+                lang="zh",
+            )
+        )
+    return out
+
+
 FETCHERS = {
     "rss": fetch_rss,
     "gnews": fetch_gnews,
     "shmet": fetch_shmet,
     "cls": fetch_cls,
+    "wscn": fetch_wscn,
 }
 
 

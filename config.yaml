@@ -103,7 +103,16 @@ news:
   sources:
     # ---------------- 宏观 / 美股 ----------------
     - {name: 美联储官网,   type: rss,   lang: en, url: "https://www.federalreserve.gov/feeds/press_all.xml"}
+    # 彭博和 FT 的 RSS 还活着，而且摘要有 180-400 字（Google News 的摘要基本等于标题）。
+    # 路透的公共 RSS 已关停且反爬，只能继续走下面 GN-华尔街 的 site:reuters.com。
+    # WSJ 的 feed 看着能打开、有 20 条，但全部冻结在 2025-01-27，是死源，别加。
+    - {name: 彭博-Markets,  type: rss, lang: en, url: "https://feeds.bloomberg.com/markets/news.rss"}
+    - {name: 彭博-Economics, type: rss, lang: en, url: "https://feeds.bloomberg.com/economics/news.rss"}
+    - {name: FT,           type: rss, lang: en, url: "https://www.ft.com/rss/home"}
     - {name: 财联社电报,   type: cls,   lang: zh}
+    # 华尔街见闻走资讯流（文章）而不是快讯流：快讯流 100 条基本是 A 股异动，
+    # 跟财联社重合；资讯流是编辑筛过的，常带机构观点，配合「观点要点名」的规则。
+    - {name: 华尔街见闻,   type: wscn,  lang: zh, channel: global-channel, limit: 40}
     - {name: GN-美联储与利率, type: gnews, lang: en, query: 'Federal Reserve OR FOMC OR Powell (rate OR policy OR minutes) when:2d'}
     - {name: GN-美国经济数据, type: gnews, lang: en, query: 'US (CPI OR inflation OR payrolls OR "jobless claims" OR PCE OR "retail sales" OR ISM OR GDP) when:2d'}
     - {name: GN-关税与贸易,   type: gnews, lang: en, query: '(tariff OR "trade deal" OR "export controls" OR sanctions) (US OR China OR EU) when:2d'}
@@ -115,6 +124,7 @@ news:
     # ---------------- 铜 ----------------
     - {name: SHMET铜快讯,  type: shmet, lang: zh, channel: '铜'}
     - {name: Mining.com,  type: rss,   lang: en, url: "https://www.mining.com/feed/"}
+    - {name: Mining-铜频道, type: rss,  lang: en, url: "https://www.mining.com/commodity/copper/feed/"}
     - {name: GN-铜矿供应,   type: gnews, lang: en, query: 'copper (mine OR smelter OR concentrate OR "treatment charges") when:2d'}
     - {name: GN-铜供应中断, type: gnews, lang: en, query: 'copper (strike OR halt OR suspend OR "force majeure" OR landslide) mine when:2d'}
     - {name: GN-铜库存政策, type: gnews, lang: en, query: 'copper (inventories OR stockpiles OR "LME warehouse" OR tariff OR "export ban") when:2d'}
@@ -123,6 +133,8 @@ news:
     - {name: SHMET铝快讯,  type: shmet, lang: zh, channel: '铝'}
     - {name: GN-铝供应,     type: gnews, lang: en, query: 'aluminium (smelter OR alumina OR bauxite OR "production cut" OR capacity) when:2d'}
     - {name: GN-铝库存政策, type: gnews, lang: en, query: 'aluminium (inventories OR "LME warehouse" OR tariff OR "export tax" OR premium) when:2d'}
+    # 注意是美式拼写 aluminum，aluminium 那个 slug 是 404
+    - {name: Mining-铝频道, type: rss,  lang: en, url: "https://www.mining.com/commodity/aluminum/feed/"}
 
   # 粗筛：把明显无关的砍掉，别让它们花 Claude 的钱。真正的判断交给 LLM。
   buckets:
