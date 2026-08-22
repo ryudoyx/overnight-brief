@@ -214,13 +214,13 @@
    {
     "sym": "CNY=X",
     "name": "美元兑人民币",
-    "close": 6.7205,
+    "close": 6.7118,
     "prev_close": 6.7225,
-    "chg": -0.002,
-    "chg_pct": -0.03,
+    "chg": -0.0107,
+    "chg_pct": -0.16,
     "session_date": "2026-08-22",
     "prev_session_date": "2026-08-21",
-    "quote_at": "2026-08-22T04:30+01:00",
+    "quote_at": "2026-08-22T22:32+01:00",
     "span_days": 1,
     "volume": null,
     "vol_ratio": null,
@@ -234,7 +234,7 @@
      6.7426,
      6.7295,
      6.7225,
-     6.7205
+     6.7118
     ]
    }
   ],
@@ -1540,7 +1540,7 @@
     "prev_session_date": "2026-08-20",
     "quote_at": "2026-08-21T16:00-04:00",
     "span_days": 1,
-    "volume": 20725295,
+    "volume": 20720632,
     "vol_ratio": 0.62,
     "spark": [
      88.19,
@@ -1864,202 +1864,111 @@
    ]
   },
   "meta": {
-   "generated_at": "2026-08-22T20:54:28+08:00",
+   "generated_at": "2026-08-22T22:37:10+00:00",
    "session_date": "2026-08-21"
   }
  },
  "news": {
   "铝": [
    {
-    "title": "中国宏桥上半年净利增39.2%",
-    "summary": "中国宏桥2026年中期净利约172.1亿元，主要受益于铝合金售价同比上涨18.7%。",
+    "title": "印度煤炭公司考察加纳铝土矿",
+    "summary": "印度寻求海外铝土矿资源，考察加纳矿产资产，反映了印度铝企对上游原料供应的长期布局。",
     "category": "供应",
-    "direction": "利多",
-    "importance": 4,
-    "source": "SHMET铝快讯",
-    "url": "https://www.shmet.com/newsFlash/newsFlash.html",
-    "published": "2026-08-21T20:32+08:00"
-   },
-   {
-    "title": "乌克兰制裁俄铝旗下五家企业",
-    "summary": "乌克兰对俄罗斯铝业巨头俄铝（Rusal）旗下的五家企业实施制裁，可能干扰俄铝的全球供应链。",
-    "category": "宏观政策",
-    "direction": "利多",
-    "importance": 4,
-    "source": "GN-地缘与能源",
-    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE13UTM5REw3ems0WWhuSGdMZXNqaUJYNmhuanhNZFdrOXk4T0NSVmxMMHM3Qnpfd0RsVVl0N0ZfcUZGc0pEaF9SOGtWbw?oc=5",
-    "published": "2026-08-22T05:35+08:00"
-   },
-   {
-    "title": "中国铝企拟在埃及建铝基地",
-    "summary": "中国铝企计划投资20亿美元在埃及建设清洁能源铝产业园，目前处于规划洽谈阶段。",
-    "category": "公司项目",
     "direction": "中性",
-    "importance": 3,
-    "source": "SHMET铝快讯",
-    "url": "https://www.shmet.com/newsFlash/newsFlash.html",
-    "published": "2026-08-21T16:38+08:00"
-   },
-   {
-    "title": "LME铝现货价格跌至3180美元",
-    "summary": "2026年LME铝现货价格下调至3180美元/吨。",
-    "category": "价格交易",
-    "direction": "利空",
     "importance": 3,
     "source": "GN-铝供应",
-    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOR3N0MFRyUFdEN0ltOWhjWU5jdUlvUkdBREg5bl92OWw3WUNVR1drSFRJWEJqb0h4d1ByMTlDOEZvYXZFdGJUR3FoYjRsbFdtNDhsOEpPOUdqZF8tdGdmNkMzZWMwMU00dWJUOGpBdXRNWE1HQklzcWxmVWk3Z3BENVBIeHQxRVRnTXA3VQ?oc=5",
-    "published": "2026-08-21T20:04+08:00"
-   },
-   {
-    "title": "铝锭持续去库支撑铝价",
-    "summary": "铝锭库存持续下降对铝价形成支撑，但市场对传统旺季需求表现存疑。",
-    "category": "库存",
-    "direction": "利多",
-    "importance": 3,
-    "source": "GN-铝库存政策",
-    "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQUERjNzNVT3NVS0ltd0JWNXJ5UGkyVWJlT0I5ZGFmOE1paW0wMWUwNlMtU0JsSTUzc0pGTXhidTkyZ2NQbW1yRmlnc09QbmdpZGlIV2N6S1ltTXFYcGM3cEdWRWs5SWdmbnlEYTJRM2FVNERfODdUaFNxNnhCQ3JlMHNoMUdSN3JUS0kzT1R4by03STEyaElrbWZYZklISEF6U1BydmhNbjk2MlFvaE1wYThUOGN6QWQtUHlWZG5mZ2V1Vk5qb3ljbFcyUml3QWVEemR6b2tPX1lOZ2hqYXJLNDk5dmZCMlFlTUcwQWhBbmdramF1V051WkJuOVc?oc=5",
-    "published": "2026-08-21T23:34+08:00"
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQc3pxdkVUdzd5UXZZTlptYUZWckU4cFE1a19CbVZQODZobFN5VkV3dGRROFpoYVFrcmc5YmJkdDZVYVhiRnR2a2dKbzJ1Mld2c0JJbXZKSUtBZ25sT0hoSTlsSE91d0hDTG5ZLTZrQ1ZIUUxZb0ROdjJrZFRYSFRGZTVQRThLdVh2?oc=5",
+    "published": "2026-08-22T20:06+08:00"
    }
   ],
-  "铜": [
-   {
-    "title": "7月我国铜精矿进口情况",
-    "summary": "7月进口237.9万吨，同比增1.9%，环比降7.1%；秘鲁供应受社区抗议和紧急状态影响，智利产量延续下降趋势。",
-    "category": "供应",
-    "direction": "利多",
-    "importance": 4,
-    "source": "SHMET铜快讯",
-    "url": "https://www.shmet.com/newsFlash/newsFlash.html",
-    "published": "2026-08-21T17:32+08:00"
-   },
-   {
-    "title": "智利风暴致Antofagasta下调指引",
-    "summary": "受智利风暴影响，Antofagasta下调2026年铜产量指引。",
-    "category": "供应",
-    "direction": "利多",
-    "importance": 4,
-    "source": "GN-铜矿供应",
-    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQTGZ5cTdmbk5LODRlS1lwd3NIRjZNZnlSZWdVT0xMNGxmRW9GaGhOeEZwNEpoUFF0ZjJTdklmZGwtWWxMSk04SGxQdk9nV183VmluVGd6TTNKT1BWaldLOTkxR1lhdXg0aGtib2xkUEtnY3B1bmlIeTYyUkhZeVROeXg1YXp4N0FzTXQ3bTZfbG9aWklQemJzMHpKTnhzdTZaY2haSnRVVnRmNDZSYUhtNDV3SEZzNkxIXzJNc0xUd0E4cWVGamdMMw?oc=5",
-    "published": "2026-08-21T19:15+08:00"
-   },
-   {
-    "title": "上期所铜仓单减少",
-    "summary": "上期所铜期货仓单减少6974吨，至46105吨。",
-    "category": "库存",
-    "direction": "利多",
-    "importance": 3,
-    "source": "SHMET铜快讯",
-    "url": "https://www.shmet.com/newsFlash/newsFlash.html",
-    "published": "2026-08-21T16:05+08:00"
-   },
-   {
-    "title": "LME注销仓单数据",
-    "summary": "LME铜注销仓单为69975吨，注册仓单168600吨。",
-    "category": "库存",
-    "direction": "中性",
-    "importance": 3,
-    "source": "SHMET铜快讯",
-    "url": "https://www.shmet.com/newsFlash/newsFlash.html",
-    "published": "2026-08-21T17:15+08:00"
-   },
-   {
-    "title": "铜价在6.5美元附近震荡",
-    "summary": "库存释放缓解了部分供应风险，铜价维持高位震荡。",
-    "category": "价格交易",
-    "direction": "中性",
-    "importance": 3,
-    "source": "GN-铜库存政策",
-    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVEhyckxpeTByWWxTRVplanJHcS1lOENRazBNbUQ3dTNPOC1zSGpWcjQtT1U1RVZvRk1TdFNleWVWdldoSTN0SFEtZVBtdG45UzE2MENGY2c5Tm53d2FBRG03aHJJQjNhV1dvSzU5M0I4T2R0bm92SWJfa3diSkxIaGJLdk1iYlVBc2VxUS1SdlNhMTA2WlpjX1dZT0d6S3V2X3ROeVlYdUY?oc=5",
-    "published": "2026-08-21T17:33+08:00"
-   }
-  ],
+  "铜": [],
   "宏观": [
    {
-    "title": "美加贸易谈判破裂，互征关税",
-    "summary": "美加谈判破裂，美国对约200亿美元加拿大商品加征50%关税，加拿大准备对等反制，冲击钢铝及汽车行业。",
+    "title": "美联储主席Warsh将在杰克逊霍尔发表讲话",
+    "summary": "美联储主席凯文·沃什（Kevin Warsh）将在周五的杰克逊霍尔年会上发表讲话，市场关注其对顽固通胀的应对立场。",
+    "category": "货币政策",
+    "direction": "中性",
+    "importance": 5,
+    "source": "彭博-Economics",
+    "url": "https://www.bloomberg.com/news/articles/2026-08-22/kevin-warsh-to-make-first-jackson-hole-speech-as-fed-chair",
+    "published": "2026-08-23T04:00+08:00"
+   },
+   {
+    "title": "伊朗威胁封锁霍尔木兹海峡",
+    "summary": "伊朗威胁称，若邻国参与美国制裁，将封锁霍尔木兹海峡，对全球能源供应构成重大威胁。",
+    "category": "地缘与能源",
+    "direction": "利空",
+    "importance": 5,
+    "source": "GN-关税与贸易",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNem1IRlNmelB3bHZ6ZVVhXzRhR0dFV1RRSVN2MVlMN3FrVHE2TFo2ZGNBMEJ5MHZYUnJsUXI2dE5YWVk5ZGhWdUtQU29HWEJWV0ZIQ0ZvRjdfVTJwUV9ndmVfSTloajc5U0djS2VLOTdSNHBMV1RTZ0k0ZVU2OENkdjl2NHE4M1R0OWsxa2dOZE1vWFBUWUJVbms5MEExUTd4d1QyV19BMU4tSjludUpoUDRXZnlPekk?oc=5",
+    "published": "2026-08-23T04:53+08:00"
+   },
+   {
+    "title": "加拿大宣布对美实施报复性关税",
+    "summary": "因美加贸易谈判破裂，美国此前对加征收50%关税，加拿大宣布将实施等额报复性关税。",
     "category": "关税与贸易",
     "direction": "利空",
     "importance": 5,
+    "source": "GN-关税与贸易",
+    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNUUpHSzVFU2ZTNXZoRGw0MVZQVnRLR2lDdU9UeUdveVBZTzhzSm04UHdBUGZ1SUJsczZ6UGlESGpsZW1lZ1ZUV0ktWDU0RHkzVVBfOHk0dnJTV2lXeGpEQlFKYzZIdVBaeFlocm16NDdtaEdxd05ROGtlM2RCOV92U0NyUGUzVFZ2MFp0b0J3ZkRNM3VEMlRCRWdFV0dRck1IREFsa1dRMXYxdUFIU1NMM2F3NTg3MjdZdEVELXUydm1hRS1xbDZ6Rg?oc=5",
+    "published": "2026-08-23T06:32+08:00"
+   },
+   {
+    "title": "美国PMI初值显示产出增长且通胀降温",
+    "summary": "美国最新PMI数据显示经济产出增长加快，同时通胀压力有所缓解。",
+    "category": "经济数据",
+    "direction": "利多",
+    "importance": 4,
+    "source": "GN-美国经济数据",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSmNENnBqZlJqM1g4ZmRINVRoOWxGaERabmNlYVE5NnJoMW9HZWJybFo1aFdMUW5VNEwzOUpZZGN1NEREYlFKVWNDZktQWk1LQ1BMdjEzQXk3TXFUTWxBdGdNUUpLNW5ieWVuX20tMlhHT3I5TUpteVVvZTY2OVdZTmlYNW5mRXFFYVNIQ3JjRlprdVZIdVpoLXFyVDROSXA0ZVpzZ0lGOFB3LV9BaktPR1FUTmc?oc=5",
+    "published": "2026-08-22T16:30+08:00"
+   },
+   {
+    "title": "高盛警告滞胀风险",
+    "summary": "高盛指出油价上涨与消费疲软并存，沃尔玛同店销售增速降至六年低点，市场显现滞胀特征。",
+    "category": "经济数据",
+    "direction": "利空",
+    "importance": 4,
     "source": "华尔街见闻",
-    "url": "https://wallstreetcn.com/articles/3780061",
-    "published": "2026-08-22T17:46+08:00"
+    "url": "https://wallstreetcn.com/articles/3780062",
+    "published": "2026-08-22T18:50+08:00"
    },
    {
-    "title": "美财长推动降息引发货币贬值交易",
-    "summary": "美国财政部推动降低收益率引发市场货币贬值交易，黄金触及三个月高位，比特币周内涨幅超25%。",
-    "category": "货币政策",
-    "direction": "利多",
-    "importance": 4,
-    "source": "GN-美债与美元",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOdFNLcG96M3ZCWDdDd1RBa3RIWVJaRDMyTXhSZzVRWVdrWEh5Zjc2a3pPb2IyWEctZGNrcUttaGtuSXUxMzVnTEVqNzA3cE0wM3dic0x6YjYxM20zSEN5S2FxeWdKeVRvZkVSU2xzOHpjQTBjNXhVYnhCVG9NZlJjRS1NaHhyUW9KSTQtaldNb0FmSk5qU0dxLUlIOFBXQmJOb200Q1BR?oc=5",
-    "published": "2026-08-21T23:10+08:00"
-   },
-   {
-    "title": "美加贸易协议拟引入钢铁配额制",
-    "summary": "消息称美加谈判拟对钢铁出口实施配额制，配额内关税25%，超出部分50%，并寻求降低铝关税。",
-    "category": "关税与贸易",
+    "title": "下周市场四大关注点",
+    "summary": "下周市场焦点包括美伊制裁、杰克逊霍尔会议、PCE数据及英伟达财报。",
+    "category": "其他",
     "direction": "中性",
     "importance": 4,
-    "source": "SHMET铝快讯",
-    "url": "https://www.shmet.com/newsFlash/newsFlash.html",
-    "published": "2026-08-21T23:41+08:00"
+    "source": "GN-美国经济数据",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5URVdvVUVsRFhoWE9lbjljSmdNTTJIdmxNNFBpckg1UV9Qb2V0UHlVZk9STS1fZG1nR0N6b2JwdXo0dU96WFBMb0VSUFV2cVlvYTlxM1pmMElhZFRoeDBzclpvNnNrcGpF?oc=5",
+    "published": "2026-08-22T19:24+08:00"
    },
    {
-    "title": "30年期美债收益率创19年新高",
-    "summary": "30年期美债收益率升至19年高位，导致芯片股等风险资产承压。",
-    "category": "经济数据",
-    "direction": "利空",
-    "importance": 4,
-    "source": "GN-美债与美元",
-    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8yamZfZ3Mwc3FpY0VmN24tNXQzM1dUN1RsS2dWbUQ0ZVJsUnV1QnN2YlJoOHNyV1piMEZVaWpwaldlcVF4U2N4OG5ZNnRtR2JoVnBiM1lGeHIzUm9mS0VBZmkzUVE3R0FjTzlFeWhDT1JITUl1WHo0NS1wVHhKUQ?oc=5",
-    "published": "2026-08-22T00:27+08:00"
-   },
-   {
-    "title": "日本7月核心CPI升至2.0%",
-    "summary": "日本7月核心通胀率加速至2.0%，给日本央行进一步调整货币政策带来压力。",
-    "category": "经济数据",
-    "direction": "利多",
-    "importance": 4,
-    "source": "GN-央行与全球",
-    "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5SV0dDaWl1aE9Ha1loTWdLak1YQmNrZWE4UFlnNFZDMTZydXZjbDJCc0xfSGNqVGh4bkljZHpoLTFhTURSU0ktWld3X0MxdDN6cmhDVjJNYmFuQmtzYU5FRDc3TQ?oc=5",
-    "published": "2026-08-22T04:35+08:00"
-   },
-   {
-    "title": "美债收益率飙升，回购效果减弱",
-    "summary": "长期美债收益率大幅上涨，抵消了财政部近期回购操作的影响，显示市场对美债供需压力担忧加剧。",
-    "category": "财政与政治",
-    "direction": "利空",
-    "importance": 4,
-    "source": "GN-美债与美元",
-    "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPem1rTWFaQnQ4V1VyWUlWRnEzbkVIeTNfVS1wa0ZFUWxjelA5cXctdkFHSEVCYklXZjNWT19JOTNGWk1Kem93QWNMSmZwVllkZXg5S0pCM1Q0VE5ZLUR5WGtfaHpfWTNiZkJ1MXdPV1BWWUhDWnJfbDlIUXgzUXFkSW1CNGxmVjRGa1lnWnRaNFNnQjNFSEpyR2pPdEQ4X201dVpERldrZXl5bU5xU21vTC02OTd3Y05qUEkxa1JUSnRPZHhuTTFLa2xRN3luVHF2bnFpY05fM1l2eHM5cXkydFZpcXFKX2dMZ1JqWllPUVVYTURBbzYteXhCUGw?oc=5",
-    "published": "2026-08-22T05:27+08:00"
-   },
-   {
-    "title": "美国誓言对伊朗实施最严厉制裁",
-    "summary": "美国官员Bessent承诺对伊朗实施最严厉制裁，同时林肯号航母正撤离中东。",
-    "category": "地缘与能源",
-    "direction": "利空",
-    "importance": 4,
-    "source": "GN-地缘与能源",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1lNkpYdUlvVk9KZWdBVGxBbF9WaC15NHBCSldNTXVQaDJ5ZFpUMDZUZURGWUhMQTNQaDllMHpmRWY2ZzJUdzZ4X1VLRmVqQnlrYjQ2RnlvUVBZVHZDemlN0gFcQVVfeXFMTzR4cDBsM2pPYXNkeGdVRlEzb2lXOU8wdUdxb0ZMOGM1RTNuV3ZkRzN1UHVvckloOURLV0ItRzB3R3djSTJicGlCNGkta2RDTWJocERURUtJbEw5VTI?oc=5",
-    "published": "2026-08-22T06:10+08:00"
-   },
-   {
-    "title": "关注美联储纪要与经济战风险",
-    "summary": "投资者需关注美联储纪要及地缘政治下的经济战对市场的影响。",
+    "title": "7月FOMC会议纪要发布",
+    "summary": "7月美联储会议纪要发布，市场关注其对未来利率路径及通胀的信号。",
     "category": "货币政策",
-    "direction": "中性",
+    "direction": "利空",
     "importance": 4,
     "source": "GN-美联储与利率",
-    "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4zS3B1aWVZMUpVS3FIZ1lscDZVZnk0NVpERUZQbGEyRlJJeEZHdUhjeE1lQ0NjR2wzTEI1WnJSTlBOelF2Y0tPNWhzZ0NYdVRleXNzck1VYnRKVFVzXzRZczMwYWxMRVNDZUZoM0hPd3BpUGRVS0xF?oc=5",
-    "published": "2026-08-22T07:00+08:00"
+    "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5RNjFOWTBkZmhOOFVsRFlHT3p3RnpKektMYmxfSFhWNFhqb1dTS0ttTlVNenUzTG9mcGsybW00UjRaLXdmSjVpVkpXeGhhdll0Ym9XZkNxSUpXdDFpc25qTng5SF9RcmwxUmtjZGYxWlIyN2Z5aDg3QUd0Z3M?oc=5",
+    "published": "2026-08-22T20:18+08:00"
+   },
+   {
+    "title": "美国财政部加倍回购国债",
+    "summary": "为应对收益率飙升，美国财政部将国债回购规模翻倍，旨在支持债券市场流动性。",
+    "category": "财政与政治",
+    "direction": "利多",
+    "importance": 4,
+    "source": "GN-美债与美元",
+    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQR2VnU0N4cmhJVnRYcXFuRzkxeFcyM0RnZlZiSEdmYXRVTUVHVHpBU2k0NUVNanhFdTVzajdzSHRBWkhfOHhKbEhyanNOaEIyMkp6aXA1ODVRUV9SdndtNDg5MmpiQmp4eEFHbkpnbzhTeUU4TWdoT2VTTHNwNUZkVnFzcWtuQnRLSWlPOVFCX1B4dDRaQm11bS1RcWstQnBBSHlFQlo4SmlSRTFI?oc=5",
+    "published": "2026-08-22T22:01+08:00"
    }
   ],
   "meta": {
-   "window_start": "2026-08-21T16:00+08:00",
-   "window_end": "2026-08-22T20:54+08:00",
-   "raw_count": 582,
-   "dedup_count": 493,
+   "window_start": "2026-08-22T16:00+08:00",
+   "window_end": "2026-08-23T06:37+08:00",
+   "raw_count": 329,
+   "dedup_count": 287,
    "failures": [],
    "llm_cost_usd": 0.0,
    "llm_model": "gemini-3.1-flash-lite"
@@ -2138,32 +2047,32 @@
   ]
  },
  "narration": {
-  "tone": "避险与贬值交易共振，贵金属领涨",
-  "macro": "昨夜市场呈现典型的“货币贬值与地缘避险”双重定价。美加贸易谈判破裂引发关税担忧，叠加美债长端收益率飙升至19年高位，显示市场对美债供需压力及经济战风险的定价加剧。尽管长债利率上行通常压制风险资产，但美财长推动降息的预期引发了强烈的货币贬值交易，资金涌入黄金与铜等硬资产以对冲信用风险。跨资产表现上，黄金与铜的大涨与美债收益率上行并存，说明市场交易逻辑已从单纯的利率敏感转向对冲法币购买力下降及地缘政治不确定性。",
-  "indices": "道指领涨，罗素2000表现强于纳指，VIX指数回落，显示市场在避险情绪下仍维持对周期性行业的偏好。",
-  "rates_fx": "美债收益率全线走高，美元指数微跌，显示市场对美债信用溢价的担忧盖过了利率上行的支撑。",
-  "sectors": "原材料板块领涨，公用事业板块领跌，资金呈现明显的从防御性公用事业向强周期原材料调仓特征。",
-  "movers": "南方铜业与自由港大涨，反映了铜价上涨带来的直接估值修复。阿里巴巴大跌，受美加贸易摩擦引发的全球贸易环境恶化预期拖累。Moderna上涨，显示医疗板块在避险情绪下获得资金青睐。",
-  "commodities": "黄金触及三个月高位，铜价受避险与供应担忧双重驱动显著走强，原油表现分化。"
+  "tone": "地缘溢价驱动，贵金属与铜共振",
+  "macro": "昨夜市场定价逻辑由地缘政治风险与滞胀担忧主导。伊朗封锁霍尔木兹海峡的威胁引发能源供应恐慌，叠加美加贸易摩擦升级，避险情绪显著升温，推动黄金与白银大幅走高。与此同时，高盛警告滞胀风险，指出油价上涨与消费疲软并存，市场对经济前景的担忧加剧。尽管美国PMI初值显示产出增长且通胀降温，但美联储会议纪要释放的利率路径信号仍令市场承压。值得注意的是，美国财政部加倍回购国债以应对收益率飙升，虽在一定程度上支持了债市流动性，但美债收益率仍全线收涨，显示出市场对财政赤字与通胀压力的深度焦虑。资金在避险资产与通胀对冲资产间快速切换，导致股债波动加剧。",
+  "indices": "标普与纳指小幅收涨，道指表现相对强势。VIX恐慌指数显著回落，显示市场在避险情绪下仍维持一定韧性，未出现恐慌性抛售。",
+  "rates_fx": "美债收益率全线走高，与股市上涨形成背离。美元指数微跌，美元兑人民币小幅走弱，汇率波动对大宗商品定价影响有限。",
+  "sectors": "原材料板块领涨，医疗保健与非必需消费跟涨。公用事业板块领跌，显示资金在防御性资产中进行结构性调仓。",
+  "movers": "阿里巴巴大跌，反映中概股面临的外部环境压力。南方铜业与自由港等矿业股显著上涨，直接受益于铜价走强及地缘政治带来的供应担忧。",
+  "commodities": "黄金与白银大幅收涨，COMEX铜价受供应担忧提振走高。原油走势分化，天然气价格上涨。"
  },
  "commentary": {
   "铜": {
-   "tone": "外盘领涨，矿端扰动支撑偏强",
-   "supply": "7月我国铜精矿进口237.9万吨，同比增1.9%，环比降7.1%。秘鲁供应受社区抗议和紧急状态干扰，智利产量延续下降趋势。此外，Antofagasta受智利风暴影响下调2026年铜产量指引。LME铜注销仓单为69975吨，注册仓单168600吨。供应端干扰频发，矿端收紧预期持续强化。",
+   "tone": "外盘领涨，内外盘共振走强",
+   "supply": "消息面无新增供应侧信息。",
    "demand": "消息面无新增需求侧信息。",
-   "market": "COMEX铜收涨1.97%，沪铜收涨0.68%。上期所交易所库存单日减少6974吨至46105吨，但五日累计增加12429吨，库存去化与累库趋势存在背离。铜矿股全线大涨，自由港涨7.64%，南方铜业涨8.69%，泰克资源涨4.59%，哈德贝涨6.79%，Ero Copper涨9.44%，美股标普500涨0.43%，VIX恐慌指数跌5.5%。",
-   "conclusion": "当前主导矛盾为矿端供应扰动引发的供给收缩预期，驱动价格上行。若上期所库存五日累计增量转为持续去库，则近端压制解除，背离将向铜价方向收敛；若库存持续累积且外盘涨幅回吐，则矿端利多交易逻辑证伪。"
+   "market": "COMEX铜收涨1.97%，沪铜收涨0.68%。上期所库存单日减少6974吨，但五日累计增加12429吨，库存去化趋势尚不稳定。美股铜矿股普涨，自由港涨7.64%，南方铜业涨8.69%，Ero Copper涨9.44%，矿端情绪显著回暖。标普500涨0.43%，VIX指数跌5.5%，美元指数微跌0.06%，宏观风险偏好改善支撑铜价。",
+   "conclusion": "当前主导矛盾为宏观情绪修复驱动的资金回流。若上期所库存五日累计增量转为持续去库，则库存背离压制解除，铜价将确认反弹趋势；若五日累计库存持续增加，则当前价格上涨仅为情绪性反弹，后续面临回调压力。"
   },
   "铝": {
-   "tone": "库存去化支撑，地缘扰动偏强",
-   "supply": "乌克兰对俄铝旗下五家企业实施制裁，可能干扰全球供应链。中国铝企计划投资20亿美元在埃及建设清洁能源铝产业园，目前处于规划洽谈阶段。LME铝现货价格下调至3180美元/吨。中国宏桥上半年净利约172.1亿元，主要受益于铝合金售价同比上涨18.7%。",
-   "demand": "铝锭库存持续下降对铝价形成支撑，但市场对传统旺季需求表现存疑。",
-   "market": "沪铝收于23835元/吨，涨幅0.91%，持仓267034手。上期所铝锭库存单日减少11030吨，五日累计减少23642吨。氧化铝收于2711元/吨，涨幅0.97%，持仓278466手，交易所库存单日增加3006吨，但五日累计减少16168吨。标普500上涨0.43%，VIX恐慌指数下跌5.5%，美元指数下跌0.06%。",
-   "conclusion": "当前主导矛盾为库存持续去化与地缘供应扰动带来的溢价。若五日累库转为持续去库的趋势逆转，或LME现货价格跌幅扩大至拖累内盘，则当前多头逻辑失效。"
+   "tone": "库存去化加速，铝价震荡偏强",
+   "supply": "印度煤炭公司考察加纳铝土矿，显示印度铝企正积极寻求海外铝土矿资源，以强化上游原料供应的长期布局。目前氧化铝交易所库存为 246022 吨，单日增加 3006 吨，但五日累计减少 16168 吨，供应端整体呈现出近端去库的趋势。",
+   "demand": "消息面无新增需求侧信息。",
+   "market": "沪铝收报 23835 CNY/t，涨幅 0.91%，持仓 267034 手；氧化铝收报 2711 CNY/t，涨幅 0.97%，持仓 278466 手。上期所铝库存为 274201 吨，单日减少 11030 吨，五日累计减少 23642 吨，库存去化趋势一致。美股标普 500 指数上涨 0.43%，VIX 恐慌指数下跌 5.5%，美元指数微跌 0.06%，宏观情绪偏暖。",
+   "conclusion": "当前主导矛盾为库存持续去化带来的现货支撑，驱动价格震荡上行。若后续氧化铝与电解铝库存转为持续累库，则近端去库逻辑证伪，价格将面临回调压力。"
   }
  },
  "meta": {
-  "generated_at": "2026-08-22T20:56:43+08:00",
+  "generated_at": "2026-08-23T06:38:25+08:00",
   "cost_usd": 0
  }
 }
