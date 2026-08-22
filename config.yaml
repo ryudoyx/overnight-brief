@@ -60,18 +60,24 @@ watchlist:
   中概:
     - {sym: "BABA", name: "阿里巴巴"}
     - {sym: "PDD",  name: "拼多多"}
-    - {sym: "JD",   name: "京东"}
-    - {sym: "NTES", name: "网易"}
-    - {sym: "BIDU", name: "百度"}
-    - {sym: "TCOM", name: "携程"}
-    - {sym: "LI",   name: "理想汽车"}
-    - {sym: "XPEV", name: "小鹏汽车"}
-    - {sym: "NIO",  name: "蔚来"}
-    - {sym: "BEKE", name: "贝壳"}
-    - {sym: "FUTU", name: "富途"}
-    - {sym: "TME",  name: "腾讯音乐"}
-    - {sym: "YUMC", name: "百胜中国"}
-    - {sym: "ZTO",  name: "中通快递"}
+  # AI 链条。对做铜的人这一栏是双重用途：既看科技情绪，也是铜需求的先行指标——
+  # 数据中心的电力和布线是这几年精铜增量需求里最硬的一块。
+  AI:
+    - {sym: "NVDA", name: "英伟达"}
+    - {sym: "AMD",  name: "AMD"}
+    - {sym: "INTC", name: "英特尔"}
+    - {sym: "MU",   name: "美光"}
+    - {sym: "AVGO", name: "博通"}
+    - {sym: "TSM",  name: "台积电"}
+    - {sym: "MRVL", name: "Marvell"}
+    - {sym: "ARM",  name: "ARM"}
+    - {sym: "LITE", name: "Lumentum"}
+    - {sym: "COHR", name: "Coherent"}
+    - {sym: "CRDO", name: "Credo"}
+    - {sym: "ANET", name: "Arista"}
+    - {sym: "VRT",  name: "Vertiv"}
+    - {sym: "SMCI", name: "超微电脑"}
+    - {sym: "CRWV", name: "CoreWeave"}
 
 # ---------------------------------------------------------------- 商品
 # unit_to 是落库口径，raw_unit 是 Yahoo 实际返回的口径，换算因子写死在 quotes.py 里，
@@ -113,6 +119,9 @@ news:
     # 华尔街见闻走资讯流（文章）而不是快讯流：快讯流 100 条基本是 A 股异动，
     # 跟财联社重合；资讯流是编辑筛过的，常带机构观点，配合「观点要点名」的规则。
     - {name: 华尔街见闻,   type: wscn,  lang: zh, channel: global-channel, limit: 40}
+    # 金十期货头条：只有标题没正文（详情接口全 502），判定时天然弱于有长摘要的源，
+    # 主要当「期货圈今天在看什么」的信号。鉴权头写在 sources.fetch_jin10 里。
+    - {name: 金十期货,     type: jin10, lang: zh}
     - {name: GN-美联储与利率, type: gnews, lang: en, query: 'Federal Reserve OR FOMC OR Powell (rate OR policy OR minutes) when:2d'}
     - {name: GN-美国经济数据, type: gnews, lang: en, query: 'US (CPI OR inflation OR payrolls OR "jobless claims" OR PCE OR "retail sales" OR ISM OR GDP) when:2d'}
     - {name: GN-关税与贸易,   type: gnews, lang: en, query: '(tariff OR "trade deal" OR "export controls" OR sanctions) (US OR China OR EU) when:2d'}

@@ -241,12 +241,53 @@ def fetch_wscn(src: dict) -> list[Item]:
     return out
 
 
+
+def fetch_jin10(src: dict) -> list[Item]:
+    """金十期货头条。
+
+    鉴权靠两个自定义头（从站点 JS 包里挖出来的），不带就一律 502：
+        x-app-id: KxBcVoDHStE6CUkQ    x-version: 1.3.0
+    这两个值是硬编码在前端里的公开常量，不是私人凭据；哪天前端换了值，
+    这个源会整体 502，fetch_all 会捕获并跳过，不影响出报。
+
+    只有标题、没有正文——detail 接口全部 502，content 字段是个内部 ID 不是文本。
+    所以这个源的条目在判定时天然弱于有长摘要的源，主要当作「期货圈今天在看什么」
+    的信号，偶尔能捞到独有消息。
+    """
+    r = requests.get(
+        "https://futures-report-api.jin10.com/api/headline",
+        headers={"User-Agent": UA, "Referer": "https://qihuo.jin10.com/",
+                 "Origin": "https://qihuo.jin10.com",
+                 "x-app-id": "KxBcVoDHStE6CUkQ", "x-version": "1.3.0"},
+        timeout=TIMEOUT)
+    r.raise_for_status()
+    rows = ((r.json().get("data") or {}).get("list")) or []
+
+    out = []
+    for row in rows:
+        title = (row.get("title") or "").strip()
+        if not title:
+            continue
+        try:
+            # updated_at 是北京时间的朴素字符串，转成 UTC 才能跟时间窗比
+            pub = datetime.strptime(row["updated_at"], "%Y-%m-%d %H:%M:%S").replace(
+                tzinfo=timezone(timedelta(hours=8))).astimezone(timezone.utc)
+        except (KeyError, TypeError, ValueError):
+            pub = datetime.now(timezone.utc)
+        out.append(
+            Item(title=title, summary="", url="https://qihuo.jin10.com/",
+                 source=src["name"], published=pub, lang="zh")
+        )
+    return out
+
+
 FETCHERS = {
     "rss": fetch_rss,
     "gnews": fetch_gnews,
     "shmet": fetch_shmet,
     "cls": fetch_cls,
     "wscn": fetch_wscn,
+    "jin10": fetch_jin10,
 }
 
 

@@ -316,9 +316,16 @@ def build(pack):
     parts.append('<div class="cols">'
                  + movers_table(q["movers"]["up"], "领涨")
                  + movers_table(q["movers"]["down"], "领跌") + "</div>")
-    parts.append("<h2>自选池</h2>")
-    parts.append('<div class="cols">' + watch_table(q["watchlist"], "矿业")
-                 + watch_table(q["watchlist"], "中概") + "</div>")
+    # 分组按事实包里出现的顺序动态渲染，config 里加减分组不用改这里
+    groups = []
+    for r in q["watchlist"]:
+        if r["group"] not in groups:
+            groups.append(r["group"])
+    if groups:
+        parts.append("<h2>自选池</h2>")
+        parts.append('<div class="cols">'
+                     + "".join(watch_table(q["watchlist"], g) for g in groups)
+                     + "</div>")
 
     parts.append("<h2>利率与汇率</h2>")
     parts.append(kpi_block(q["macro_markets"]))
