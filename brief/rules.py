@@ -204,6 +204,9 @@ SPEC = {
     # 铝复用铜那套信号词：罢工/减产/库存/关税这些事件词是通用的，
     # 只有主力企业名单不同
     "铝": (COPPER_SIGNALS, ALU_MAJORS),
+    # AI 桶在规则档下只做粗糙兜底：信号词表是为金属设计的，对科技新闻不适用，
+    # 真要用 AI 桶就上 openai_compat 或 claude
+    "AI": (COPPER_SIGNALS, ["nvidia", "tsmc", "amd", "intel", "micron", "openai", "英伟达", "台积电"]),
     "宏观": (MACRO_SIGNALS, MACRO_MAJORS),
 }
 

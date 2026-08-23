@@ -306,10 +306,30 @@ ALU_SYSTEM = """你是一名铝产业链基本面研究员，服务于一位做�
 direction 是对**铝价**的方向影响：利多 / 利空 / 中性。
 """ + COMMON_RULES
 
+AI_SYSTEM = """你是一名科技产业研究员，服务于一位做大宗商品为主的研究员。他关心 AI 链条
+有两个理由：一是它是当前美股情绪的主导变量，二是**数据中心的电力与布线是近年精铜
+增量需求里最硬的一块**，AI 资本开支的拐点会比铜的下游数据更早显现。
+
+判断「相关」（relevant=true）：
+- 算力资本开支：超大规模厂商的 capex 指引、数据中心新建与投产、电力供应约束
+- 芯片供需：GPU/HBM/存储的订单、产能、交期、价格变化，代工产能分配
+- 政策：出口管制、关税、补贴、技术封锁及其反制
+- 龙头公司的业绩指引与产业链传导（英伟达、台积电、美光、博通这类）
+- 与铜相关的交叉信号：数据中心用电、电网扩容、变压器与线缆需求
+
+判断「不相关」（relevant=false）：
+- 消费级产品发布、软件功能更新、模型跑分
+- 纯股价点评、券商荐股、技术面喊单
+- 与产业无关的公司新闻（人事、赞助、诉讼八卦）
+
+direction 是对**AI 产业景气**的方向影响：利多 / 利空 / 中性。
+""" + COMMON_RULES
+
 BUCKET_SPEC = {
     "宏观": (MACRO_SYSTEM, MacroBatch),
     "铜": (COPPER_SYSTEM, CopperBatch),
     "铝": (ALU_SYSTEM, CopperBatch),   # 分类集跟铜一样，复用同一个 schema
+    "AI": (AI_SYSTEM, CopperBatch),
 }
 
 
@@ -392,6 +412,16 @@ class ClaudeJudge:
         return self.usage["input"] / 1e6 * price[0] + self.usage["output"] / 1e6 * price[1]
 
 
+def is_weekend(now=None):
+    """按北京时间判断是不是周末版。
+
+    周六周日美股不开盘、SHMET 和财联社基本停更，铜铝两栏必然很薄——
+    实测周日那版铜 1 条铝 1 条。与其硬凑，不如把版面让给周末照常发稿的
+    宏观和 AI（彭博、FT、Telegram 这些海外源周末不休息）。
+    """
+    return (now or dt.datetime.now(CST)).weekday() >= 5
+
+
 def make_judge(cfg):
     """三档后端，改 config.yaml 的 judge.backend 一行切换。
 
@@ -421,6 +451,9 @@ def collect(cfg=None):
     items = dedup(raw, nc["fuzzy_dedup_threshold"])
     log(f"窗口内 {len(raw)} 条，去重后 {len(items)} 条")
 
+    weekend = is_weekend()
+    if weekend:
+        log("周末版：宏观与 AI 扩容，铜铝收窄")
     judge = make_judge(cfg)
     log(f"判定后端：{judge.model if hasattr(judge, 'model') else cfg['judge']['backend']}")
     out, claimed = {}, set()
@@ -432,6 +465,7 @@ def collect(cfg=None):
         )[: nc["max_llm_items"]]
         claimed.update(i.uid for i in cand)
         log(f"{bucket}：粗筛出 {len(cand)} 条送判定")
+        top_n = (nc.get("weekend") or {}).get(bucket, bc["top_n"]) if weekend else bc["top_n"]
         rows = []
         for it, j in judge.judge(bucket, cand, nc["llm_batch_size"]):
             if j.get("stale"):
@@ -463,12 +497,13 @@ def collect(cfg=None):
                 continue
             per_cat[c] = per_cat.get(c, 0) + 1
             picked.append(r)
-            if len(picked) >= bc["top_n"]:
+            if len(picked) >= top_n:
                 break
         out[bucket] = picked
         log(f"{bucket}：留下 {len(out[bucket])} 条")
 
     out["meta"] = {
+        "weekend": weekend,
         "window_start": start.astimezone(CST).isoformat(timespec="minutes"),
         "window_end": end.astimezone(CST).isoformat(timespec="minutes"),
         "raw_count": len(raw),

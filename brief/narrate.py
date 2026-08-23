@@ -206,12 +206,18 @@ def commentary(pack, cfg):
     if cfg["judge"]["backend"] == "rules":
         log("规则档不生成品种评论")
         return {}
+    weekend = (pack["news"].get("meta") or {}).get("weekend")
     out = {}
     for variety in ("铜", "铝"):
         facts = _variety_facts(pack, variety)
         news = pack["news"].get(variety, [])
         if not facts.get("沪盘") and not news:
             log(f"{variety}：既无盘面也无消息，跳过评论")
+            continue
+        # 周末消息稀疏时不硬写评论：只有盘面没有消息面，写出来的只能是复述价格，
+        # 不如把版面留给宏观和 AI
+        if weekend and len(news) < 2:
+            log(f"{variety}：周末且仅 {len(news)} 条消息，跳过评论")
             continue
         payload = ("facts（程序算好的，直接引用）：\n"
                    + json.dumps(facts, ensure_ascii=False, indent=1)

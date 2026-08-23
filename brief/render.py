@@ -327,6 +327,10 @@ def build(pack):
                      + "".join(watch_table(q["watchlist"], g) for g in groups)
                      + "</div>")
 
+    if n.get("AI"):
+        parts.append(f'<h2>AI 与半导体<span class="n">{len(n["AI"])} 条</span></h2>')
+        parts.append(news_block(n["AI"]))
+
     parts.append("<h2>利率与汇率</h2>")
     parts.append(kpi_block(q["macro_markets"]))
 

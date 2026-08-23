@@ -103,6 +103,14 @@ news:
   max_llm_items: 120       # 单桶最多送多少条进 Claude
   max_per_source: 25       # 单个源最多贡献多少条——防止某一组 Google News 查询把别的源挤掉
   max_per_category: 2      # 最终版面里单个分类最多几条——同一件事换四种措辞时靠这个保多样性
+
+  # 周末（北京时间周六、周日）美股不开盘、国内有色源基本停更，铜铝两栏必然很薄。
+  # 与其硬凑，不如把版面让给周末照常发稿的宏观和 AI。这里覆盖各桶的 top_n。
+  weekend:
+    宏观: 10
+    AI: 8
+    铜: 3
+    铝: 3
   llm_batch_size: 25
   fuzzy_dedup_threshold: 0.86
 
@@ -134,6 +142,11 @@ news:
     - {name: GN-华尔街,      type: gnews, lang: en, query: 'site:reuters.com (stocks OR "Wall Street" OR Nasdaq OR "S&P 500") when:2d'}
     - {name: GN-地缘与能源,   type: gnews, lang: en, query: '(OPEC OR "oil prices" OR Russia OR Iran OR "Middle East") (supply OR sanctions OR conflict) when:2d'}
     - {name: GN-央行与全球,   type: gnews, lang: en, query: '(ECB OR "Bank of Japan" OR "People''s Bank of China" OR BOE) (rate OR policy) when:2d'}
+
+    # ---------------- AI / 半导体 ----------------
+    - {name: GN-AI资本开支, type: gnews, lang: en, query: '("AI capex" OR "data center" OR datacenter) (investment OR buildout OR power OR spending) when:2d'}
+    - {name: GN-AI芯片,     type: gnews, lang: en, query: '(Nvidia OR AMD OR TSMC OR "AI chip" OR GPU) (demand OR supply OR orders OR guidance OR export) when:2d'}
+    - {name: GN-半导体,     type: gnews, lang: en, query: 'semiconductor (memory OR HBM OR foundry OR "export controls" OR capacity) when:2d'}
 
     # ---------------- 铜 ----------------
     - {name: SHMET铜快讯,  type: shmet, lang: zh, channel: '铜'}
@@ -257,6 +270,52 @@ news:
           - 跌幅扩大
           - 涨超
           - 跌超
+    AI:
+      precedence: 1        # 与铜铝同级，各自认领
+      top_n: 5
+      min_importance: 3
+      keywords:
+        must:
+          - nvidia
+          - 英伟达
+          - amd
+          - intel
+          - 英特尔
+          - tsmc
+          - 台积电
+          - broadcom
+          - 博通
+          - micron
+          - 美光
+          - marvell
+          - arm holdings
+          - semiconductor
+          - 半导体
+          - chip
+          - 芯片
+          - gpu
+          - hbm
+          - foundry
+          - 晶圆
+          - data center
+          - datacenter
+          - 数据中心
+          - ai capex
+          - 算力
+          - openai
+          - anthropic
+          - hyperscaler
+          - 云厂商
+          - export control
+          - 出口管制
+        block:
+          - 券商
+          - 荐股
+          - 目标价
+          - 买入评级
+          - 涨停
+          - 连板
+
     铝:
       precedence: 1        # 跟铜同级，各自认领自己的条目
       top_n: 5
