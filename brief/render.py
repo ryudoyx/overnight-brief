@@ -298,7 +298,10 @@ def build(pack):
 
     parts = [
         f'<div class="top"><div><h1>隔夜早报 · {esc(day)}</h1>'
-        f'<div class="sub">美股 {esc(day)} 收盘 · 生成于 {esc(gen)}</div></div>'
+        f'<div class="sub">美股 {esc(day)} 收盘 · 生成于 {esc(gen)}'
+        + ('　·　<b>周末版</b>：美股休市，铜铝消息稀疏，版面让给宏观与 AI'
+           if n.get("meta", {}).get("weekend") else '')
+        + '</div></div>'
         f'{date_picker(day)}</div>',
     ]
     if narr.get("tone"):
