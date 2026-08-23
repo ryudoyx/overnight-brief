@@ -281,6 +281,54 @@ def fetch_jin10(src: dict) -> list[Item]:
     return out
 
 
+
+_TG_MSG = re.compile(r'<div class="tgme_widget_message_text[^"]*"[^>]*>(.*?)</div>', re.S)
+_TG_TIME = re.compile(r'<time[^>]+datetime="([^"]+)"')
+
+
+def fetch_telegram(src: dict) -> list[Item]:
+    """Telegram 公开频道，走 t.me/s/<频道> 的网页预览。
+
+    不需要 bot token、不需要登录——公开频道的网页预览就是完整的最近消息列表，
+    带 ISO 时间戳，而且有正文不只是标题。
+
+    一次只能拿到最近 20 条（网页预览的分页大小）。WalterBloomberg 这类频道
+    20 条大约覆盖 20 小时，够我们的隔夜窗；如果哪天某个频道刷屏，早段可能取不全，
+    这是这个方案的固有上限。
+
+    注意 t.me/s/ 对私有频道、封停账号、已废弃频道都返回 200 但零消息——
+    实测彭博官方频道停更 5 个月、mining_com 停在 2023 年，加源前务必看最新时间戳。
+    """
+    r = requests.get(f"https://t.me/s/{src['channel']}",
+                     headers={"User-Agent": UA}, timeout=TIMEOUT)
+    r.raise_for_status()
+    msgs = _TG_MSG.findall(r.text)
+    times = _TG_TIME.findall(r.text)
+
+    out = []
+    for raw, ts in zip(msgs, times):
+        # 必须先按 <br> 切段再清洗：strip_html 会把换行压成空格，
+        # 先清洗就再也找不到标题和正文的分界了
+        segs = [strip_html(x) for x in re.split(r"<br\s*/?>", raw)]
+        # 末尾那行 (@频道名) 是转载署名，不是内容
+        # 清洗后署名会变成「( @WalterBloomberg )」——括号内带空格，正则要放宽
+        segs = [x for x in segs if x and not re.fullmatch(r"[(（]?\s*@[\w]+\s*[)）]?", x)]
+        if not segs:
+            continue
+        title = segs[0][:120]
+        body = " ".join(segs[1:])
+        try:
+            pub = datetime.fromisoformat(ts.replace("Z", "+00:00")).astimezone(timezone.utc)
+        except ValueError:
+            continue
+        out.append(
+            Item(title=title, summary=body.strip()[:400],
+                 url=f"https://t.me/s/{src['channel']}",
+                 source=src["name"], published=pub, lang=src.get("lang", "en"))
+        )
+    return out
+
+
 FETCHERS = {
     "rss": fetch_rss,
     "gnews": fetch_gnews,
@@ -288,6 +336,7 @@ FETCHERS = {
     "cls": fetch_cls,
     "wscn": fetch_wscn,
     "jin10": fetch_jin10,
+    "telegram": fetch_telegram,
 }
 
 

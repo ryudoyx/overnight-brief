@@ -122,6 +122,11 @@ news:
     # 金十期货头条：只有标题没正文（详情接口全 502），判定时天然弱于有长摘要的源，
     # 主要当「期货圈今天在看什么」的信号。鉴权头写在 sources.fetch_jin10 里。
     - {name: 金十期货,     type: jin10, lang: zh}
+    # Telegram 公开频道，免鉴权。WalterBloomberg 是转发彭博/路透快讯的头部频道，
+    # 出稿比正式报道快。想加更多先自己看最新时间戳——t.me 对废弃频道也返回 200
+    # 但零消息，实测彭博官方频道停更 5 个月、mining_com 停在 2023 年。
+    # 备选（信号密度低一档，需要更原始的 squawk 流时再开）：financialjuice
+    - {name: TG-WalterBloomberg, type: telegram, lang: en, channel: WalterBloomberg}
     - {name: GN-美联储与利率, type: gnews, lang: en, query: 'Federal Reserve OR FOMC OR Powell (rate OR policy OR minutes) when:2d'}
     - {name: GN-美国经济数据, type: gnews, lang: en, query: 'US (CPI OR inflation OR payrolls OR "jobless claims" OR PCE OR "retail sales" OR ISM OR GDP) when:2d'}
     - {name: GN-关税与贸易,   type: gnews, lang: en, query: '(tariff OR "trade deal" OR "export controls" OR sanctions) (US OR China OR EU) when:2d'}
