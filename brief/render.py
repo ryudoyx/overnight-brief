@@ -248,8 +248,8 @@ def layered(obj, lead_key, labels):
 
 NARR_LABELS = [("indices", "指数"), ("rates_fx", "利率汇率"), ("sectors", "板块"),
                ("movers", "个股"), ("commodities", "商品")]
-COMMENT_LABELS = [("supply", "供应"), ("demand", "需求"),
-                  ("market", "盘面"), ("conclusion", "结论")]
+COMMENT_LABELS = [("market", "盘面"), ("supply", "供应"), ("demand", "需求"),
+                  ("inventory", "库存"), ("conclusion", "结论")]
 
 
 def comment_block(pack, variety):
