@@ -150,6 +150,13 @@ news:
 
     # ---------------- 铜 ----------------
     - {name: SHMET铜快讯,  type: shmet, lang: zh, channel: '铜'}
+    # SMM 资讯页：带相对时间（「11小时前」），标题信息量高（隔夜行情综述、
+    # 上期所规则变动、机构调研）。只有 10 条/页，React 类名改版会失效。
+    - {name: SMM资讯,     type: smm,     lang: zh}
+    # Mysteel 有色：取页面上最新一批日报，滤掉纯价格表。日报标题即结论
+    # （「现货升水持续承压走跌」「补库不及预期」），正好补现货升水、下游补库、
+    # 加工费这些免费源一直缺的字段。实际发布日期写在摘要里。
+    - {name: Mysteel有色, type: mysteel, lang: zh}
     - {name: Mining.com,  type: rss,   lang: en, url: "https://www.mining.com/feed/"}
     - {name: Mining-铜频道, type: rss,  lang: en, url: "https://www.mining.com/commodity/copper/feed/"}
     # 矿业专业媒体。发文频率低（一天 1-6 条），但条条是行业内容，一次请求的成本

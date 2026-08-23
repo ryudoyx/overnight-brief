@@ -364,3 +364,120 @@ def fetch_all(sources: list[dict], lookback_hours: int) -> tuple[list[Item], lis
 
     items.sort(key=lambda i: i.published, reverse=True)
     return items, failures
+
+
+_MYSTEEL = re.compile(
+    r'<span\s*>\[(\d{2})-(\d{2})\]</span>\s*<a[^>]+href="([^"]+)"[^>]*title="([^"]{4,120})"')
+# 纯价格表：标题里没有任何结论，正文又抓不到，留着只会挤占送审名额
+_PRICE_TABLE = re.compile(r"价格汇总|价格行情|报价汇总|汇总$")
+
+
+def fetch_mysteel(src: dict) -> list[Item]:
+    """Mysteel 有色首页。
+
+    列表只给到日级别（`[08-21]`），没有时分。按用户口径「当天或前一天的最新数据」，
+    把日期落在窗口内的合成成时间戳：今天的记为此刻，昨天的记为昨天 23:00
+    （隔夜窗从前一日 16:00 起，所以昨天的条目能进窗、前天的自然被滤掉）。
+
+    首页 536 条里 167 条是纯价格表（「8月21日Mysteel铜杆价格汇总」这种），
+    标题不含结论、正文又抓不到，直接滤掉。留下的是「Mysteel日报：现货升水持续
+    承压走跌」这类——标题即结论，正好补现货升水、下游补库、加工费这些我们缺的字段。
+    """
+    r = requests.get("https://youse.mysteel.com/", headers={"User-Agent": UA}, timeout=TIMEOUT)
+    r.raise_for_status()
+    # 这个站的响应头不带 charset，requests 会退回 latin-1 把中文解成乱码，
+    # 连带「价格汇总」的过滤也会失效。显式指定 utf-8。
+    r.encoding = "utf-8"
+
+    now = datetime.now(timezone(timedelta(hours=8)))
+    rows = []
+    for mm, dd, url, title in _MYSTEEL.findall(r.text):
+        title = html.unescape(title).strip()
+        if not title or _PRICE_TABLE.search(title):
+            continue
+        month, day = int(mm), int(dd)
+        # [MM-DD] 没有年份；跨年时月份会大于当前月，往前退一年
+        year = now.year - 1 if month > now.month else now.year
+        try:
+            d = datetime(year, month, day, tzinfo=now.tzinfo).date()
+        except ValueError:
+            continue
+        rows.append((d, url, title))
+
+    if not rows:
+        return []
+
+    # 取页面上最新的那一批。不能按「今天或昨天」卡：Mysteel 日报是国内交易时段
+    # 下午发的，而早报早上 6:17 跑——周一早上按日期卡会拿到空，可那时最该看的
+    # 正是周五那批。超过 4 天的就真是陈货了，不要。
+    latest = max(d for d, _, _ in rows)
+    if (now.date() - latest).days > 4:
+        return []
+
+    out = []
+    for d, url, title in rows:
+        if d != latest:
+            continue
+        # 时间戳记为此刻，好让它进得了隔夜窗；真实发布日写进摘要，来源不含糊
+        out.append(
+            Item(title=title, summary=f"（Mysteel 有色 {d:%Y-%m-%d} 发布）",
+                 url=url if url.startswith("http") else "https://youse.mysteel.com" + url,
+                 source=src["name"], published=now.astimezone(timezone.utc), lang="zh")
+        )
+    return out
+
+
+_SMM_LI = re.compile(r'<li><div class="news_newsListContent.*?</li>', re.S)
+_SMM_REL = re.compile(r"(\d+)\s*(分钟|小时|天)前")
+
+
+def fetch_smm(src: dict) -> list[Item]:
+    """SMM 资讯页。
+
+    列表带相对时间（「11小时前」），比 Mysteel 的日级别更准，能算出绝对时间戳。
+    标题信息量高——「美元周线下跌 金属普涨 伦铜铝锌沪锌涨逾1%【隔夜行情】」
+    这种本身就是一份隔夜综述。
+
+    只有 10 条/页，且是 React 渲染的类名，改版会失效——fetch_all 会捕获跳过。
+    """
+    r = requests.get("https://news.smm.cn/", headers={"User-Agent": UA}, timeout=TIMEOUT)
+    r.raise_for_status()
+    r.encoding = "utf-8"
+
+    now = datetime.now(timezone.utc)
+    out = []
+    for blk in _SMM_LI.findall(r.text):
+        m = re.search(r'href="(https?://news\.smm\.cn/news/\d+)"', blk)
+        title = ""
+        t = re.search(r'alt="([^"]{6,140})"', blk)
+        if t:
+            title = html.unescape(t.group(1)).strip()
+        if not title:
+            t2 = re.search(r'>([^<]{8,140})</a>', blk)
+            title = html.unescape(t2.group(1)).strip() if t2 else ""
+        if not title:
+            continue
+
+        rel = _SMM_REL.search(blk)
+        if rel:
+            n, unit = int(rel.group(1)), rel.group(2)
+            mins = n * {"分钟": 1, "小时": 60, "天": 1440}[unit]
+            pub = now - timedelta(minutes=mins)
+        elif "刚刚" in blk:
+            pub = now
+        else:
+            continue                    # 没有可解析的时间就不要，宁缺毋滥
+
+        body = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", blk))
+        body = body.replace(title, " ").strip()
+        out.append(
+            Item(title=title, summary=strip_html(body, limit=300),
+                 url=m.group(1) if m else "https://news.smm.cn/",
+                 source=src["name"], published=pub, lang="zh")
+        )
+    return out
+
+
+# 这两个 fetcher 定义在 FETCHERS 之后，所以在这里补注册
+FETCHERS["mysteel"] = fetch_mysteel
+FETCHERS["smm"] = fetch_smm
