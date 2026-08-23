@@ -102,7 +102,7 @@
      3017.8899,
      3032.9399,
      2992.4299,
-     3017.871
+     3017.8708
     ]
    },
    {
@@ -1864,16 +1864,36 @@
    ]
   },
   "meta": {
-   "generated_at": "2026-08-23T13:46:29+00:00",
+   "generated_at": "2026-08-23T14:01:19+00:00",
    "session_date": "2026-08-21"
   }
  },
  "news": {
   "AI": [
    {
-    "title": "黄仁勋访台，据传与台积电锁定AI产能",
-    "summary": "英伟达CEO黄仁勋在财报发布前夕低调抵达台湾，旨在与台积电进一步锁定AI芯片代工产能。",
-    "category": "公司项目",
+    "title": "英伟达计划2027年起上调AI芯片价格15%",
+    "summary": "英伟达提前预告涨价，显示出对未来几年AI算力需求持续增长的信心。",
+    "category": "价格交易",
+    "direction": "利多",
+    "importance": 5,
+    "source": "GN-AI芯片",
+    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOamgxQ1R5VkRHQ1FUd0N3ak81YjZVd2pXLWxFeTJfaFRmeXdWZEVfLS1PZHctd25PS09nSEtPNFo5TU9objFtZnlpazI5c3ZxOW53OGc3TjJPX1kxV3o1dkhNeWZoRXBVMmpjU1NBNWg2WUZNcV9xdF84UkdqMFVZc3dIMmlQTl84bXZUVWZXTFg5WS1BYjI1UHdZZjBXRm1zbXNobXU1NnA1bHM4YWFEVw?oc=5",
+    "published": "2026-08-23T07:55+08:00"
+   },
+   {
+    "title": "英伟达决定上调AI芯片价格",
+    "summary": "英伟达确认上调产品价格，进一步证实了AI算力硬件供需失衡的现状。",
+    "category": "价格交易",
+    "direction": "利多",
+    "importance": 5,
+    "source": "GN-半导体",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBrUHE5c3Fkd29NRWZoelNwRElZXzY2N2RURnRGYnhMSmdyUWJkbFJwdjk2Q3BCSHNFajJxcVRQTGxMODZFdWRmVHdnNVJPYlU?oc=5",
+    "published": "2026-08-23T09:43+08:00"
+   },
+   {
+    "title": "黄仁勋抵台会晤台积电锁定产能",
+    "summary": "英伟达CEO黄仁勋在财报发布前抵达台湾，据报与台积电高层会晤以锁定AI芯片产能。",
+    "category": "供应",
     "direction": "利多",
     "importance": 5,
     "source": "GN-AI芯片",
@@ -1881,28 +1901,18 @@
     "published": "2026-08-23T16:25+08:00"
    },
    {
-    "title": "英伟达AI服务器价格将上涨超15%",
-    "summary": "受内存供应紧张影响，英伟达计划上调AI服务器价格，反映了上游核心零部件的供需紧平衡。",
-    "category": "价格交易",
-    "direction": "利多",
-    "importance": 5,
-    "source": "GN-AI芯片",
-    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPVkhzQmNrUDRLOHo0N2JMN0pjb2RlLXZzVm5ESlZ6ZmJZZk5ybzlFN09iOE9XLWE5ZGVwTDNUTm5fRDJqNEgyMHM0X1R0UURoa3VkMDlINjk4Z3lBcUN4c3h1V2V0NFAzQ1lad0sxc2NENkFtR2JQcHAzY3RVbnRWd01FLXhTbkE4ZlNTV1pNMXNjMHFnVVh0UUN1R010Qm02NGtoVTJ6RlZWc2lDTERKV25fT3pnVmVwNk5yNVMyNkV2S1dHWlVNY3NZcjZfck94bmEw?oc=5",
-    "published": "2026-08-23T19:39+08:00"
-   },
-   {
-    "title": "英伟达财报发布在即，市场聚焦AI热潮",
-    "summary": "英伟达即将公布财报，市场高度关注其业绩指引以验证AI资本开支周期的持续性。",
-    "category": "公司项目",
+    "title": "下周AI产业活动与英伟达财报",
+    "summary": "下周将迎来英伟达财报及多场AI产业博览会，市场高度关注AI资本开支验证及宏观经济数据。",
+    "category": "其他",
     "direction": "中性",
     "importance": 5,
-    "source": "GN-AI芯片",
-    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE85RXdnWUZtTWpRNE5ZNHBLWnI0Y2dBMDJSQnFWbjBoUHBWcDhpWGl4MGhfYlh3S3ZxZ210MXNwQWNhYi0tTVVZMWlOc2hrWVFfdVpVVUZlVUV5WGd0MFpHX1MxZTl0dHpqUXVv?oc=5",
-    "published": "2026-08-23T21:21+08:00"
+    "source": "财联社电报",
+    "url": "https://api3.cls.cn/share/article/2461757?os=web&sv=8.4.6&app=CailianpressWeb",
+    "published": "2026-08-23T22:00+08:00"
    },
    {
-    "title": "韩国8.4GW数据中心面临电力设计瓶颈",
-    "summary": "韩国大规模数据中心建设受限于内部电力设计，成为制约AI基础设施落地的关键瓶颈。",
+    "title": "韩国8.4GW数据中心建设面临电力设计瓶颈",
+    "summary": "韩国大规模数据中心扩容计划受限于内部电力设计，凸显了电力基础设施供应的硬约束。",
     "category": "需求",
     "direction": "利空",
     "importance": 4,
@@ -1911,60 +1921,60 @@
     "published": "2026-08-23T06:25+08:00"
    },
    {
-    "title": "英伟达2027年起上调AI芯片价格",
-    "summary": "英伟达计划从2027年起将AI芯片价格上调超过15%，显示长期供应紧张预期。",
-    "category": "价格交易",
-    "direction": "利多",
-    "importance": 4,
-    "source": "GN-AI芯片",
-    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOamgxQ1R5VkRHQ1FUd0N3ak81YjZVd2pXLWxFeTJfaFRmeXdWZEVfLS1PZHctd25PS09nSEtPNFo5TU9objFtZnlpazI5c3ZxOW53OGc3TjJPX1kxV3o1dkhNeWZoRXBVMmpjU1NBNWg2WUZNcV9xdF84UkdqMFVZc3dIMmlQTl84bXZUVWZXTFg5WS1BYjI1UHdZZjBXRm1zbXNobXU1NnA1bHM4YWFEVw?oc=5",
-    "published": "2026-08-23T07:55+08:00"
-   },
-   {
-    "title": "闪存制造工艺由钨转向钼",
-    "summary": "随着3D NAND层数突破300层，钼成为强制替代材料，预计2027年相关沉积设备市场规模将超10亿美元。",
+    "title": "台积电完成1.6nm A16工艺，扩大技术领先优势",
+    "summary": "台积电在先进制程上取得进展，进一步拉大与三星的技术差距，利好后续高端芯片代工。",
     "category": "供应",
     "direction": "利多",
     "importance": 4,
-    "source": "华尔街见闻",
-    "url": "https://wallstreetcn.com/articles/3780077",
-    "published": "2026-08-23T14:40+08:00"
-   },
-   {
-    "title": "Anthropic与OpenAI自研芯片，英伟达与AMD开发模型",
-    "summary": "AI模型厂商与芯片厂商业务边界模糊，模型公司通过自研芯片以降低对英伟达的依赖，反映了算力供应链的垂直整合趋势。",
-    "category": "供应",
-    "direction": "中性",
-    "importance": 4,
     "source": "GN-AI芯片",
-    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZC1Ja1dicnplRVVXV240ZUZUSjd4cjBESHhJLWI3ejI5UFVlWHl5S2FnM04ycXBYdjk3NUxvZm9QZFoxa2ZhM19FdFlWUHZyUmpMNl9aNFhyQzhhbmN1azBWVDdGZWotTkhMcXRIRTlHNzZ2cEFuOFc5WTIyZ21IUjRNc2pzWXk0?oc=5",
-    "published": "2026-08-23T16:13+08:00"
+    "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOb0FyUWUzX2NjSkQ5SXVPTU9tT3Rwelh0TnMzcUV6X1FoMXQ5bGhWR043UU90bFJUSi1CeVdWcnRFelYyLVcweWpvMzZzY2w2cjZDLUQ1MmdrNllNRVloMFk3d2JaUjFqZVlwVGpGUGpXZHdKZ0U3eUZfdWc3dzNKdUJn?oc=5",
+    "published": "2026-08-23T08:12+08:00"
    },
    {
-    "title": "中信证券：科技股调整源于AI商业化预期",
-    "summary": "研报指出科技股调整核心在于AI商业化速率与算力定价权，而非单纯受美债利率影响，强调了算力差距对远期模型竞争的影响。",
-    "category": "宏观政策",
+    "title": "中信证券：科技股调整源于远期定价",
+    "summary": "中信证券认为科技股调整核心在于AI商业化落地速度及算力带来的定价权优势，而非单纯受美债利率影响。",
+    "category": "需求",
     "direction": "中性",
     "importance": 4,
     "source": "财联社电报",
     "url": "https://api3.cls.cn/share/article/2461635?os=web&sv=8.4.6&app=CailianpressWeb",
     "published": "2026-08-23T16:32+08:00"
+   },
+   {
+    "title": "英伟达新叙事：开源模型与锁定产能",
+    "summary": "汇丰认为英伟达通过开源小模型生态及长期产能协议，有望进一步巩固其市场定价权与估值。",
+    "category": "公司项目",
+    "direction": "利多",
+    "importance": 4,
+    "source": "华尔街见闻",
+    "url": "https://wallstreetcn.com/articles/3780090",
+    "published": "2026-08-23T20:57+08:00"
    }
   ],
   "铝": [
    {
-    "title": "中国上半年铝土矿进口增长17.5%",
-    "summary": "在4500万吨电解铝产能天花板限制下，上半年铝土矿进口量仍大幅增长，反映原料供应充足。",
+    "title": "中国上半年铝土矿进口增17.5%",
+    "summary": "尽管存在4500万吨产能天花板，但上半年铝土矿进口量仍大幅增长，反映原料供应充足。",
     "category": "供应",
     "direction": "利空",
-    "importance": 3,
+    "importance": 4,
     "source": "GN-铝供应",
     "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPaEEyWWRmbzB5WG5OMEFJc0pTLXlFWDkyS0szTWdCSmRTZlF1c1RyTHE2MHlkWnhkZDVybVdKb3pGT05URmtINGh0U3RkZ3NiemQyTjlXZE5oU0VSUFBSZ1BmVWdTSGFSVlZYRFA4djFZNnFzeGhrdk4wck1JeXY2VVJHX3lwWmQtUy0yX3JVRUV1eFRZZHdIY1lqbmRMNWxPbmM1RXhmTmpscURiZVdkVGRqZnBvRGRVOUZPZzRpSW9fMDNWcWtLczJUemdZVjFhQ3JkZW1CcXBOSmY3a2xaa3B4LU9Wc3Jm?oc=5",
     "published": "2026-08-23T13:10+08:00"
    },
    {
-    "title": "美加贸易协议谈判及关税风险",
-    "summary": "美加贸易协议谈判涉及关税豁免条件，若谈判失败可能影响北美铝贸易流。",
+    "title": "印度煤炭公司考察加纳铝土矿",
+    "summary": "印度正积极寻求海外铝土矿资产，以保障国内铝工业原料供应。",
+    "category": "供应",
+    "direction": "中性",
+    "importance": 3,
+    "source": "GN-铝供应",
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQc3pxdkVUdzd5UXZZTlptYUZWckU4cFE1a19CbVZQODZobFN5VkV3dGRROFpoYVFrcmc5YmJkdDZVYVhiRnR2a2dKbzJ1Mld2c0JJbXZKSUtBZ25sT0hoSTlsSE91d0hDTG5ZLTZrQ1ZIUUxZb0ROdjJrZFRYSFRGZTVQRThLdVh2?oc=5",
+    "published": "2026-08-22T20:06+08:00"
+   },
+   {
+    "title": "美加贸易协议谈判进展",
+    "summary": "美加贸易协议若达成可能避免新关税，需关注其对北美铝贸易流及铝价的潜在影响。",
     "category": "宏观政策",
     "direction": "中性",
     "importance": 3,
@@ -1974,6 +1984,16 @@
    }
   ],
   "铜": [
+   {
+    "title": "力拓上半年利润创新高",
+    "summary": "力拓发布上半年财报，并指出当前全球铜供应链仍处于脆弱状态。",
+    "category": "供应",
+    "direction": "中性",
+    "importance": 4,
+    "source": "GN-铜矿供应",
+    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZWZFWjMxT2hqTkxScnZUT0l4ZG9GbDBveTZsVkNaOWNPRkVOdG13cllhandyWTM2czB6Q1hDNTBFLVYxb2ZwRnFELThUbEd2dDRYTVg5Sk1sNGZDVTNTbWNpb1JJZGlSYWtab1RIQjA1ZGJIMTBhNjBHR2NQUll0UENWdFdiQ1c3Z0RycTl4MzJ1cVF5OW4tcTFJSlFfVXl5Z0pzRkx5bjFhOFBGY0pfV1V5dHRidllrQlFSdURqVUxDSk0?oc=5",
+    "published": "2026-08-22T16:00+08:00"
+   },
    {
     "title": "COMEX铜库存增加",
     "summary": "COMEX铜库存合计增加1235短吨，总库存升至448534短吨。",
@@ -1985,20 +2005,20 @@
     "published": "2026-08-23T08:00+08:00"
    },
    {
-    "title": "力拓上半年利润创新高",
-    "summary": "力拓发布上半年财报，并指出当前全球铜供应链仍处于脆弱状态。",
-    "category": "供应",
+    "title": "Gunnison铜矿展望2027年",
+    "summary": "Gunnison铜矿公布了未来关键催化剂，涉及项目开发进度预期。",
+    "category": "公司项目",
     "direction": "中性",
     "importance": 3,
-    "source": "GN-铜矿供应",
-    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZWZFWjMxT2hqTkxScnZUT0l4ZG9GbDBveTZsVkNaOWNPRkVOdG13cllhandyWTM2czB6Q1hDNTBFLVYxb2ZwRnFELThUbEd2dDRYTVg5Sk1sNGZDVTNTbWNpb1JJZGlSYWtab1RIQjA1ZGJIMTBhNjBHR2NQUll0UENWdFdiQ1c3Z0RycTl4MzJ1cVF5OW4tcTFJSlFfVXl5Z0pzRkx5bjFhOFBGY0pfV1V5dHRidllrQlFSdURqVUxDSk0?oc=5",
+    "source": "GN-铜库存政策",
+    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQOFV5RHpVeWI4RVp2Y2N1RG9BOWM4ZzI2bXB4VF9NT255Uk82aXRpV0IyZlFlQndEOGEyY3lrZ0dINkh5RmpKYTU5aHdHV3RCNjZ1bkJLanJ1TGlqTEhhVDdjSThsQkF4V0FTR0N3bFR3SWRoNTJoamxqVnRvRjNxRUZ2X0l2TzBId01QOVV5ZlRPc3Y2RzlpTzVXMWRGMDM3MTdzRnpZeDloN2VmRVd2d1FlUkI0bTRVZXhJdDV2U3lYb3dZc0JtbUFTSQ?oc=5",
     "published": "2026-08-22T16:00+08:00"
    }
   ],
   "宏观": [
    {
     "title": "美加贸易谈判破裂，关税战升级",
-    "summary": "美国与加拿大之间的贸易谈判正式破裂，双方关税战风险显著上升。",
+    "summary": "美国与加拿大之间的贸易谈判破裂，双方关税冲突进一步升级。",
     "category": "关税与贸易",
     "direction": "利空",
     "importance": 5,
@@ -2007,8 +2027,8 @@
     "published": "2026-08-23T01:49+08:00"
    },
    {
-    "title": "美联储主席Warsh将在杰克逊霍尔发表讲话",
-    "summary": "市场关注美联储主席Warsh在杰克逊霍尔年会上对顽固通胀的政策立场表态。",
+    "title": "美联储主席沃什将在杰克逊霍尔发表讲话",
+    "summary": "市场关注美联储主席沃什在杰克逊霍尔年会的讲话，以明确其应对顽固通胀的政策立场。",
     "category": "货币政策",
     "direction": "中性",
     "importance": 5,
@@ -2017,18 +2037,18 @@
     "published": "2026-08-23T04:00+08:00"
    },
    {
-    "title": "美债收益率飙升至20年高位",
-    "summary": "美国国债收益率升至20年高点，导致欧洲债券市场承压，全球流动性趋紧。",
+    "title": "英国6月工资增长维持4.1%",
+    "summary": "英国6月工资增长保持在4.1%，收入增速超过通胀，减轻了英国央行的加息压力。",
     "category": "经济数据",
-    "direction": "利空",
-    "importance": 5,
-    "source": "GN-美债与美元",
-    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOS2RXLUEybkVMZVdRMVZia0x1OFNfSjQ2TWlnblZVb1F0UGUwb1czWVlzS21XNHJtY2ZUVXg3VjFsalBmRmx4YU42RDR1eHVrcEpPbjZ0NjlpeW5keng5VTJwTGJTbjF3aHRxSUItRWF3WXd4djRYM095V194X2E1UVJNUERLYVF3d2g2bHJvUFo1Tzhad1FjM2NWbTZESTNBYTg2aDZ1VENCXzhkWmRPNWoyeWNoSWVqOF9GTkhWdEVKLU9NUF9z?oc=5",
-    "published": "2026-08-23T16:25+08:00"
+    "direction": "利多",
+    "importance": 4,
+    "source": "GN-央行与全球",
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5HdzBOQWV1cXRKZ2FvN2VTU2pfNWFYczI1TVQyb08ydTVYUEs1VDRSS2dhS0tVQzhjWGtTUUJpektNMXdsX2luMF9FdTZIalRNTjV0US1FQ09tSnp2SmphUXZENUlhNk1CYzl0ZTgzbw?oc=5",
+    "published": "2026-08-23T01:07+08:00"
    },
    {
-    "title": "美国提议下调加拿大铝关税",
-    "summary": "美国贸易代表格里尔提议将加拿大铝产品关税从50%下调至25%，钢铁关税降至25%。",
+    "title": "美国提议下调对加关税",
+    "summary": "美国贸易代表提议将加拿大钢铁关税降至25%，铝关税从50%降至25%，贸易摩擦边际缓和。",
     "category": "关税与贸易",
     "direction": "利多",
     "importance": 4,
@@ -2037,18 +2057,18 @@
     "published": "2026-08-23T05:27+08:00"
    },
    {
-    "title": "野村警告日本面临金融危机风险",
-    "summary": "野村报告指出美国财政部回购计划未能稳住债市，若日本效仿压低融资成本，可能引发资本外流并重蹈1997年金融危机。",
-    "category": "货币政策",
+    "title": "伊朗威胁封锁霍尔木兹海峡",
+    "summary": "针对美国拟议的严厉制裁，伊朗发出封锁能源运输要道霍尔木兹海峡的威胁。",
+    "category": "地缘与能源",
     "direction": "利空",
     "importance": 4,
-    "source": "华尔街见闻",
-    "url": "https://wallstreetcn.com/articles/3780052",
-    "published": "2026-08-23T13:18+08:00"
+    "source": "GN-地缘与能源",
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBPdEtqZXk5V0g0d0tWdnFERlBqTVJnRVlDclJMRk5vT3BpTGVGa3FEa1NvQUpLNVRpWXlxdnNEa2c5VUFfMXVhV2xfVktOeTVnNWRGRktvRXR2eWpxdGlEX1pKU1RQZw?oc=5",
+    "published": "2026-08-23T12:30+08:00"
    },
    {
-    "title": "特朗普称霍尔木兹海峡属美领土",
-    "summary": "特朗普重申霍尔木兹海峡为美国领土，伊朗警告参与制裁者为敌人，地缘冲突风险显著上升。",
+    "title": "特朗普称霍尔木兹海峡为美领土",
+    "summary": "特朗普重申霍尔木兹海峡为美国领土，引发伊朗强烈反弹，地缘风险显著上升。",
     "category": "地缘与能源",
     "direction": "利空",
     "importance": 4,
@@ -2057,52 +2077,42 @@
     "published": "2026-08-23T18:55+08:00"
    },
    {
-    "title": "美联储官员关注高利率，初请失业金人数下降",
-    "summary": "美联储官员倾向维持高利率，同时初请失业金人数下降显示劳动力市场韧性。",
-    "category": "经济数据",
+    "title": "美债回购计划未能平抑收益率",
+    "summary": "美国财政部加倍回购长债未能持续压低收益率，市场担忧通胀及财政赤字问题。",
+    "category": "财政与政治",
     "direction": "利空",
+    "importance": 4,
+    "source": "彭博-Markets",
+    "url": "https://www.bloomberg.com/news/videos/2026-08-23/treasury-buybacks-fail-to-calm-bond-market-video",
+    "published": "2026-08-23T21:26+08:00"
+   },
+   {
+    "title": "欧元在美联储纪要发布后维持强势",
+    "summary": "受美联储会议纪要影响，欧元兑美元汇率保持强劲动能。",
+    "category": "货币政策",
+    "direction": "利多",
     "importance": 3,
     "source": "GN-美联储与利率",
-    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNbFRtSnZkeVR6bjE1ODhObzZwUmtKVXk3VVdGWGZqSk50TWpxbHY1dGtmXzNHRUthcS1zZWpoZGljekMxNFMtYW9mWURTcTFnZzhjY2pzNUlMcVdpNHYyMExrbzRvcHpyMS00dEJGTzN5ZWhaY2Itc00zbVA1R2JvUFhaNFpFdmo0elRQNnhPMDV1NVp2clQwMjg2a2F0UUdxNTRmQjNHSnNSQQ?oc=5",
-    "published": "2026-08-23T01:36+08:00"
+    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPWFJDVGVBanNUYXZ3Ykc4NThfal9HcF9HN3dtSVlNMmVjSzk1YXNBSWhPbnZFN3k0VEEzY0NhTHdPdDdobTZMRXhTM1JneWZ0QmVKa05rUVJscElaOVpsRE9TM0FFOXZDaldHMEdYTXl1ZU82RnVjNUw0X3BpVGpQR2ZIcllGREdfVmVrakFWcVZUSW9kT05lVVk1ejNPbVhyQTYyQm41bGs0VWJVMHFNNVVQdlkxdFF2U2xLLWtUanRMQjhvMlA3TkE5VXZPa3M?oc=5",
+    "published": "2026-08-23T00:02+08:00"
    },
    {
-    "title": "阿里配股800亿港元投向AI",
-    "summary": "阿里巴巴宣布配售800亿港元新股用于AI基础设施建设，获超额认购。",
-    "category": "公司与行业",
-    "direction": "利多",
+    "title": "美国债务突破40万亿美元",
+    "summary": "美国国债总额突破40万亿美元大关，财政压力持续引发市场关注。",
+    "category": "财政与政治",
+    "direction": "利空",
     "importance": 3,
-    "source": "华尔街见闻",
-    "url": "https://wallstreetcn.com/articles/3780075",
-    "published": "2026-08-23T13:34+08:00"
-   },
-   {
-    "title": "美债风暴与人民币资产逻辑",
-    "summary": "分析美债收益率上行背景下，人民币资产作为避险资产的逻辑探讨。",
-    "category": "其他",
-    "direction": "中性",
-    "importance": 3,
-    "source": "华尔街见闻",
-    "url": "https://wallstreetcn.com/articles/3780079",
-    "published": "2026-08-23T15:55+08:00"
-   },
-   {
-    "title": "中石化上半年利润增长19.3%",
-    "summary": "尽管面临伊朗地缘冲突及需求疲软，中石化上半年仍实现利润同比增长19.3%。",
-    "category": "公司与行业",
-    "direction": "利多",
-    "importance": 3,
-    "source": "GN-地缘与能源",
-    "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNV0hPR1JrMFBOb05wQlVBbnlyNmkwQnZHQnpXdWNaRllmT2dpNzFCcDI0allOU1NkOEtjVHBOZVVpb2NOd1VFcXJ6bzN4U0tJUXBXTDJOMEc3ZF82Rm80T3FnWHE1dGxqOHpfZDlIbzloVFg1LTlMTDhrb3ZpYTZpUHV4dklUeEFMaVNxMTZReXJQZExXYjB3UlFaRVdVVk8wOV80ZGV0alljTVc2Q3hRSzhJTWZsb1h5S1lUY2c0Nno?oc=5",
-    "published": "2026-08-23T18:07+08:00"
+    "source": "GN-美债与美元",
+    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5EX2JtRGxUTnYzb0wwNHhoZTB0RlQ4MnZwQzdMYkIxZ0VVbHN1V3Mxd1pGMG1VR0tvaUE0YzVWbEdTamp1RFFiX3dtZGl2cW5oOEVodA?oc=5",
+    "published": "2026-08-23T11:28+08:00"
    }
   ],
   "meta": {
    "weekend": true,
    "window_start": "2026-08-22T16:00+08:00",
-   "window_end": "2026-08-23T21:46+08:00",
-   "raw_count": 685,
-   "dedup_count": 605,
+   "window_end": "2026-08-23T22:01+08:00",
+   "raw_count": 683,
+   "dedup_count": 601,
    "failures": [],
    "llm_cost_usd": 0.0,
    "llm_model": "gemini-3.1-flash-lite"
@@ -2181,32 +2191,32 @@
   ]
  },
  "narration": {
-  "tone": "地缘冲突加剧，商品与美债同步走高",
-  "macro": "昨夜市场呈现典型的避险与通胀预期共振。美加贸易谈判破裂及特朗普关于霍尔木兹海峡的言论，显著推升了地缘政治溢价，直接驱动黄金与铜等大宗商品价格走高。与此同时，美债收益率飙升至20年高位，反映出市场对财政赤字与通胀失控的担忧，野村关于日本金融危机风险的警告进一步加剧了全球流动性紧缩的恐慌。尽管美债收益率上行通常对风险资产构成压制，但原材料板块在避险需求与供给担忧的支撑下逆势领涨，显示出资金正在从流动性敏感的科技股向实物资产进行结构性切换。美联储官员对高利率的坚持与劳动力市场的韧性，使得市场在等待杰克逊霍尔年会上的政策定调，宏观环境正处于利率压力与地缘风险的博弈之中。",
-  "indices": "道指领涨，罗素2000小盘股表现强于纳指，VIX指数回落，显示市场在避险情绪下仍维持一定的风险偏好，并未出现恐慌性抛售。",
-  "rates_fx": "美债收益率全线飙升，美元指数微跌，人民币汇率持稳，利率上行与商品上涨的背离反映了市场对通胀与地缘风险的定价权重高于利率折现。",
-  "sectors": "原材料与医疗保健领涨，公用事业领跌。资金呈现明显的防御性调仓，从利率敏感型行业流向具备抗通胀属性的资源板块。",
-  "movers": "阿里巴巴因配股计划引发市场对股权稀释的担忧，股价大跌。Robinhood与Coinbase受加密货币市场活跃度影响大幅上涨，显示出散户交易情绪的波动。南方铜业与自由港等矿业股随铜价走高，反映了资源端对地缘冲突的敏感反应。",
-  "commodities": "黄金与铜价显著上涨，反映地缘政治溢价。原油表现分化，WTI小幅下跌而布伦特上涨，天然气受地缘担忧支撑走强。"
+  "tone": "地缘冲突推升避险，财政赤字压制债市",
+  "macro": "昨夜市场呈现典型的地缘政治溢价与财政担忧并存特征。伊朗威胁封锁霍尔木兹海峡引发能源供应担忧，叠加特朗普关于该海峡主权的言论，地缘风险显著上升，直接驱动黄金与铜等大宗商品避险及抗通胀属性爆发。与此同时，美国国债总额突破40万亿美元，且财政部加倍回购长债未能有效压低收益率，显示市场对长期财政赤字与通胀粘性的担忧压倒了回购操作的利好。美债收益率全线上行，但并未阻碍原材料板块走强，说明资金正从传统的科技成长股向具备实物资产支撑的板块调仓，以对冲地缘动荡与货币贬值风险。",
+  "indices": "道指领涨，罗素2000小盘股表现稳健，VIX恐慌指数显著回落，显示市场在应对地缘风险时，更倾向于通过配置实物资产而非单纯抛售风险资产来避险。",
+  "rates_fx": "美债收益率全线走高，与黄金大涨形成背离，反映出市场对财政赤字引发的通胀预期已超过对利率敏感性的考量。美元指数微跌，与美债收益率上行出现不自洽。",
+  "sectors": "原材料板块领涨，公用事业板块领跌。资金呈现明显的结构性调仓特征，从防御性公用事业流向具备抗通胀属性的矿业与原材料领域。",
+  "movers": "南方铜业与自由港等矿业股显著走强，直接受益于地缘局势紧张带来的铜价上涨。阿里巴巴大跌，反映出中概股在宏观不确定性下的脆弱性。Marvell科技因半导体板块整体疲软而走低，显示科技成长股在利率上行背景下承压。",
+  "commodities": "黄金与铜价双双大涨，反映地缘风险溢价与抗通胀需求。原油走势分化，WTI原油受贸易摩擦担忧拖累，布伦特原油则受地缘供应威胁支撑。"
  },
  "commentary": {
   "铜": {
-   "tone": "外盘领涨，内盘库存背离",
-   "supply": "力拓发布上半年财报指出，当前全球铜供应链仍处于脆弱状态。COMEX铜库存合计增加1235短吨，总库存升至448534短吨。上期所交易所库存单日减少6974吨，但五日累计增加12429吨，库存变动方向在短周期内存在明显背离，显示现货端流向仍不稳定。",
+   "tone": "外盘领涨，内外盘走势背离",
+   "supply": "力拓发布上半年财报，明确指出当前全球铜供应链仍处于脆弱状态。COMEX铜库存合计增加1235短吨，总库存升至448534短吨。Gunnison铜矿公布了未来关键催化剂，涉及项目开发进度预期。",
    "demand": "消息面无新增需求侧信息。",
-   "market": "COMEX铜收涨1.97%，沪铜主力合约收涨0.68%。铜矿股表现强劲，自由港涨7.64%，南方铜业涨8.69%，泰克资源涨4.59%，哈德贝涨6.79%，Ero Copper涨9.44%。美股标普500上涨0.43%，VIX恐慌指数下跌5.5%，美元指数微跌0.06%。内外盘价格走势同步上行，但上期所库存五日累库与单日去库的背离，暗示近端现货压力尚未完全出清。",
-   "conclusion": "当前主导矛盾为海外宏观情绪回暖带动铜矿股与铜价共振。若上期所库存五日累库趋势转为持续去库，近端压制解除，背离将向铜价方向收敛；若五日累库持续扩大，则表明内盘现货需求疲软，铜价上行空间将受限。"
+   "market": "沪铜收报107740.0 CNY/t，涨幅0.68%，持仓181026手。COMEX铜收报14521.85 USD/t，涨幅1.97%。上期所库存单日减少6974.0吨，但五日累计增加12429吨。铜矿股全线大涨，自由港涨7.64%，南方铜业涨8.69%，泰克资源涨4.59%，哈德贝涨6.79%，Ero Copper涨9.44%。标普500涨0.43%，VIX指数跌5.5%，美元指数跌0.06%。",
+   "conclusion": "当前主导矛盾为海外宏观情绪回暖与矿端供应脆弱性带来的估值修复。盘面呈现外盘强于内盘、股票强于商品的特征。若上期所库存五日累库转为持续去库，近端压制解除，背离将向铜价方向收敛；若COMEX库存持续累库且铜矿股涨幅回撤，则上述反弹逻辑失效。"
   },
   "铝": {
    "tone": "库存去化加速，铝价震荡偏强",
-   "supply": "上半年铝土矿进口量增长17.5%，在电解铝产能天花板限制下，原料供应维持充裕状态。氧化铝交易所库存单日增加3006吨，但五日累计减少16168吨，显示短期供应压力有所缓解。美加贸易协议谈判涉及关税豁免条件，若谈判失败可能影响北美铝贸易流，供应端存在潜在扰动。",
+   "supply": "上半年铝土矿进口量增长17.5%，尽管国内存在4500万吨产能天花板，但原料供应整体维持充足态势。印度煤炭公司近期考察加纳铝土矿资产，显示全球铝工业正积极寻求海外资源保障。美加贸易协议谈判进展中，若协议达成有望避免新关税，市场正评估其对北美铝贸易流的潜在影响。",
    "demand": "消息面无新增需求侧信息。",
-   "market": "沪铝收报23835元/吨，涨幅0.91%；氧化铝收报2711元/吨，涨幅0.97%。上期所铝库存单日减少11030吨，五日累计减少23642吨，库存去化趋势一致，支撑盘面表现。美股标普500上涨0.43%，VIX恐慌指数下跌5.5%，宏观情绪回暖，美元指数微跌0.06%。",
-   "conclusion": "当前主导矛盾为交易所库存持续去化带来的现货支撑。若五日累库转为持续去库，近端压制解除，背离将向铜价方向收敛。若后续交易所库存出现单日大幅累库且五日累计转正，则当前去库逻辑失效，铝价上涨动能将显著减弱。"
+   "market": "沪铝收涨0.91%，报23835 CNY/t，持仓量267034手。上期所铝库存单日减少11030吨，五日累计减少23642吨，去库趋势一致。氧化铝收涨0.97%，报2711 CNY/t，虽单日库存增加3006吨，但五日累计减少16168吨。标普500上涨0.43%，VIX恐慌指数下跌5.5%，宏观情绪回暖。",
+   "conclusion": "当前主导矛盾在于交易所库存的持续去化支撑现货价格。若氧化铝库存转为持续累库，或铝锭去库趋势中断，则当前偏强走势将面临修正。"
   }
  },
  "meta": {
-  "generated_at": "2026-08-23T21:49:02+08:00",
+  "generated_at": "2026-08-23T22:04:13+08:00",
   "cost_usd": 0
  }
 }
