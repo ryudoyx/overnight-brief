@@ -188,18 +188,17 @@
    {
     "sym": "DX-Y.NYB",
     "name": "美元指数",
-    "close": 101.92,
-    "prev_close": 102.1,
-    "chg": -0.18,
-    "chg_pct": -0.17,
-    "session_date": "2026-10-02",
-    "prev_session_date": "2026-10-01",
-    "quote_at": "2026-10-02T16:59-04:00",
-    "span_days": 1,
+    "close": 101.95,
+    "prev_close": 101.93,
+    "chg": 0.02,
+    "chg_pct": 0.02,
+    "session_date": "2026-10-04",
+    "prev_session_date": "2026-10-02",
+    "quote_at": "2026-10-04T20:44-04:00",
+    "span_days": 2,
     "volume": null,
     "vol_ratio": null,
     "spark": [
-     100.43,
      100.6,
      101.1,
      101.29,
@@ -208,20 +207,21 @@
      101.37,
      101.45,
      102.1,
-     101.924
+     101.93,
+     101.948
     ]
    },
    {
     "sym": "CNY=X",
     "name": "美元兑人民币",
-    "close": 6.6987,
+    "close": 6.6963,
     "prev_close": 6.7045,
-    "chg": -0.0058,
-    "chg_pct": -0.09,
-    "session_date": "2026-10-03",
+    "chg": -0.0082,
+    "chg_pct": -0.12,
+    "session_date": "2026-10-05",
     "prev_session_date": "2026-10-02",
-    "quote_at": "2026-10-03T22:32+01:00",
-    "span_days": 1,
+    "quote_at": "2026-10-05T01:52+01:00",
+    "span_days": 3,
     "volume": null,
     "vol_ratio": null,
     "spark": [
@@ -234,7 +234,7 @@
      6.703,
      6.7045,
      6.7045,
-     6.6987
+     6.6963
     ]
    }
   ],
@@ -250,8 +250,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 7296894,
-    "vol_ratio": 1.14,
+    "volume": 7328587,
+    "vol_ratio": 1.15,
     "spark": [
      596.03,
      607.46,
@@ -584,18 +584,17 @@
    {
     "sym": "GC=F",
     "name": "COMEX 黄金",
-    "close": 4162.3,
-    "prev_close": 4202.3,
-    "chg": -40.0,
-    "chg_pct": -0.95,
-    "session_date": "2026-10-02",
-    "prev_session_date": "2026-10-01",
-    "quote_at": "2026-10-02T16:59-04:00",
-    "span_days": 1,
-    "volume": 164881,
-    "vol_ratio": 0.95,
+    "close": 4181.1,
+    "prev_close": 4162.3,
+    "chg": 18.8,
+    "chg_pct": 0.45,
+    "session_date": "2026-10-04",
+    "prev_session_date": "2026-10-02",
+    "quote_at": "2026-10-04T20:44-04:00",
+    "span_days": 2,
+    "volume": 6772,
+    "vol_ratio": 0.04,
     "spark": [
-     4383.8999,
      4376.3999,
      4318.3999,
      4298.0,
@@ -604,25 +603,25 @@
      4179.7002,
      4186.7002,
      4202.2998,
-     4162.3
+     4162.2998,
+     4181.1
     ],
     "unit": "USD/oz"
    },
    {
     "sym": "SI=F",
     "name": "COMEX 白银",
-    "close": 60.41,
-    "prev_close": 60.72,
-    "chg": -0.31,
-    "chg_pct": -0.51,
-    "session_date": "2026-10-02",
-    "prev_session_date": "2026-10-01",
-    "quote_at": "2026-10-02T16:59-04:00",
-    "span_days": 1,
-    "volume": 38696,
-    "vol_ratio": 168.46,
+    "close": 61.44,
+    "prev_close": 59.98,
+    "chg": 1.46,
+    "chg_pct": 2.43,
+    "session_date": "2026-10-04",
+    "prev_session_date": "2026-10-02",
+    "quote_at": "2026-10-04T20:43-04:00",
+    "span_days": 2,
+    "volume": 1907,
+    "vol_ratio": 8.0,
     "spark": [
-     65.825,
      65.932,
      64.382,
      63.457,
@@ -631,25 +630,25 @@
      60.668,
      60.098,
      60.725,
-     60.415
+     59.977,
+     61.435
     ],
     "unit": "USD/oz"
    },
    {
     "sym": "HG=F",
     "name": "COMEX 铜",
-    "close": 14438.07,
-    "prev_close": 14290.36,
-    "chg": 147.71,
-    "chg_pct": 1.03,
-    "session_date": "2026-10-02",
-    "prev_session_date": "2026-10-01",
-    "quote_at": "2026-10-02T16:59-04:00",
-    "span_days": 1,
-    "volume": 34321,
-    "vol_ratio": 21.89,
+    "close": 14561.53,
+    "prev_close": 14312.41,
+    "chg": 249.12,
+    "chg_pct": 1.74,
+    "session_date": "2026-10-04",
+    "prev_session_date": "2026-10-02",
+    "quote_at": "2026-10-04T20:44-04:00",
+    "span_days": 2,
+    "volume": 1126,
+    "vol_ratio": 0.71,
     "spark": [
-     14741.2093,
      14902.1467,
      14722.4698,
      14811.7574,
@@ -658,25 +657,25 @@
      14425.948,
      14460.1198,
      14290.3635,
-     14438.0735
+     14312.4103,
+     14561.5324
     ],
     "unit": "USD/t"
    },
    {
     "sym": "CL=F",
     "name": "WTI 原油",
-    "close": 91.11,
-    "prev_close": 92.87,
-    "chg": -1.76,
-    "chg_pct": -1.9,
-    "session_date": "2026-10-02",
-    "prev_session_date": "2026-10-01",
-    "quote_at": "2026-10-02T17:00-04:00",
-    "span_days": 1,
-    "volume": 326828,
-    "vol_ratio": 0.99,
+    "close": 90.75,
+    "prev_close": 91.11,
+    "chg": -0.36,
+    "chg_pct": -0.4,
+    "session_date": "2026-10-04",
+    "prev_session_date": "2026-10-02",
+    "quote_at": "2026-10-04T20:44-04:00",
+    "span_days": 2,
+    "volume": 6816,
+    "vol_ratio": 0.02,
     "spark": [
-     95.78,
      94.59,
      92.16,
      94.61,
@@ -685,25 +684,25 @@
      89.38,
      90.42,
      92.87,
-     91.11
+     91.11,
+     90.75
     ],
     "unit": "USD/bbl"
    },
    {
     "sym": "BZ=F",
     "name": "布伦特原油",
-    "close": 102.25,
-    "prev_close": 102.31,
-    "chg": -0.06,
-    "chg_pct": -0.06,
-    "session_date": "2026-10-02",
-    "prev_session_date": "2026-10-01",
-    "quote_at": "2026-10-02T16:59-04:00",
-    "span_days": 1,
-    "volume": 52249,
-    "vol_ratio": 1.09,
+    "close": 102.1,
+    "prev_close": 102.25,
+    "chg": -0.15,
+    "chg_pct": -0.15,
+    "session_date": "2026-10-04",
+    "prev_session_date": "2026-10-02",
+    "quote_at": "2026-10-04T20:41-04:00",
+    "span_days": 2,
+    "volume": 1311,
+    "vol_ratio": 0.03,
     "spark": [
-     100.34,
      99.25,
      103.08,
      106.6,
@@ -712,25 +711,25 @@
      102.59,
      103.53,
      102.31,
-     102.25
+     102.25,
+     102.1
     ],
     "unit": "USD/bbl"
    },
    {
     "sym": "NG=F",
     "name": "天然气",
-    "close": 3.035,
-    "prev_close": 2.967,
-    "chg": 0.068,
-    "chg_pct": 2.29,
-    "session_date": "2026-10-02",
-    "prev_session_date": "2026-10-01",
-    "quote_at": "2026-10-02T16:59-04:00",
-    "span_days": 1,
-    "volume": 178518,
-    "vol_ratio": 1.09,
+    "close": 3.028,
+    "prev_close": 3.035,
+    "chg": -0.007,
+    "chg_pct": -0.23,
+    "session_date": "2026-10-04",
+    "prev_session_date": "2026-10-02",
+    "quote_at": "2026-10-04T20:44-04:00",
+    "span_days": 2,
+    "volume": 3465,
+    "vol_ratio": 0.02,
     "spark": [
-     2.836,
      2.965,
      3.023,
      3.297,
@@ -739,7 +738,8 @@
      3.011,
      3.026,
      2.967,
-     3.035
+     3.035,
+     3.028
     ],
     "unit": "USD/MMBtu"
    }
@@ -1135,8 +1135,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 6223348,
-    "vol_ratio": 0.98,
+    "volume": 6771517,
+    "vol_ratio": 1.06,
     "spark": [
      79.3,
      80.35,
@@ -1162,8 +1162,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 134470648,
-    "vol_ratio": 1.22,
+    "volume": 135167817,
+    "vol_ratio": 1.23,
     "spark": [
      227.38,
      228.87,
@@ -1189,8 +1189,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 19323673,
-    "vol_ratio": 0.86,
+    "volume": 19865309,
+    "vol_ratio": 0.88,
     "spark": [
      615.52,
      623.77,
@@ -1216,8 +1216,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 94956744,
-    "vol_ratio": 0.85,
+    "volume": 95401476,
+    "vol_ratio": 0.86,
     "spark": [
      121.78,
      123.86,
@@ -1243,8 +1243,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 26523742,
-    "vol_ratio": 1.01,
+    "volume": 27337514,
+    "vol_ratio": 1.04,
     "spark": [
      1043.96,
      1096.16,
@@ -1270,8 +1270,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 24509128,
-    "vol_ratio": 0.91,
+    "volume": 24639562,
+    "vol_ratio": 0.92,
     "spark": [
      362.66,
      364.54,
@@ -1324,8 +1324,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 14725646,
-    "vol_ratio": 0.83,
+    "volume": 15905528,
+    "vol_ratio": 0.89,
     "spark": [
      257.38,
      262.36,
@@ -1351,8 +1351,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 5880656,
-    "vol_ratio": 1.0,
+    "volume": 5902359,
+    "vol_ratio": 1.01,
     "spark": [
      322.9,
      333.2,
@@ -1378,8 +1378,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 4663824,
-    "vol_ratio": 0.97,
+    "volume": 4735853,
+    "vol_ratio": 0.98,
     "spark": [
      954.49,
      945.67,
@@ -1432,8 +1432,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 10556496,
-    "vol_ratio": 1.18,
+    "volume": 10666036,
+    "vol_ratio": 1.19,
     "spark": [
      187.27,
      192.56,
@@ -1513,8 +1513,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 42778087,
-    "vol_ratio": 1.13,
+    "volume": 44497408,
+    "vol_ratio": 1.17,
     "spark": [
      41.2,
      41.54,
@@ -1540,8 +1540,8 @@
     "prev_session_date": "2026-10-01",
     "quote_at": "2026-10-02T16:00-04:00",
     "span_days": 1,
-    "volume": 22743288,
-    "vol_ratio": 0.75,
+    "volume": 23591620,
+    "vol_ratio": 0.77,
     "spark": [
      85.43,
      86.76,
@@ -1564,7 +1564,7 @@
      "close": 449.04,
      "chg_pct": 8.0,
      "market_cap": 70203252736,
-     "volume": 3357703
+     "volume": 3401925
     },
     {
      "sym": "HPE",
@@ -1580,7 +1580,7 @@
      "close": 158.96,
      "chg_pct": 7.35,
      "market_cap": 2095375843328,
-     "volume": 119274773
+     "volume": 119859134
     },
     {
      "sym": "STM",
@@ -1596,7 +1596,7 @@
      "close": 94.25,
      "chg_pct": 6.8,
      "market_cap": 27409393664,
-     "volume": 4941992
+     "volume": 4943908
     },
     {
      "sym": "MTSI",
@@ -1604,14 +1604,14 @@
      "close": 321.6,
      "chg_pct": 6.62,
      "market_cap": 24560891904,
-     "volume": 1351025
+     "volume": 1352114
     },
     {
      "sym": "ASX",
      "name": "ASE Technology Holding Co., Ltd",
      "close": 47.45,
      "chg_pct": 6.08,
-     "market_cap": 123543928832,
+     "market_cap": 104333811712,
      "volume": 8066598
     },
     {
@@ -1620,7 +1620,7 @@
      "close": 84.89,
      "chg_pct": 6.01,
      "market_cap": 33049257984,
-     "volume": 22883034
+     "volume": 22908331
     }
    ],
    "down": [
@@ -1630,7 +1630,7 @@
      "close": 415.29,
      "chg_pct": -10.22,
      "market_cap": 149729050624,
-     "volume": 24651005
+     "volume": 24768458
     },
     {
      "sym": "STX",
@@ -1638,7 +1638,7 @@
      "close": 848.99,
      "chg_pct": -10.21,
      "market_cap": 193054392320,
-     "volume": 13521412
+     "volume": 13577249
     },
     {
      "sym": "ACN",
@@ -1654,7 +1654,7 @@
      "close": 541.7,
      "chg_pct": -5.19,
      "market_cap": 23233888256,
-     "volume": 945685
+     "volume": 1117874
     },
     {
      "sym": "ALNY",
@@ -1662,7 +1662,7 @@
      "close": 219.72,
      "chg_pct": -4.96,
      "market_cap": 29400539136,
-     "volume": 1661624
+     "volume": 1661854
     },
     {
      "sym": "APP",
@@ -1670,7 +1670,7 @@
      "close": 268.22,
      "chg_pct": -4.65,
      "market_cap": 90105700352,
-     "volume": 8862212
+     "volume": 8968978
     },
     {
      "sym": "CTSH",
@@ -1678,7 +1678,7 @@
      "close": 58.51,
      "chg_pct": -3.89,
      "market_cap": 26355490816,
-     "volume": 6979143
+     "volume": 7001895
     },
     {
      "sym": "SNDK",
@@ -1686,7 +1686,7 @@
      "close": 1719.99,
      "chg_pct": -3.79,
      "market_cap": 251839234048,
-     "volume": 8141704
+     "volume": 8191520
     }
    ]
   },
@@ -1694,18 +1694,17 @@
    "comex": {
     "sym": "HG=F",
     "name": "COMEX 铜",
-    "close": 14438.07,
-    "prev_close": 14290.36,
-    "chg": 147.71,
-    "chg_pct": 1.03,
-    "session_date": "2026-10-02",
-    "prev_session_date": "2026-10-01",
-    "quote_at": "2026-10-02T16:59-04:00",
-    "span_days": 1,
-    "volume": 34321,
-    "vol_ratio": 21.89,
+    "close": 14561.53,
+    "prev_close": 14312.41,
+    "chg": 249.12,
+    "chg_pct": 1.74,
+    "session_date": "2026-10-04",
+    "prev_session_date": "2026-10-02",
+    "quote_at": "2026-10-04T20:44-04:00",
+    "span_days": 2,
+    "volume": 1126,
+    "vol_ratio": 0.71,
     "spark": [
-     14741.2093,
      14902.1467,
      14722.4698,
      14811.7574,
@@ -1714,7 +1713,8 @@
      14425.948,
      14460.1198,
      14290.3635,
-     14438.0735
+     14312.4103,
+     14561.5324
     ],
     "unit": "USD/t"
    },
@@ -1864,266 +1864,228 @@
    ]
   },
   "meta": {
-   "generated_at": "2026-10-04T00:36:08+00:00",
+   "generated_at": "2026-10-05T00:54:35+00:00",
    "session_date": "2026-10-02"
   }
  },
  "news": {
   "AI": [
    {
-    "title": "英伟达锁定2027年三分之一存储产能",
-    "summary": "英伟达通过大规模资本运作锁定2027年存储芯片供应，显示其对未来算力扩张的持续高投入，将加剧HBM等高端存储供应紧张。",
+    "title": "台积电CEO称AI芯片短缺将持续",
+    "summary": "台积电CEO明确表示AI芯片供应紧张局面短期内无法缓解，凸显产能瓶颈。",
     "category": "供应",
     "direction": "利多",
     "importance": 5,
     "source": "GN-AI芯片",
-    "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQNW1JbFhLeUViVmZsYzcwN1ZsM1ZQOXQwQU1Lc0JCRVNmRzRhdHRneTRGVGdwbEtZUktzQzhFNFRqcFFFWU9KZTdJdEpHZUJDMk4zall3QVBUU2VhY2N3YmE5Y0ZJZzFtdWxpYXc3NnV6SEJXeGo0NkhEOHFjVzc2Qm9JenhRR09aU1hYbU5rTTVhQUZTZ1RLbDZYWjQ0UXJTLXFPWGYwWkpQcFg3R24xVGtlME1rWkVvYXJ2Qk85UkNpY3BDcjVEd2VSYldVWV9vN2hGMWUxLXVIOWpqSnlTcjFxMzdzbklNaGVF?oc=5",
-    "published": "2026-10-03T16:10+08:00"
+    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbU5KOHVZT19qRTNCVzJLRDF4UjNCZ3JaeFBUZVM0TDBzY2tHYU9fTDVnajFaOWhOb2xrZUVBZnRDbXJoVnhBNWNOUmN2WFZ3X3d6VVdjcXU4am9yTFBwNEVfdWI0cm5Bd2F3VmN5QXB5X1NWX2JCV3NsZ1JzNHVITHF6X0lJVFdPLVFXQjRwdTBUb2dZVFg2V19xNDFid2V4OURuM2RkdUFTT0RVR0lCYUk4enJxQ3Zm?oc=5",
+    "published": "2026-10-04T18:38+08:00"
    },
    {
-    "title": "ASML警告过度管制将催生竞争对手",
-    "summary": "ASML CEO警告称，对华出口管制若过度，将迫使中国自主研发并催生竞争对手，影响全球半导体供应链格局。",
+    "title": "英伟达应对走私案及出口管制压力",
+    "summary": "英伟达正评估违约保险，以应对芯片走私案件对出口管制政策执行带来的挑战。",
     "category": "宏观政策",
     "direction": "利空",
     "importance": 4,
     "source": "GN-AI芯片",
-    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQUF9uUHJ3UVY4Ymx5VHY1NGJja1dleDRacHNyYk9uMDBKNHhVTnBvb0lydjh5RUY0V252OV9XR1hGMzMzdWhyZ1J0ZEttNFRqMWp2XzVVQmRIbF9hT3A0d0YzUnNKV1ZFbmFwWU82SHRjYVpUT0R6WkZ4aUdMaGJyOW1PVmZoZVFDWVpKQi1US2p6dzhYcElWWTJ6NmItOV84Um1LWTlFZGxiNkJET3dreUxwVFFCTWNzLUlhdURpSQ?oc=5",
-    "published": "2026-10-03T18:35+08:00"
+    "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNallwME9TZ2tMWjVpYWFoVVJvY2t0MlNHUzFETDZBdnBxUFIzcGpnWk5EOWFHY3lFUFVvaFdaclN4c2RUc0V5bHQzc0JTMGhaM3lHZEhDenk2ZkRwREQzbFcwTHAzYVc4T2lmWW4wVWNERFpJaHh3eEFObTJwbzlKWktYS0xReXpzc08yUDdXVG9FMVBLcVlBOVZTMHMxd2tSU3drMEZHQ2RmZS1iN2NUaGV3eWFiRXhJLVZCbGhpbFZKVkFLV2UyLWZDMnVUYmtVdi02aU8ydlF4bWM?oc=5",
+    "published": "2026-10-04T18:30+08:00"
    },
    {
-    "title": "马斯克确认与台积电探讨Terafab合作",
-    "summary": "马斯克确认正与台积电讨论Terafab芯片制造合作，该项目将专供特斯拉、SpaceX及xAI使用。",
+    "title": "HPE因英伟达Vera CPU服务器订单上涨",
+    "summary": "HPE股价上涨7%，反映市场对其采用英伟达Vera CPU服务器架构的积极预期。",
     "category": "公司项目",
     "direction": "利多",
     "importance": 4,
     "source": "GN-AI芯片",
-    "url": "https://news.google.com/rss/articles/CBMiygJBVV95cUxNeXItamxLWmIyc21RQWhkVFlValdBRFZZWF9aamZYcmZrdFBXM1BZSHAzZFhydlFHcUNpMlE3bV83dlJLZ0ZIQnZtWGFuNmp4Vzh1QVA2WFFFZk5faHU2U0ZyZlE0RzJxdWplX3pFTm1QTVdibHZTMUZFOHRmTGFjWk1XRnQtSVFLTmpoVjd1cV9HR3dlRDB1TW5jdnpIMk9WZjJhUFRINXFqMWFlNjFVNldTUWxxQk1zeXJlQ1lwRzNaOHpZemdEaWNtUnd3RXdCSEpuNWphVWxuMXZpeGM5cXBYaUlRU0dVVnpGaUF1d09pMWM5MkhQY2FWQnlWeHROQ2RibUZwWVY4VXNtS1JjZ0lzZGZWS183UjZpZVJfZU9UV0NKa05Oam1SY2JNeFhMWjd5RTdYNmVnQWUzZ0lrb21GaVJpR2lWTGc?oc=5",
-    "published": "2026-10-03T22:50+08:00"
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB0LWtBaDUwaU5aZVNSRFk3dG02cW5YQms2VUktQTFJdTIya2l4ZTBVZFdxdXp0RUxSQ2pjb1FXTWdUTWpqWjVSd1RMLWJnckJUaHBtc1RRVDhydHF6dTNnSk9LZVQxSXRPX2Mw?oc=5",
+    "published": "2026-10-04T20:28+08:00"
    },
    {
-    "title": "钇供应链短缺与中国出口管制",
-    "summary": "钇作为半导体及高科技制造关键材料，受出口管制影响可能加剧供应紧张，影响产业链稳定性。",
+    "title": "特朗普成立超级智能特别工作组",
+    "summary": "美国政府成立SIF工作组以协调AI企业、基础设施与联邦政府间的合作，旨在加强对AI产业的监管与引导。",
     "category": "宏观政策",
-    "direction": "利空",
-    "importance": 4,
-    "source": "GN-关税与贸易",
-    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQbDFzX08zdDRHVVV1amFBZWExc253aU1ZQUdDWWp0aEl0ZWhjTG8tNHdNTldrWk5DVjhYYkJ0eU5FaURkSVhObURoNmFGUzF2d0ZQanJCRDhoWlZETVp6U2R1MDFGSGdMcEY0WUxabEN2Y1RTUHhEU25GSklWV05rYnZ2bUg4dw?oc=5",
-    "published": "2026-10-04T02:50+08:00"
-   },
-   {
-    "title": "英伟达GPU关键矿产供应链解析",
-    "summary": "详细梳理了GPU生产所需的关键矿产资源，对理解AI硬件供应瓶颈具有重要参考价值。",
-    "category": "供应",
     "direction": "中性",
     "importance": 4,
-    "source": "GN-AI芯片",
-    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQOW9OcnVocFI5bUdyODJsNDE2SlZMSnc5anJQZ05mQjlKbnAtV1RZQ3hFVGtTRDBLM0lDX0xiR25LNDNiRENoVVNDRjlnakZ5eTZoeUlBNE1zZXBfVDMwNnRTQ0VhSWRjT3FkTmZJakgxMXB3YzQ5R09zbzdrTldyWGVvcmM?oc=5",
-    "published": "2026-10-04T03:09+08:00"
+    "source": "TG-WalterBloomberg",
+    "url": "https://t.me/s/WalterBloomberg",
+    "published": "2026-10-04T21:36+08:00"
    },
    {
-    "title": "台积电考虑在德州新建晶圆厂",
-    "summary": "继亚利桑那州2650亿美元投资后，台积电正评估在德州进一步扩产的可能性。",
-    "category": "公司项目",
+    "title": "台积电Q3财报预期强劲",
+    "summary": "台积电预计将公布强劲的三季度业绩，反映出全球AI芯片代工需求依然旺盛。",
+    "category": "供应",
     "direction": "利多",
     "importance": 4,
     "source": "GN-AI芯片",
-    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8xMXlqSWF4M3otR0dOLXl5ZmhJNkhIX0cyeWdpbDV3QmNNUktCWkZoYU5vRlNuM0NvYzMwanZ1SDdnS3FBRlZrbnJRcmxCVDJkQ3RYSW5QaFkxcWFDRG5CTzNnbWNGVTZVZVNYRnJn?oc=5",
-    "published": "2026-10-04T05:48+08:00"
-   },
-   {
-    "title": "AI数据中心支出或将突破30万亿美元",
-    "summary": "市场预测AI驱动的数据中心资本开支规模巨大，反映了长期电力与基础设施建设的强劲需求。",
-    "category": "需求",
-    "direction": "利多",
-    "importance": 4,
-    "source": "GN-AI资本开支",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBQYno4M3VRaUlXVENuVTlVeUY3a2lhS3JPRGR6aEc0SEFiVThZRHJxYWtfTzcxMXkxaHY1TGRzc1BVWnJiTWp5Q1dXeC14WWd6aEFuQ3VEam1kNEZWZE5VSXNTRnNpdmRZ?oc=5",
-    "published": "2026-10-04T06:27+08:00"
-   },
-   {
-    "title": "Volusia县拟拒绝数据中心项目",
-    "summary": "Volusia县计划拒绝数据中心建设申请，显示地方政府对数据中心带来的资源消耗持审慎态度。",
-    "category": "需求",
-    "direction": "利空",
-    "importance": 3,
-    "source": "GN-AI资本开支",
-    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOeEw3Qlp1RFRIdTZuWEhZeDhHNVhUOVZTQkpKWHFTd1pPUkxBbXhxRnVJRkNHZXZlVExzUVFTVmlBLWktLXJTSlF3WVIxRGttTjJVR1ZPVy02OUZ4U2tUQ1B6QUxRNTFnQ2VYeENkQ212SFg4RmE5TGtUMHZGV29VNmxaYkd1aXg1T2R6OEhoQzZfNHgzU0RZZ3k2ckptMl9TdjVsdUhKdVlkb0NUenNmcDFLa3FOdw?oc=5",
-    "published": "2026-10-03T17:03+08:00"
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOdVlaOERJVEhWYk9GZzl6UW50Ni1XbjJ2YTNZRWNvT3laUTJzanBfbjVVemV1QmFnZm5zSXdsR195UmxlRWZMWkl2MXMwN3VTbi02ZEREaE9yLTh3T19zNzJuaWJFQmk5Tkt6Z0xoMkpHNDRzbzdMcDY0d0xjdWs5QTZyc3hzVDhCc01CbmRKcmUwM0x2?oc=5",
+    "published": "2026-10-04T22:46+08:00"
    }
   ],
   "铝": [
    {
-    "title": "Aughinish氧化铝厂面临出口审查",
-    "summary": "欧盟正在审查对俄氧化铝出口，Aughinish作为关键供应商寻求支持，若出口受限将影响全球氧化铝贸易平衡。",
-    "category": "供应",
-    "direction": "利多",
+    "title": "节后库存累积，铝价承压",
+    "summary": "光伏组件交付支撑短期边框需求，但节后库存累积及需求走弱风险导致铝价面临下行压力。",
+    "category": "需求",
+    "direction": "利空",
     "importance": 4,
     "source": "GN-铝供应",
-    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQeXJNdVU4ODRHWHgzRTA2WTFGdE5xSnZUQmdnZ2gyVGl1eGlPYlVFRGg2cHdkMDhvQk9FQ1FseXhKaDlsNEFuUjAwQ3JyX21yc0RhbUxER2ozNGdKYmNxMjMzaTBtMTdDSmUtNTZVZmdhZGRCZnk3bnU3TXgxR3hjTWVpaW1Cal9wUDZIcVZmU0tEazJtSmgtanNFNDBIVjZjZWtYUXUzanNjUWNKLU1HXw?oc=5",
-    "published": "2026-10-03T18:38+08:00"
+    "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNU29HTGFLeDFETlNXem4xQmlGN2dJMEJCNWdJVTFqdXFyTTdrZDhDVktQSS1PaExfaFFldDFYZlcydU9HSWNyajN0bFU5RE5LOHBkdjAzaDhxdjBYY3RLaDZXTm5fUVNsLXNWUUhYNzVQaXYyNnN5Yjd4RHJOQ2xrYXdXODRBcFQxQkFSMko4ZzJTbkVVTWtfUk5RUVE1dGw4ajN6TGtxbDVlWjBKLWlrTG1SeGJ1eENUV0VVNmVwVzBjQ3I5dDFsakhSMGlNVF9jZDBkeDJobFFRZEI4RkhlVE1HTXhMUU83Ujdlc3M3QVlYS192NVluX1BsY2Jzb0cyQUNRZy1FN1JvdEVm?oc=5",
+    "published": "2026-10-04T17:24+08:00"
    },
    {
-    "title": "Vedanta铝业二季度产量创新高",
-    "summary": "得益于冶炼厂扩建和氧化铝产能爬坡，Vedanta铝业2027财年二季度产量创历史新高。",
+    "title": "韦丹塔铝业二季度产量创新高",
+    "summary": "韦丹塔铝业2027财年二季度产量达到64.9万吨，创历史新高，显示供应端压力增加。",
     "category": "供应",
     "direction": "利空",
-    "importance": 3,
+    "importance": 4,
     "source": "GN-铝供应",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9QdTQxUXhwdWxiaHJpR3FLaEEyTnVZX0s0clR6SVFhbkZHODZLV3hqYTdMYmlSb0JvcFB2ZlV5WWFqbUdfVXNzUGR5Q3g4MEZmX041NnQwckZNd3hLN3RB?oc=5",
-    "published": "2026-10-04T05:55+08:00"
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPMXRlZ2F1dkd4eW1WOTgxVl9LX1IwU0p1d2RhU0tqWEN1bnpERmhHTE5xX1I3b21YREJQV3JmSV9fOGp2Y0FncDUwYlVTN2o3R3BYR3pwSWhVempYdkd3dDhXRlAwTzNiQ2tBWVAyaWg0T1RYWERsWFJsWWZma21mSlA3TVhSSWhzaVJ2S3VwMmxhV0swOEo1OVFWM0hyOWJJYTRR0gGjAUFVX3lxTE8xdGVnYXV2R3h5bVY5ODFWX0tfUjBTSnV3ZGFTS2pYQ3VuekRGaEdMTnFfUjdvbVhEQlBXcmZJX184anZjQWdwNTBiVVM3ajdHcFhHenBJaFV6alh2R3d0OFdGUDBPM2JDa0FZUDJpaDRPVFhYRGxYUmxZZmZrbWZKUDdNWFJJaHNpUnZLdXAybGFXSzA4SjU5UVYzSHI5YklhNFE?oc=5",
+    "published": "2026-10-04T20:00+08:00"
    },
    {
-    "title": "安得拉邦支持斯里卡库拉姆铝冶炼厂计划",
-    "summary": "印度安得拉邦政府支持在斯里卡库拉姆建设铝冶炼厂，并计划与奥里萨邦的氧化铝供应联动，长期增加供应预期。",
-    "category": "公司项目",
-    "direction": "利空",
+    "title": "铝行业连续两年创产量纪录",
+    "summary": "马来西亚铝行业受需求驱动，连续第二年实现产量增长，反映出区域性铝供应扩张趋势。",
+    "category": "供应",
+    "direction": "利多",
     "importance": 3,
     "source": "GN-铝供应",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPc21tZjY1MDBBR2FZNzJ6Mk1HaHg1Rm9KVEY0b2s3Z2c3aG5lMXhaVDY3dHFvWEt1aEtWS2ZqOVZMWDcxR040MFFPdzZXRlV3Y0t2S2p1eFF4VnU1cFlaV0todi1zVTJtUXNWcEtFUi1keERvTUFLWDJWTElud21QSllZT0g5OE5UNVRxVEdhaFd4ZTFpTkFkbFRxbWsyRW81LURhTXItdHAtSVZWTVBJSzBTSklJbFU?oc=5",
-    "published": "2026-10-04T06:25+08:00"
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9UQnNTc2dqXzJkTjZOSjdmenFCaUM2RURGbXJnZWd1eHdEOVhGelpoZGoyXzNxLXFvdmlOTEtXd3k2SGJWNHZ6aGNuYjEteHgw?oc=5",
+    "published": "2026-10-05T00:00+08:00"
    }
   ],
   "铜": [
    {
-    "title": "必和必拓Escondida铜矿罢工风险上升",
-    "summary": "Escondida铜矿面临罢工风险，市场担忧供应中断，推动相关资产价格波动。",
+    "title": "美国铜库存引发供应紧缺担忧",
+    "summary": "市场对美国铜库存水平及潜在的供应短缺风险表示担忧。",
     "category": "供应",
     "direction": "利多",
-    "importance": 4,
-    "source": "GN-铜供应中断",
-    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNYVRJcHQ2SUpwVHpQOWRMWjFCNTMxV0hKTWFtdURHWWZEN0xlbVo2dHRQaUVQckNkSXU4LWFlTS1PQ2ExRmNkbDBtTlNLdm9RS0RDdklGOFNpdkZ2RnVoQ3JNc2hTVjAtUFo1Rlo3c0tScE1mSnlpNndpLXRCRzBfeFhaX3c5cFJBSS1MQ2RmQXZFd1lCSi1FTmNuSllValVCOURnbXpvR2E3UnRqcHhZVTYzQndkOFN6V0w3Ulgxcw?oc=5",
-    "published": "2026-10-04T05:42+08:00"
-   },
-   {
-    "title": "供应风险与中国需求疲软博弈",
-    "summary": "市场综述指出供应端风险支撑铜价，但中国需求疲软限制了上涨空间。",
-    "category": "其他",
-    "direction": "中性",
     "importance": 3,
     "source": "GN-铜矿供应",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcHd3ZXhkOHVqSVpoam1samZIbndvem1SanhlZV9BeVlRc3RTTGhrMjBBLU9mdDN4bmVvWDVrZGZISXp6bmdwc1FpSkVMQThHTG9Wc0tEQS05VmNFOEZPeGphalZfa3hKUTBlZ1dlRHBFbzg0Rm1ycFEyQTBSeXo5dUFMOEdYNTA4cDQ2Q3lWTQ?oc=5",
-    "published": "2026-10-03T20:45+08:00"
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNY0s4b1BOU1VuTGFZTWRUQXFUVWluS2VibDVyeWQxT3pyY1A4d2RDMzNYR1hqdDRmU3FQY1dfUXEzSGoyVXdHRDJvOWUxcy11T3pNWU9qNXh5Nk5GQ1BFTWFPZ2IxaWc3VnVZMjl3VW03TnMtdERaSEM0eUZROGFLZHMybV9uSnRfVEhxQkxENkVJeS15UkxLU1VJWDJsRmRhcUNXNWRsaE02OUpOa3c?oc=5",
+    "published": "2026-10-05T02:12+08:00"
    },
    {
-    "title": "COMEX铜库存数据更新",
-    "summary": "COMEX铜库存合计为471428短吨，较前值无变动，各仓库库存水平保持稳定。",
+    "title": "Antofagasta下调产量指引",
+    "summary": "Antofagasta在强劲的上半年业绩后，因运营挑战下调了全年产量预期。",
+    "category": "供应",
+    "direction": "利多",
+    "importance": 3,
+    "source": "GN-铜矿供应",
+    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPNS1sM2J6c09QZzJIbGRRTTVLTl9VUGl0SFp3V3ltNTVQS1RPOFRFbUdLZnI3bVNiODloVDR1Ujk2Nms4QnRORmpqVVh6amZnWUM4cktBSG5WU1YwNXF5dFQ0RVAtWldSLVRQdmNKTjN6ZGgzQXl0Y0tZZTlGdWpUbUlQMGx5Vl9aeXdYMEc0SUtTNGRsdDNPSURLQy1GYmU5MXBIY3hGRTZsZGdfMFVtakVMM2hUeUQ1NTN6anFsM3FpQ2xjcGxB?oc=5",
+    "published": "2026-10-05T05:15+08:00"
+   },
+   {
+    "title": "COMEX铜库存统计",
+    "summary": "COMEX铜库存合计471428短吨，较前值无变动。",
     "category": "库存",
     "direction": "中性",
     "importance": 3,
     "source": "SHMET铜快讯",
     "url": "https://www.shmet.com/newsFlash/newsFlash.html",
-    "published": "2026-10-04T08:00+08:00"
+    "published": "2026-10-05T08:00+08:00"
+   },
+   {
+    "title": "LME铜现货结算价及升贴水",
+    "summary": "LME铜现货结算价为14355美元/吨，现货对三个月合约升水53.5美元/吨。",
+    "category": "价格交易",
+    "direction": "中性",
+    "importance": 3,
+    "source": "SHMET铜快讯",
+    "url": "https://www.shmet.com/newsFlash/newsFlash.html",
+    "published": "2026-10-05T08:41+08:00"
    }
   ],
   "宏观": [
    {
-    "title": "美国非农就业数据不及预期",
-    "summary": "美国最新非农就业人数低于市场预期，市场关注其对美联储货币政策路径的影响。",
-    "category": "经济数据",
-    "direction": "利多",
-    "importance": 5,
-    "source": "GN-美国经济数据",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVzBlWmIzc2NVS2E3RjVwNEM1MmozbE5qZ2Qxejl4aW5nQjF0V01QRl9kaWhLSVJPRG9pcVdCSmR5aGhkTE9LaXB6WHk3cExOaDN5ckFKVmVPRk96bTg5SFRQT1RBU05BX1F2TVFRVTRMWU9BRXA5LUgybUozWTU5UHp6dWc3b0dOTElCMk5zWEMydHhwcXM3cXNHNHBTV1ZhQ2RiNXZjLUxXcmpCNjR3?oc=5",
-    "published": "2026-10-03T17:42+08:00"
-   },
-   {
-    "title": "美联储或无视特朗普意愿继续加息",
-    "summary": "市场预期美联储将继续加息，尽管面临特朗普的反对压力。",
+    "title": "白宫官员哈塞特：是时候让鲍威尔离开了",
+    "summary": "白宫国家经济委员会主任哈塞特公开批评美联储主席鲍威尔，并对沃什的加息决策表示尊重，显示美联储内部及政府间政策分歧加剧。",
     "category": "货币政策",
     "direction": "利空",
-    "importance": 4,
-    "source": "GN-美联储与利率",
-    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOSDV6MU83ak9wclpwNUJZOGVoSmo5SC10LURNOV9tMTlvTng0SkRRQzVpb2ZSc2ViQ1V4QkUyYS0tQUZ1T2tOdDJiRl93SVFfQlY0dXJLUFZYV3BhNElRMmtpSVZEQU5rNzdXczZLdF9VdU51eTkxOFphOG1HSnd3emoxR3FVdHdDX1pRVHJ6dzVrU1dZMmZUaFJtSVZwS0N5VnJfN1lFTjZxd1JMRUpjSzk1VGl0d3I5V01KZ2pwS1Q3TERiVUtvVWZSYzVQd3BXYlVR?oc=5",
-    "published": "2026-10-03T18:15+08:00"
+    "importance": 5,
+    "source": "财联社电报",
+    "url": "https://api3.cls.cn/share/article/2497737?os=web&sv=8.4.6&app=CailianpressWeb",
+    "published": "2026-10-04T22:30+08:00"
    },
    {
-    "title": "美俄就乌克兰问题涉及石油交易",
-    "summary": "据《纽约时报》报道，美俄关于乌克兰的谈判涉及数十亿美元的石油交易。",
+    "title": "G7决定释放1亿桶原油储备",
+    "summary": "G7集团决定释放多达1亿桶的原油和柴油储备，旨在平抑能源价格。",
     "category": "地缘与能源",
-    "direction": "利多",
-    "importance": 4,
-    "source": "GN-华尔街",
-    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPbXFtRVNvb2d6UFFRcG1ER2ZEcTktc3Y3UzZyYjU1QmRJcWdJWE9kNy16bXQyR054ekNKMTFXN2s2RlVVc1RRMTliajBMQTQ2X2wwYnZTdWM2V05aSE53ZzZkd0tBZm5iSUtRQkhqX2tyV2dkRkRCYkNkRXlUdjlCM1U5WHNNeWVWcWFLUFFjZU5BT1ZqbE1iRGxJeTAyUGpBb2Ytdlp1bnExci00R1lSdnRjOWhZMkhlRzRMWEViM3JYaXM?oc=5",
-    "published": "2026-10-03T18:30+08:00"
+    "direction": "利空",
+    "importance": 5,
+    "source": "金十期货",
+    "url": "https://qihuo.jin10.com/",
+    "published": "2026-10-04T22:41+08:00"
    },
    {
-    "title": "美财长称伊朗海上石油将清零",
-    "summary": "美国财政部长贝森特表示，伊朗本周将没有石油在海上运输，暗示制裁执行力度加大。",
+    "title": "霍尔木兹海峡发生多起袭击",
+    "summary": "10月1日至4日期间，霍尔木兹海峡发生四起船只遇袭事件，地缘风险加剧可能推升油价。",
     "category": "地缘与能源",
     "direction": "利多",
     "importance": 4,
     "source": "财联社电报",
-    "url": "https://api3.cls.cn/share/article/2497569?os=web&sv=8.4.6&app=CailianpressWeb",
-    "published": "2026-10-03T20:07+08:00"
+    "url": "https://api3.cls.cn/share/article/2497744?os=web&sv=8.4.6&app=CailianpressWeb",
+    "published": "2026-10-04T23:19+08:00"
    },
    {
-    "title": "Scope警告美债占GDP比重十年内或达160%",
-    "summary": "评级机构Scope警告称，由于财政赤字压力，美国债务占GDP比重在未来十年内可能攀升至160%。",
-    "category": "财政与政治",
+    "title": "美联储10月维持利率概率升至77.9%",
+    "summary": "CME美联储观察数据显示，市场对10月维持利率不变的预期升至77.9%，12月加息预期有所调整。",
+    "category": "货币政策",
+    "direction": "中性",
+    "importance": 4,
+    "source": "财联社电报",
+    "url": "https://api3.cls.cn/share/article/2497771?os=web&sv=8.4.6&app=CailianpressWeb",
+    "published": "2026-10-05T06:01+08:00"
+   },
+   {
+    "title": "欧洲债市担忧传染风险重燃",
+    "summary": "市场对欧洲债券市场的传染风险感到担忧，投资者处于高度警惕状态。",
+    "category": "其他",
     "direction": "利空",
     "importance": 3,
-    "source": "GN-美国经济数据",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQVlRCVUF6elBqUDJUNFpqQV8wcnJqUUlQTmRPT1VQcGdjUUhUbzhBTUpxaGxVdFlCNTFQaXZlcVRaeEdGamVZUHlZeHpBSUMzczVVVE1naVY4cE92NkV2eDlLZDZfU0t6bE1FdkhBbE9La21vX3RxLXFLR0Y1a3lhRXFpWHVYWkJKOXVScGxRQmdsUEprMmVvUEoyR2pROFlvblN6dk51c0ZIOWJz?oc=5",
-    "published": "2026-10-03T17:29+08:00"
+    "source": "GN-美债与美元",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1RcDlMd3h6VmpWZkNfTUFHa3pZbjNDeWJWMXRBX0luR2dPYldLUlJIdEt0a1A3WEU1a2hFOXRxc3hnSmJZcjhOSVgwc01JaDExaThXQjRKVmJfd2hXclpWdWtJdWNGWno2a2lLcHZpRnlrWkU?oc=5",
+    "published": "2026-10-04T22:30+08:00"
    },
    {
-    "title": "美联储暂停加息预期提振市场",
-    "summary": "市场对美联储暂停加息的预期推动了风险资产表现，同时监管机构收紧托管规则。",
-    "category": "货币政策",
-    "direction": "利多",
-    "importance": 3,
-    "source": "GN-美联储与利率",
-    "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNN1MzTEEzV25tOGNqMzBnT183a2l0Wi1JU0Z3T1VlbzNuWUVtQVdtUzRScFowcFNjU3dad1JZNG00bFdPUF9yMUlPQ2VEcGZSVk1rTWxfUDJBd2w4NUNVM3lGX0VlOXM4TTB6Zm16Q2ZidzVxb1FaVklTMEV4NjNnMldqTFBQZERZQ3kwZTh2NUUxZVlmVkFJS3ZNZlp3WU44elozNDB4Ry1LemtaQkFSY3lzUDNETkJsR0NnajV4aUY?oc=5",
-    "published": "2026-10-03T18:12+08:00"
-   },
-   {
-    "title": "美印贸易协议短期难达成",
-    "summary": "美国贸易代表办公室官员表示美印贸易协议尚有分歧，短期内不会达成。",
+    "title": "近20艘伊朗油轮受制裁滞留",
+    "summary": "受美国制裁影响，近20艘伊朗油轮在斯里兰卡附近海域滞留，影响能源运输。",
     "category": "关税与贸易",
     "direction": "中性",
     "importance": 3,
     "source": "GN-关税与贸易",
-    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBmZ2pieGk0YWVUUC1RYlBsaXhSY2djdkJILWZTWV9rN3ctUG9STmtsQ1lKSldYelE4aEZEa05qd252SVJDelJiX3o5dGM5Qkw4T1ByaUxaR0pVY0NLcHhjeEZFLTRVakU2NlNnZkFDa0NUdmY0bElBbGFMNNIBe0FVX3lxTFBmZ2pieGk0YWVUUC1RYlBsaXhSY2djdkJILWZTWV9rN3ctUG9STmtsQ1lKSldYelE4aEZEa05qd252SVJDelJiX3o5dGM5Qkw4T1ByaUxaR0pVY0NLcHhjeEZFLTRVakU2NlNnZkFDa0NUdmY0bElBbGFMNA?oc=5",
-    "published": "2026-10-03T18:16+08:00"
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQWDRUeFBlSWY4cnZYNFJvaF9md01tTnRTNEdWaG55SFV6Z04xMUoya2lXOXczZkR5c1hkczJFWXFEYngxU0hvNWl6WHB6WGpmS3VIdnhXa1BvODJqTlZDa1lubVJKQ2c0Q3NQTTNWTzdnZ3pYMXAtQUZBb0p6eS1HNGxyRFdtVU0?oc=5",
+    "published": "2026-10-04T22:58+08:00"
    },
    {
-    "title": "美国考虑制裁以色列定居者暴力",
-    "summary": "报道称美国正考虑因西岸定居者暴力问题对以色列实施制裁。",
+    "title": "伊朗与格鲁吉亚直航因制裁中断",
+    "summary": "受美国新一轮制裁影响，伊朗与格鲁吉亚之间的直飞航班已停止运营。",
     "category": "关税与贸易",
-    "direction": "利空",
+    "direction": "中性",
     "importance": 3,
     "source": "GN-关税与贸易",
-    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPWE1vMUkzX1FqYUl1TkV5VHZWR0Z3b3RlbmpKWF9qeTlmTEFNaGdyMVNZR3AwNC1OMHRUc3ozbFo3bmxUbWNLaHEzdHlFc3czUnZ3b0pBOVpBYWhlLXVWZjdQOVFyRHRlTUF6d1BiREgyVEk4MHM0WVpEOVVibWIzbTVQY3FZdWhlUjdDbm01T2ZzeXdQZG5ING5ZS1RkWGU1cXhBT1BxRjM4VkFQel9ob0YtM01tdng0V3N5aQ?oc=5",
-    "published": "2026-10-03T18:57+08:00"
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQRHBVMjJ5YmtiNnZGRjhVclhVWURvbXdDQldvVjNkaEE4ZGxCSllIMUYteFJvMEZDZ0EzSk1aVVF4RzVPY2VOaXAzQVJaZGROeGJXWllxNXRMQ2tPYWdWa2cyV0ZEOGtpa01XNFotMEVQcllXNlY2aWE3RG5RYjI0VGtwTnhfMjhzNDFHQklLQl9MLXl3M2ZOVVpRSGd1WDJNenRB?oc=5",
+    "published": "2026-10-05T00:00+08:00"
    },
    {
-    "title": "McCormick销量下滑2.5%",
-    "summary": "受高通胀影响，McCormick销量下降，反映美国消费端品牌忠诚度受损。",
+    "title": "委内瑞拉9月通胀率8.4%",
+    "summary": "委内瑞拉央行报告显示，2026年9月通胀率为8.4%。",
     "category": "经济数据",
     "direction": "利空",
     "importance": 3,
     "source": "GN-美国经济数据",
-    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8yTEtObm4zWjJVZXJCMlNhOGJ4TGtPcFRQMDRFT25tVEZEOFFvRFZsczNnazVmMHVHX3kzY09nM2kzYkN0MjZ4V3JCbTdfUUVpMTFDLVFfVlUwN1BJdEFwaTNXYklnTVQydlBOUThJcVotMDg2akE?oc=5",
-    "published": "2026-10-03T19:58+08:00"
-   },
-   {
-    "title": "特朗普承诺若共和党胜选将发放5000美元奖励",
-    "summary": "美国总统特朗普重申，若共和党赢得中期选举，将向民众提供5000美元奖励，并强调其对通胀问题的把控能力。",
-    "category": "财政与政治",
-    "direction": "利多",
-    "importance": 3,
-    "source": "财联社电报",
-    "url": "https://api3.cls.cn/share/article/2497613?os=web&sv=8.4.6&app=CailianpressWeb",
-    "published": "2026-10-04T08:30+08:00"
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOS3JBeURtUDJpX2pRcjhfczdXTXZFbzdIeS1oLVI4TmpOWWN5ZkZzQXdIbUxMU29IdXpTQl9CTGF6aXhEamp2VDBCY1JqUlFvVWUwbDl0WWE5d3pabVNWUm9UblFTQ2s3Z0p4YTV0bl9tMThMcnA3UUpFOEdMb1hXRmJMNVFQRlVFeXZlSVpLZ0JYLUpUeG5vOQ?oc=5",
+    "published": "2026-10-05T01:24+08:00"
    }
   ],
   "meta": {
-   "weekend": true,
-   "window_start": "2026-10-03T16:00+08:00",
-   "window_end": "2026-10-04T08:36+08:00",
-   "raw_count": 342,
-   "dedup_count": 310,
-   "failures": [],
+   "weekend": false,
+   "window_start": "2026-10-04T16:00+08:00",
+   "window_end": "2026-10-05T08:54+08:00",
+   "raw_count": 506,
+   "dedup_count": 461,
+   "failures": [
+    "Mysteel有色: ReadTimeout: HTTPSConnectionPool(host='youse.mysteel.com', port=443): Read timed out. (read t"
+   ],
    "llm_cost_usd": 0.0,
    "llm_model": "gemini-3.1-flash-lite"
   }
@@ -2200,34 +2162,34 @@
   ]
  },
  "narration": {
-  "tone": "就业疲软驱动降息预期，科技股领涨",
-  "macro": "昨夜市场核心逻辑在于非农就业数据不及预期，这直接强化了市场对美联储货币政策转向的押注，尽管美联储内部仍有加息倾向，但就业市场的降温已成为主导风险资产定价的关键变量。这种宏观背景下，资金表现出明显的风险偏好回升，表现为美债收益率上行与股市上涨并存，说明市场更关注经济放缓带来的流动性宽松预期，而非单纯的衰退恐慌。与此同时，财政赤字压力持续引发市场对长期债务可持续性的担忧，但短期内市场仍被降息预期所主导。地缘政治方面，美俄石油交易传闻与美国对伊朗制裁力度的表态，为能源市场注入了复杂的不确定性，但未能扭转风险资产的整体乐观情绪。",
-  "indices": "标普与纳指领涨，罗素2000同步上行，显示市场风险偏好全面修复，VIX指数显著回落，市场情绪由避险转向进攻。",
-  "rates_fx": "美债收益率全线走高，美元指数小幅回落，汇率与利率走势出现背离，反映出市场在消化就业数据后的政策博弈。",
-  "sectors": "半导体与非必需消费板块领涨，中概互联板块领跌，显示资金正集中流向AI相关的高成长领域，而非系统性普涨。",
-  "movers": "存储芯片巨头Western Digital与Seagate跌幅均超10%，显示半导体行业内部出现分化，与Teradyne等设备股的强劲表现形成鲜明对比。McCormick销量下滑反映出高通胀对消费端品牌忠诚度的持续侵蚀。",
-  "commodities": "铜价受宏观情绪提振上涨，黄金因风险偏好回升而承压，原油受制裁消息与需求预期扰动呈现震荡。"
+  "tone": "科技股领涨，地缘风险推升铜价",
+  "macro": "昨夜市场呈现出明显的风险偏好回升，尽管白宫国家经济委员会主任哈塞特公开批评美联储主席鲍威尔，加剧了政策层面的不确定性，但市场对美联储10月维持利率不变的预期依然高达77.9%，利率环境的相对稳定支撑了风险资产。跨资产表现上，尽管G7决定释放1亿桶原油储备以平抑价格，但霍尔木兹海峡的地缘冲突风险占据了主导地位，导致原油价格在供应干扰预期下表现抗跌，而铜价则在强劲的工业需求预期与地缘溢价的双重驱动下显著走高。与此同时，欧洲债市的传染风险担忧虽存，但并未引发美股的避险抛售，资金明显流向了半导体等高成长板块，显示出市场当前更关注产业逻辑而非宏观扰动。",
+  "indices": "标普500与纳斯达克领涨，VIX恐慌指数大幅回落6.59%，显示市场情绪显著修复，大盘与小盘股同步上涨，压力主要来自行业轮动而非系统性风险。",
+  "rates_fx": "美债收益率全线走高，美元指数微涨，美元兑人民币小幅走弱，利率上行未对股市构成压制，显示市场对经济增长的信心强于对融资成本的担忧。",
+  "sectors": "半导体板块领涨，非必需消费与科技紧随其后，中概互联板块表现疲软，整体呈现出明显的结构性调仓特征，资金向高成长性行业集中。",
+  "movers": "存储芯片巨头Western Digital与Seagate Technology分别下跌10.22%与10.21%，显示存储行业短期面临较大的估值修正压力；而Teradyne与Hewlett Packard Enterprise分别上涨8.0%与7.36%，反映出市场对半导体测试设备及企业级硬件需求的乐观预期。",
+  "commodities": "COMEX铜价大涨1.74%，受地缘冲突与工业需求预期支撑；原油价格在G7释放储备与海峡袭击事件的博弈中震荡，黄金白银同步走强。"
  },
  "commentary": {
   "铜": {
-   "tone": "供应扰动支撑，内外盘联袂走强",
-   "market": "沪铜主力合约收报 109,680 元/吨，涨幅 0.35%，持仓 185,404 手。COMEX 铜收报 14,438.07 美元/吨，涨幅 1.03%。受铜价上涨带动，隔夜美股铜矿板块表现强劲，自由港涨 3.98%，南方铜业涨 3.17%，泰克资源涨 5.12%，哈德贝涨 3.9%，Ero Copper 涨 6.04%。美元指数下跌 0.17%，宏观情绪回暖，VIX 恐慌指数下跌 6.59%。",
-   "supply": "必和必拓 Escondida 铜矿罢工风险上升，市场对供应中断的担忧加剧，成为推动铜价上涨的核心驱动。目前供应端风险与中国需求疲软持续博弈，供应端扰动在短期内为价格提供支撑。",
+   "tone": "外盘领涨，供应扰动支撑偏强",
+   "market": "沪铜主力合约收报 109,680 元/吨（+0.35%），持仓 185,404 手。COMEX 铜收报 14,561.53 美元/吨（+1.74%）。隔夜美股铜矿股普涨，自由港涨 3.98%，泰克资源涨 5.12%，Ero Copper 涨 6.04%。LME 铜现货对三个月合约升水 53.5 美元/吨，现货结算价为 14,355 美元/吨。",
+   "supply": "Antofagasta 因运营挑战下调全年产量指引。市场对美国铜库存水平及潜在的供应短缺风险表示担忧。COMEX 铜库存合计 471,428 短吨，较前值无变动。",
    "demand": "消息面无新增需求侧信息。",
-   "inventory": "上期所交易所库存 10,011 吨（单日 -721，五日 -10,794），库存呈现持续去化态势。COMEX 铜库存合计 471,428 短吨，较前值无变动，各仓库库存水平保持稳定。",
-   "conclusion": "当前铜价主导矛盾在于供应端罢工风险与需求疲软的博弈。随着上期所库存持续去化，供应扰动带来的溢价效应显现。若罢工风险解除且库存去化趋势逆转，当前上涨逻辑将面临证伪。"
+   "inventory": "上期所交易所库存 10,011 吨（单日 -721，五日 -10,794）。库存单日与五日变动方向一致，均呈现去化趋势。",
+   "conclusion": "供应端扰动与减产预期成为当前主导矛盾，支撑铜价偏强运行。若五日累库转为持续去库的趋势被打破，或供应端扰动出现实质性缓解，则当前偏强逻辑将面临修正。"
   },
   "铝": {
-   "tone": "铝价震荡回调，氧化铝受供应扰动走强",
-   "market": "沪铝主力合约收于 23,830 元/吨，单日下跌 0.79%，持仓 258,589 手。氧化铝主力合约表现强势，收于 2,723 元/吨，单日上涨 2.45%，持仓 216,743 手。外盘方面，标普 500 指数上涨 0.73%，美元指数下跌 0.17%，宏观情绪偏暖。",
-   "supply": "氧化铝方面，欧盟正审查对俄氧化铝出口，Aughinish 厂面临出口受限风险，引发市场对全球贸易平衡的担忧。铝锭方面，Vedanta 铝业二季度产量创历史新高，印度安得拉邦政府支持新建铝冶炼厂计划，长期供应预期增加。",
-   "demand": "消息面无新增需求侧信息。",
-   "inventory": "上期所铝锭库存 121,863 吨（单日 -6,880，五日 -47,532），去库趋势显著。氧化铝交易所库存 232,783 吨（单日 0，五日 +6,292），库存水平保持平稳。",
-   "conclusion": "氧化铝受地缘政治扰动驱动走强，铝锭则因库存持续去化支撑价格。若氧化铝出口审查风险解除，或铝锭五日累库转为持续增加，当前偏强格局将面临修正。"
+   "tone": "铝价承压回调，氧化铝逆势走强",
+   "market": "沪铝主力合约收于 23,830 元/吨，跌幅 0.79%，持仓 258,589 手。氧化铝主力合约表现强势，收于 2,723 元/吨，涨幅 2.45%，持仓 216,743 手。外盘方面，标普 500 指数上涨 0.73%，VIX 恐慌指数下跌 6.59%，美元指数微涨 0.02%。",
+   "supply": "韦丹塔铝业 2027 财年二季度产量达到 64.9 万吨，创历史新高，供应端压力有所增加。马来西亚铝行业连续第二年实现产量增长，显示出区域性供应扩张趋势。",
+   "demand": "光伏组件交付对短期边框需求形成一定支撑，但节后需求走弱风险显现，整体消费预期偏弱。",
+   "inventory": "上期所铝库存 121,863 吨（单日 -6,880，五日 -47,532），库存呈现持续去化态势。氧化铝交易所库存 232,783 吨（单日 0，五日 +6,292），五日累库趋势与铝锭去库形成背离。",
+   "conclusion": "当前铝价受节后需求走弱预期压制，供应端产量创新高进一步加剧压力。若上期所铝库存去化趋势逆转为持续累库，则铝价下行压力将进一步放大。氧化铝盘面逆势走强，需警惕其与电解铝基本面背离带来的波动风险。"
   }
  },
  "meta": {
-  "generated_at": "2026-10-04T08:39:46+08:00",
+  "generated_at": "2026-10-05T08:57:12+08:00",
   "cost_usd": 0
  }
 }
